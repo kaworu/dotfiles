@@ -4,9 +4,9 @@
 # {{{ General settings
 
 # History
-HISTFILE=~/.histfile
-HISTSIZE=5000
-SAVEHIST=5000
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
 setopt append_history hist_ignore_all_dups hist_reduce_blanks
 
 # Misc options
@@ -23,6 +23,8 @@ setopt transient_rprompt
 unsetopt beep
 unsetopt notify
 
+# Extended globbing
+setopt extendedglob
 # Color vars
 autoload -U colors
 colors
@@ -130,13 +132,39 @@ zstyle ':completion:*:rm:*' ignore-line yes
 
 # {{{ Per OS settings
 
+function is_a_BSD() {
+    alias ll="ls -loh"
+    alias lla="ls -lohA"
+    # GNU/ls like colors (used by zsh completion)
+    export LS_COLORS='rs=0:di=01;34:ln=01;36:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=01;05;37;41:mi=01;05;37;41:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arj=01;31:*.taz=01;31:*.lzh=01;31:*.lzma=01;31:*.zip=01;31:*.z=01;31:*.Z=01;31:*.dz=01;31:*.gz=01;31:*.bz2=01;31:*.bz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.rar=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz'
+}
+
+# used if the toor user exist
+function has_toor() {
+    alias toor="sudo su -l toor"
+}
+
 case `uname -s` in
+  NetBSD)
+    is_a_BSD; has_toor
+    if which colorls &>/dev/null; then
+      alias cls="colorls -G"
+      alias cll="colorls -Glo"
+      alias cla="colorls -GA"
+      alias clla="colorls -GloA"
+    fi
+  ;;
   FreeBSD)
-    export LSCOLORS="exgxfxcxcxdxdxhbadacec"
-    alias ls="ls -G"
-    ZCOLORS="no=00:fi=00:di=00;34:ln=00;36:pi=00;32:so=00;35:do=00;35:bd=00;33:cd=00;33:or=05;37;41:mi=05;37;41:su=37;41:sg=30;43:tw=30;42:ow=34;42:st=37;44:ex=00;32:"
-    zstyle ':completion:*' list-colors ${(s.:.)ZCOLORS}
-    ;;
+    is_a_BSD; has_toor
+    # FreeBSD's ls colors (default is "exfxcxdxbxegedabagacad")
+    export LSCOLORS='ExGxFxcxCxdxdxhbadacec'
+    export CLICOLOR='enable'
+  ;;
+  OpenBSD)
+    is_a_BSD
+    # FIXME: hardcoded 4.4
+    export PKG_PATH=http://mirror.switch.ch/ftp/pub/OpenBSD/4.4/packages/${$(arch)/OpenBSD\.}
+  ;;
   Linux)
     if [[ -r ~/.dir_colors ]]; then
       eval `dircolors -b ~/.dir_colors`
@@ -145,23 +173,32 @@ case `uname -s` in
     else
       eval `dircolors`
     fi
-    zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+    # GNU ls colors
     alias ls="ls --color=auto"
-    which bsdtar >/dev/null && alias tar="bsdtar"
-    ;;
+    alias ll="ls -lh"
+    alias lla="ls -lhA"
+    # try to buy some real useful stuff
+    alias realpath="/bin/readlink -f"
+  ;;
+  Darwin) # *khof*
+    is_a_BSD
+  ;;
 esac
 
+unfunction is_a_BSD has_toor
 # }}}
 
 # {{{ General aliases
 
-alias :e="\$EDITOR"
+# vim as manpager when avaiable.
+which vimmanpager &>/dev/null && alias man="man -P vimmanpager"
+alias la="ls -A"
 alias :q="exit"
-alias l="ls -A -F"
-alias ll="ls -h -l"
-alias la="ls -a"
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
+# use personal lesspipe.sh if avaiable
+alias less="less -Rc"
+if [ -f ~/.local/bin/lesspipe.sh ]; then
+    export LESSOPEN="| ~/.local/bin/lesspipe.sh %s"
+fi
 
 # }}}
 

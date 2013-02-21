@@ -8,12 +8,10 @@
 !/.vim
 /.vim/.netrwhist
 
-!/.bashrc
 !/.profile
-!/.zlogin
+!/.bashrc
 !/.zprofile
 !/.zsh
-!/.zshenv
 !/.zshrc
 
 !/.screenrc
