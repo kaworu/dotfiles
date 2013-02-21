@@ -1,156 +1,125 @@
-XTerm*Geometry:		100x25
-XTerm*foreground:	#BBBBBB
-XTerm*background:	#111111
-XTerm*FaceName:		Inconsolata:size=11
-XTerm*boldColors:	true
-XTerm*boldMode:		false
-XTerm*metaSendsEscape:	true
-XTerm*loginShell:	true
-XTerm*title:		Terminal
-XTerm*termName:		xterm-256color
-XTerm*utmpInhibit:	False
-XTerm*on2Clicks:	word
-XTerm*on3Clicks:	line
-XTerm*on4Clicks:	page
-XTerm*on5Clicks:	all
-XTerm*saveLines:	1024
-XTerm*bellIsUrgent:	true
-! black
-XTerm*color0:		#111111
-! red
-XTerm*color1:		#AA6655
-! green
-XTerm*color2:		#88AA77
-! yellow
-XTerm*color3:		#AA8833
-! blue
-XTerm*color4:		#3388AA
-! magenta
-XTerm*color5:		#AA7788
-! cyan
-XTerm*color6:		#66AAAA
-! white
-XTerm*color7:		#BBBBBB
-! bright black
-XTerm*color8:		#444444
-! bright red
-XTerm*color9:		#CC7766
-! bright green
-XTerm*color10:		#AACC88
-! bright yellow
-XTerm*color11:		#CCAA44
-! bright blue
-XTerm*color12:		#44AACC
-! bright magenta
-XTerm*color13:		#CC88AA
-! bright cyan
-XTerm*color14:		#88CCCC
-! bright white
-XTerm*color15:		#FFFFFF
+XTerm*foreground:       white
+XTerm*background:       #000011
+XTerm*FaceName:         Liberation Mono:size=10:antialias=true
+!XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
+XTerm*faceSize:         8
+XTerm*metaSendsEscape:  true
+XTerm*loginShell:       true
+XTerm*title:            Terminal
+XTerm*utmpInhibit:      False
+XTerm*on2Clicks:        word
+XTerm*on3Clicks:        line
+XTerm*on4Clicks:        page
+XTerm*on5Clicks:        all
+XTerm*saveLines:        1024
 
-URxvt.geometry:		100x25
-!URxvt.depth:		32
-!URxvt.background:	rgba:1111/1111/1111/DDDD
-!URxvt.foreground:	rgba:BBBB/BBBB/BBBB/FFFF
-URxvt.background:	#111111
-URxvt.foreground:	#AAAAAA
-URxvt.font:		xft:Inconsolata:size=11,xft:Dejavu Sans Mono:size=11,xft:VL Gothic:size=11
-URxvt.letterSpace:	-1
-URxvt.title:		Terminal
-URxvt.termName:		rxvt-unicode-256color
-URxvt.loginShell:	true
-URxvt.modifier:		alt
-URxvt.saveLines:	1024
-URxvt.borderLess:	false
-URxvt.inheritPixmap:	false
-URxvt.scrollBar:	false
-URxvt.scrollstyle:	plain
-URxvt.scrollColor:	#444444
-URxvt.jumpScroll:	true
-URxvt.scrollTtyOutput:	false
-URxvt.scrollWithBuffer:	true
-URxvt.scrollTtyKeypress:	true
+XTerm*color0:           #000000
+XTerm*color1:           #CC0000
+XTerm*color2:           #00CC00
+XTerm*color3:           #CC8800
+XTerm*color4:           #0088CC
+XTerm*color5:           #CC00CC
+XTerm*color6:           #00CC88
+XTerm*color7:           #EEEEEE
+XTerm*color8:           #444444
+XTerm*color9:           #FF0000
+XTerm*color10:          #00FF00
+XTerm*color11:          #FFFF00
+XTerm*color12:          #0088FF
+XTerm*color13:          #FF00FF
+XTerm*color14:          #00FF88
+XTerm*color15:          #FFFFFF
+!XTerm*color0:           #000000
+!XTerm*color1:           #CD0000
+!XTerm*color2:           #00CD00
+!XTerm*color3:           #CDCD00
+!XTerm*color4:           #1E90FF
+!XTerm*color5:           #CD00CD
+!XTerm*color6:           #00CDCD
+!XTerm*color7:           #E5E5E5
+!XTerm*color8:           #4C4C4C
+!XTerm*color9:           #FF0000
+!XTerm*color10:          #00FF00
+!XTerm*color11:          #FFFF00
+!XTerm*color12:          #4682B4
+!XTerm*color13:          #FF00FF
+!XTerm*color14:          #00FFFF
+!XTerm*color15:          #FFFFFF
+
+URxvt.termName:         rxvt
+URxvt.depth:            24
+URxvt.title:            Terminal
+URxvt.background:       rgba:0011/1111/1111/EEEE
+URxvt.foreground:       rgba:DDDD/DDDD/DDDD/FFFF
+URxvt.font:             xft:Liberation Mono:style=Regular:size=9:antialias=true
+XFontSel*background:    black
+XFontSel*foreground:    black
+URxvt.loginShell:       true
+URxvt.modifier:         alt
+URxvt.borderLess:       false
+
+URxvt.saveLines:        1024
+URxvt.jumpScroll:       true
+URxvt.scrollstyle:      plain
+URxvt.scrollBar:        false
+URxvt.scrollColor:      #444444
+URxvt.scrollTtyOutput:  false
+URxvt.scrollWithBuffer: true
+URxvt.scrollTtyKeypress:true
+
 URxvt.utmpInhibit:	false
-URxvt.cursorUnderline:	true
-URxvt.cursorBlink:	true
-URxvt.urgentOnBell:	true
-URxvt.perl-ext-common:	default,matcher
-URxvt.url-launcher:	firefox
-URxvt.matcher.button:	1
-! black
-URxvt.color0:		#111111
-! red
-URxvt.color1:		#AA6655
-! green
-URxvt.color2:		#88AA77
-! yellow
-URxvt.color3:		#AA8833
-! blue
-URxvt.color4:		#3388AA
-! magenta
-URxvt.color5:		#AA7788
-! cyan
-URxvt.color6:		#66AAAA
-! white
-URxvt.color7:		#BBBBBB
-! bright black
-URxvt.color8:		#444444
-! bright red
-URxvt.color9:		#CC7766
-! bright green
-URxvt.color10:		#AACC88
-! bright yellow
-URxvt.color11:		#CCAA44
-! bright blue
-URxvt.color12:		#44AACC
-! bright magenta
-URxvt.color13:		#CC88AA
-! bright cyan
-URxvt.color14:		#88CCCC
-! bright white
-URxvt.color15:		#FFFFFF
+URxvt.keysym.C-o: perl:mark-yank-urls:activate_mark_mode
+URxvt.underlineURLs: true
+URxvt.perl-lib: /home/alex/.urxvt/mark-yank-urls
+URxvt.urlLauncher: firefox3
+URxvt.perl-ext: selection,mark-yank-urls
+URxvt.perl-ext-common:  default,matcher
 
-Xcursor.theme:		whiteglass
-Xcursor.size:		16
+URxvt.matcher.button:   1
+URxvt.cursorUnderline:  false
+URxvt.cursorBlink:      false
 
-Xft.dpi:		96
-Xft.antialias:		true
-Xft.hinting:		true
-Xft.hintstyle:	hintfull
-Xft.lcdfilter:	lcddefault
-Xft.rgba:	rgb
+URxvt.fading:           25%
+URxvt.fadeColor:        black
+!URxvt.inheritPixmap:    true
+!URxvt.shading:          70%
+!URxvt.tintColor:        blue
 
-xpdf*background:	#111111
-xpdf*foreground:	#bbbbbb
+Xcursor.theme: whiteglass
+Xcursor.size: 16
+Xft.dpi: 98
 
-xscreensaver.Dialog.headingFont:		-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.bodyFont:			-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.labelFont:			-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.unameFont:			-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.buttonFont:			-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.dateFont:			-*-dina-medium-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.passwd.passwdFont:			-*-dina-bold-r-*-*-12-*-*-*-*-*-*-*
-xscreensaver.Dialog.foreground:			#aacc88
-xscreensaver.Dialog.background:			#111111
-xscreensaver.Dialog.topShadowColor:		#111111
-xscreensaver.Dialog.bottomShadowColor:		#111111
-xscreensaver.Dialog.Button.foreground:		#aacc88
-xscreensaver.Dialog.Button.background:		#222222
-xscreensaver.Dialog.text.foreground:		#aacc88
-xscreensaver.Dialog.text.background:		#000000
-xscreensaver.Dialog.borderColor:		#222222
-xscreensaver.Dialog.internalBorderWidth:	24
-xscreensaver.Dialog.borderWidth:		1
-xscreensaver.Dialog.shadowThickness:		2
-xscreensaver.passwd.thermometer.foreground:	#aacc88
-xscreensaver.passwd.thermometer.background:	#000000
-xscreensaver.passwd.thermometer.width:		8
-xscreensaver.passwd.uname:			false
-xscreensaver.passwd.heading.label:		XScreenSaver
-xscreensaver.passwd.body.label:			Session locked.
-xscreensaver.dateFormat:			
-xscreensaver.captureStderr:			false
-xscreensaver.fade:				false
-xscreensaver.splash:				false
+URxvt.color0:           #111111
+URxvt.color1:           #CC2222
+URxvt.color2:           #44CC44
+URxvt.color3:           #CCAA44
+URxvt.color4:           #4488CC
+URxvt.color5:           #CC44CC
+URxvt.color6:           #44CCCC
+URxvt.color7:           #CCCCCC
+URxvt.color8:           #444444
+URxvt.color9:           #FF3333
+URxvt.color10:          #44FF44
+URxvt.color11:          #FFCC44
+URxvt.color12:          #4488FF
+URxvt.color13:          #FF44FF
+URxvt.color14:           #44FFCC
+URxvt.color15:          #FFFFFF
 
-! vim:noet:ft=xdefaults
+!default colors
+!URxvt.color0:           #000000
+!URxvt.color1:           #CD0000
+!URxvt.color2:           #00CD00
+!URxvt.color3:           #CDCD00
+!URxvt.color4:           #1E90FF
+!URxvt.color5:           #CD00CD
+!URxvt.color6:           #00CDCD
+!URxvt.color7:           #E5E5E5
+!URxvt.color8:           #4C4C4C
+!URxvt.color9:           #FF0000
+!URxvt.color10:          #00FF00
+!URxvt.color11:          #FFFF00
+!URxvt.color12:          #4682B4
+!URxvt.color13:          #FF00FF
+!URxvt.color14:          #00FFFF
+!URxvt.color15:          #FFFFFF
