@@ -1,8 +1,8 @@
-#!/bin/sh
 PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
-[ -d /usr/local/kde4 ] && PATH="$PATH:/usr/local/kde4/sbin:/usr/local/kde4/bin"
-[ -d ~/.rvm ] && PATH="$HOME/.rvm/bin:$PATH"
-PATH="$HOME/.local/bin:$PATH"; export PATH
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
 
 #LC_ALL="en_US.UTF-8"; export LC_ALL
 LC_COLLATE="en_US.UTF-8"; export LC_COLLATE
