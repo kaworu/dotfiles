@@ -12,24 +12,6 @@ fi
 
 # }}}
 
-# {{{ Env vars
-
-export PATH="$HOME/.rvm/bin:$HOME/.local/bin:$PATH"
-#export LC_ALL="en_US.UTF-8"
-export LC_COLLATE="en_US.UTF-8"
-export LC_CTYPE="en_US.UTF-8"
-export LC_MESSAGES="en_US.UTF-8"
-export LC_MONETARY="en_US.UTF-8"
-export LC_NUMERIC="en_US.UTF-8"
-export LC_TIME="en_US.UTF-8"
-export LANG="en_US.UTF-8"
-export PAGER="less"
-export EDITOR="vim"
-export VISUAL="vim"
-export LESS="-I -M -R --shift 5"
-
-# }}}
-
 # {{{ General settings
 
 # History
@@ -58,8 +40,12 @@ case `uname -s` in
   FreeBSD)
     export LSCOLORS="exgxfxcxcxdxdxhbadacec"
     alias ls="ls -G"
+    alias ll="ls -h -l"
+    alias la="ls -a"
+    alias grep="grep --color=auto"
+    alias egrep="egrep --color=auto"
     ;;
-  Linux) 
+  Linux)
     if [[ -r ~/.dir_colors ]]; then
       eval `dircolors -b ~/.dir_colors`
     elif [[ -r /etc/DIR_COLORS ]]; then
@@ -67,6 +53,10 @@ case `uname -s` in
     fi
     alias ls="ls --color=auto"
     alias cal="cal -m"
+    alias ll="ls -h -l"
+    alias la="ls -a"
+    alias grep="grep --color=auto"
+    alias egrep="egrep --color=auto"
     which bsdtar >/dev/null && alias tar="bsdtar"
     ;;
 esac
@@ -75,13 +65,7 @@ esac
 
 # {{{ General aliases
 
-alias :e="\$EDITOR"
 alias :q="exit"
-alias l="ls -A -F"
-alias ll="ls -h -l"
-alias la="ls -a"
-alias grep="grep --color=auto"
-alias egrep="egrep --color=auto"
 
 # }}}
 
@@ -138,24 +122,29 @@ function precmd {
   color_bblue="\033[01;34m"
   color_cyan="\033[22;36m"
   color_white="\033[22;37m"
+  color_bwhite="\033[01;37m"
+  color_black="\033[22;30m"
+  color_bblack="\033[01;30m"
 
   # Color for non-text things
   local misc="\[${color_white}\]"
 
   # Change path color given user rights on it
-  if [[ -O "${PWD}" ]]; then # owner
-    local path_color="${color_byellow}"
-  elif [[ -w "${PWD}" ]]; then # can write
+  if [[ -w "${PWD}" ]]; then # can write
     local path_color="${color_bblue}"
   else # other
     local path_color="${color_bred}"
   fi
 
+  # red prompt for root
   if [[ $UID = 0 ]]; then
     local login_color="${color_bred}"
   else
-    local login_color="${color_bgreen}"
+    local login_color="${color_bwhite}"
   fi
+
+  # host color.
+  local host_color="${color_bwhite}"
 
   # Jailed ?
   if [[ "`uname -s`" = 'FreeBSD' && "`sysctl -n security.jail.jailed 2>/dev/null`" = 1 ]]; then
@@ -165,22 +154,22 @@ function precmd {
   fi
   # Display return code when not 0
   local return_code=""
-  [[ ${rcode} != 0 ]] && return_code="${misc}!\[${color_red}\]${rcode}${misc}! "
+  [[ ${rcode} != 0 ]] && return_code="${misc}!\[${color_bred}\]${rcode}${misc}! "
   # Host
-  local host="\[${color_cyan}\]\h"
+  local host="\[${host_color}\]\h"
   # User
-  local user="${misc}[\[${login_color}\]\u${misc}]"
+  local user="${misc}\[${login_color}\]\u${misc}"
   # Current path
   local cwd="\[${path_color}\]\w"
-  # Red # for root, green $ for user
+  # Red # for root, white $ for user
   if [[ $UID = 0 ]]; then
     local sign="\[${color_bred}\]#"
   else
-    local sign="\[${color_bgreen}\]\$"
+    local sign="\[${color_white}\]\$"
   fi
 
   # Set the prompt
-  PS1="${return_code}${host}${jailed} ${user} ${cwd} ${sign}\[${color_reset}\] "
+  PS1="${return_code}${user}@${host}${jailed} ${cwd} ${sign}\[${color_reset}\] "
 }
 
 PROMPT_COMMAND=precmd
