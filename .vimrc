@@ -1,16 +1,16 @@
-" peikk0's vimrc
-
 execute pathogen#infect()
-
 set nocompatible
+
+set path=.,./include,/usr/include,/usr/local/include,,
+colorscheme elflord
+set pastetoggle=<F10>
+set sm
+set complete=.,w,b,u,t,i
+
 set modeline
 set modelines=5     " Debian likes to disable this
 
 set backspace=indent,eol,start
-
-set nobackup
-set swapfile
-set autoread
 
 set title
 set shortmess=aoOtTI
@@ -21,12 +21,14 @@ set viminfo='20,\"500,h
 set history=50
 
 set fileencodings=utf-8,latin1,default
-set fileformats=unix,dos,mac
+set fileformats=unix
 
 set shiftwidth=4
+set tabstop=4
 set expandtab
 set smarttab
 set autoindent
+set preserveindent
 set smartindent
 
 let showbreak="> "
@@ -37,18 +39,17 @@ if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
 else
   set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:_
 endif
+highlight extrablank ctermbg=red guibg=red
+match extrablank /\s\+$\| \+\ze\t/
 
 set selection=inclusive
 set virtualedit=block
 
-set nonumber
+set number
 set numberwidth=3
 set nocursorline
 set ruler
 set showcmd
-set laststatus=2
-
-set statusline=[%n]\ %<%f\ %y[%{&ff}][%{&fenc}]%h%w%r%m%{SL('fugitive#statusline')}%#ErrorMsg#%{SL('SyntasticStatuslineFlag')}%*%=%5l/%L%4c%V\ [0x%04B]
 
 set hlsearch
 set incsearch
@@ -60,6 +61,9 @@ set scrolloff=3
 set sidescrolloff=5
 set scrolljump=1
 
+set foldcolumn=2
+set foldmethod=marker
+
 set completeopt=longest,menu,preview
 
 set diffopt+=vertical
@@ -68,78 +72,97 @@ set timeoutlen=250
 
 set shell=/bin/sh
 set grepprg=grep\ -nH\ $*
-command -bar -nargs=1 OpenURL :!firefox <args>
+" rails.vim plugin config
+command -bar -nargs=1 OpenURL :!google-chrome <args>
+
+" french spell check (:set spell)
+setlocal spelllang=fr
+
+" buffer navigation
+map <C-l> <esc>:bnext<return>
+map <C-h> <esc>:bprevious<return>
+map <C-q> <esc>:bdelete<return>
+" split navigation
+map <Tab> <C-w>w
+map <S-Tab> <C-w>W
 
 if has("autocmd")
-  filetype plugin indent on
+    filetype plugin indent on
 
-  au!
-  autocmd FileType text setlocal textwidth=78
-  autocmd FileType c      set omnifunc=ccomplete#Complete
-  autocmd FileType css    set omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html   set omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType man    set nolist
-  autocmd FileType php    set omnifunc=phpcomplete#CompletePHP
-  autocmd FileType python set omnifunc=pythoncomplete#Complete
-  autocmd FileType ruby   set omnifunc=rubycomplete#Complete
-  autocmd FileType sql    set omnifunc=sqlcomplete#Complete
-  autocmd FileType xml    set omnifunc=xmlcomplete#CompleteTags
-  " When editing a file, always jump to the last known cursor position.
-  " Don't do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  autocmd BufReadPost *
-        \ if line("'\"") > 0 && line("'\"") <= line("$") |
-        \   exe "normal! g`\"" |
-        \ endif
+    au!
+    autocmd FileType text setlocal textwidth=78
+    autocmd FileType c      set omnifunc=ccomplete#Complete
+    autocmd FileType css    set omnifunc=csscomplete#CompleteCSS
+    autocmd FileType html   set omnifunc=htmlcomplete#CompleteTags
+    autocmd FileType man    set nolist
+    autocmd FileType php    set omnifunc=phpcomplete#CompletePHP
+    autocmd FileType python set omnifunc=pythoncomplete#Complete
+    autocmd FileType ruby   set omnifunc=rubycomplete#Complete
+    autocmd FileType sql    set omnifunc=sqlcomplete#Complete
+    autocmd FileType xml    set omnifunc=xmlcomplete#CompleteTags
+    " When editing a file, always jump to the last known cursor position.
+    " Don't do it when the position is invalid or when inside an event handler
+    " (happens when dropping a file on gvim).
+    autocmd BufReadPost *
+                \ if line("'\"") > 0 && line("'\"") <= line("$") |
+                \   execute "normal! g`\"" |
+                \ endif
+    " When editing a new file, load skeleton if any.
+    " If we find <+FILENAME+> replace it by the filename.
+    " If we find <+HEADERNAME+> replace it by the filename uppercase with .
+    "       replaced by _ (foo.h become FOO_H).
+    " If we find <+CLASSNAME+> replace it by the filename without the extensions.
+    autocmd BufNewFile *
+                \ let skel = $HOME . "/.vim/skeletons/skel." . expand("%:e") |
+                \ if filereadable(skel) |
+                \   execute "silent! 0read " . skel |
+                \   let fn = expand("%") |
+                \   let hn = substitute(expand("%"), "\\w", "\\u\\0", "g") |
+                \   let hn = substitute(hn, "\\.", "_", "g") |
+                \   let hn = substitute(hn, "/", "_", "g") |
+                \   let cn = expand("%:t:r") |
+                \   %s/<+FILENAME+>/\=fn/Ige |
+                \   %s/<+HEADERNAME+>/\=hn/Ige |
+                \   %s/<+CLASSNAME+>/\=cn/Ige |
+                \   unlet fn hn cn |
+                \ endif |
+                \ unlet skel |
+                \ goto 1
+endif " has autocmd
+syntax enable
 
-  autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" Nice statusbar
+set laststatus=2
+set statusline=
+set statusline+=%-3.3n\                             " buffer number
+set statusline+=%f\                                 " file name
+set statusline+=%h%m%r%w                            " flags
+set statusline+=\[%{strlen(&ft)?&ft:'none'},        " filetype
+set statusline+=%{&encoding},                       " encoding
+set statusline+=%{&fileformat}]\                    " file format
+"set statusline+=%{strftime('%a\ %b\ %e\ %H:%M')}    " hour
+set statusline+=%=                                  " right align
+"set statusline+=%{VimBuddy()}\                      " :-)
+
+set statusline+=0x%-5B\                             " current char
+set statusline+=%-10.(%l,%c%V%)\ %<%P               " offset
+
+" statusline colors
+if version >= 700
+    " default statusline highlight (colors)
+    hi StatusLine   ctermbg=3 ctermfg=0 gui=bold
+    " default non-currenct statusline highlight
+    hi StatusLineNC ctermbg=3 ctermfg=0 gui=bold
+    " statusline highlight when in INSERT mode
+    au InsertEnter * hi StatusLine ctermbg=6 ctermfg=0 gui=bold
+    " leaving INSERT mode reset to default
+    au InsertLeave * hi StatusLine ctermbg=3 ctermfg=0 gui=bold
 endif
 
-if has("terminfo")
-  syntax enable
-  set t_Co=256
-  let g:solarized_termcolors=256
-  let g:solarized_termtrans=1
-  set background=dark
-  colorscheme solarized
-end
 
-function! SL(function)
-  if exists('*'.a:function)
-    return call(a:function,[])
-  else
-    return ''
-  endif
-endfunction
-
-function! NTFinderP()
-  "" Check if NERDTree is open
-  if exists("t:NERDTreeBufName")
-    let s:ntree = bufwinnr(t:NERDTreeBufName)
-  else
-    let s:ntree = -1
-  endif
-  if (s:ntree != -1)
-    "" If NERDTree is open, close it.
-    :NERDTreeClose
-  else
-    "" Try to open a :Rtree for the rails project
-    if exists(":Rtree")
-      "" Open Rtree (using rails plugin, it opens in project dir)
-      :Rtree
-    else
-      "" Open NERDTree in the file path
-      :NERDTreeFind
-    endif
-  endif
-endfunction
-
-" Plugins
-
-" :Man command
-runtime ftplugin/man.vim
-
-let g:netrw_http_cmd="wget -q -O"
+" skeleton template use <+KEY+>
+nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
+inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
 
 " use XHTML and CSS with :TOhtml
 let use_xhtml=1
@@ -147,9 +170,9 @@ let html_use_css=1
 let html_ignore_folding=1
 let html_use_encoding="UTF-8"
 
-" Lua
-let lua_version=5
-let lua_subversion=1
+" Java
+let java_highlight_all=1
+let java_allow_cpp_keywords=1
 
 " Python
 let python_highlight_builtins=1
@@ -175,63 +198,36 @@ let g:syntastic_auto_loc_list = 1
 " gist
 let g:gist_detect_filetype = 1
 let g:gist_open_browser_after_post = 1
-let g:gist_browser_command = 'firefox %URL%'
+let g:gist_browser_command = 'google-chrome %URL%'
 let g:gist_show_privates = 1
 
-" Mappings
-
-map <silent> <F1> :call NTFinderP()<CR>
-map <F5> <Esc>gg=G''
-map <F6> :TlistToggle<CR>
-map <F7> :TlistUpdate<CR>
-map <F9> :DiffChangesDiffToggle<CR>
-map <F10> :DiffChangesPatchToggle<CR>
-map <A-Right> gt
-map <A-Left> gT
-set pastetoggle=<F11>
+" mail
+au BufRead ~/.tmp/mutt* set textwidth=72
 
 " "" '' <> () [] {}
-noremap! "" ""<esc>i
-noremap! '' ''<esc>i
+noremap! "" ""<left>
+noremap! '' ''<left>
 
-noremap! << <><esc>i
-noremap! </ </><esc>i
-noremap! <</ </><esc>hi
-noremap! <<! <!--  --><esc>hhhi
-noremap! <% <%  %><esc>hhi
-noremap! <%= <%=  %><esc>hhi
+noremap! <> <><left>
+noremap! </ </><left>
 
 noremap! (( ()<left>
 noremap! (<cr> (<cr>)<c-o>O
-noremap! (; ();<esc>hi
-noremap! (<cr>; (<cr>);<c-o>O
-noremap! ('; ('');<esc>hhi
-noremap! ("; ("");<esc>hhi
 noremap! (' ('')<esc>hi
 noremap! (" ("")<esc>hi
 
 noremap! {{ {}<left>
 noremap! {<cr> {<cr>}<c-o>O
-noremap! {; {};<esc>hi
-noremap! {<cr>; {<cr>};<c-o>O
-noremap! {'; {''};<esc>hhi
-noremap! {"; {""};<esc>hhi
 noremap! {' {''}<esc>hi
 noremap! {" {""}<esc>hi
-noremap! {{{ {{{ }}}<esc>hhhi
 noremap! {{{<cr> {{{ <cr>}}}<esc>kA
 
 noremap! [[ []<left>
 noremap! [<cr> [<cr>]<c-o>O
-noremap! [; [];<esc>hi
-noremap! [<cr>; [<cr>];<c-o>O
-noremap! ['; [''];<esc>hhi
-noremap! ["; [""];<esc>hhi
 noremap! [' ['']<esc>hi
 noremap! [" [""]<esc>hi
 
-if exists(":nohls")
-  nnoremap <silent> <C-L> :nohls<CR><C-L>
+if exists(":nohlsearch")
+  nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
-
 " vim:ft=vim:sw=2:ts=2:et
