@@ -161,11 +161,11 @@ function precmd {
   local user="${misc}\[${login_color}\]\u${misc}"
   # Current path
   local cwd="\[${path_color}\]\w"
-  # Red # for root, white $ for user
+  # $ for user, # for root
   if [[ $UID = 0 ]]; then
-    local sign="\[${color_bred}\]#"
+    local sign="\[${login_color}\]#"
   else
-    local sign="\[${color_white}\]\$"
+    local sign="\[${login_color}\]\$"
   fi
 
   # Set the prompt

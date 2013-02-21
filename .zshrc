@@ -15,7 +15,7 @@ setopt auto_param_keys
 setopt auto_param_slash
 setopt autocd
 setopt equals
-setopt extended_glob
+setopt extendedglob
 setopt hash_cmds
 setopt hash_dirs
 setopt numeric_glob_sort
@@ -23,8 +23,6 @@ setopt transient_rprompt
 unsetopt beep
 unsetopt notify
 
-# Extended globbing
-setopt extendedglob
 # Color vars
 autoload -U colors
 colors
@@ -188,6 +186,39 @@ esac
 unfunction is_a_BSD has_toor
 # }}}
 
+# {{{ Completion II
+zmodload -a autocomplete
+zmodload -a complist
+
+# formatting and messages
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format "${fg_bold[yellow]}%B%d%b$end"
+zstyle ':completion:*:messages' format '%d'
+zstyle ':completion:*' group-name ''
+
+zstyle :compinstall filename "$HOME/.zshrc"
+zstyle ':completion:*' special-dirs true
+zstyle ':completion:*:*:cd:*' tag-order local-directories path-directories
+zstyle ':completion:*:rm:*' ignore-line yes
+# color for completion
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# menu for auto-completion
+zstyle ':completion:*' menu select=2
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
+# Completion Menu for kill
+#zstyle ':completion:*:processes' command 'ps -u'
+#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
+zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
+zstyle ':completion:*:*:kill:*' menu yes select
+#zstyle ':completion:*:*:kill:*' force-list always
+# Cache
+zstyle ':completion::complete:*' use-cache on
+zstyle ':completion::complete:*' cache-path ~/.zsh/cache
+
+# failed match * are passed literally
+#unsetopt nomatch
+# }}}
+
 # {{{ General aliases
 
 # vim as manpager when avaiable.
@@ -212,7 +243,7 @@ if [ -f "$HOME/.zsh/git-prompt/zshrc.sh" ]; then
 fi
 
 # Right prompt with clock
-RPS1="  %{$fg_no_bold[yellow]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
+#RPS1="  %{$fg_no_bold[yellow]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
 
 # Others prompts
 PS2="%{$fg_no_bold[yellow]%}%_>%{${reset_color}%} "
@@ -246,12 +277,10 @@ function precmd {
   title
 
   # Color for non-text things
-  local misc="%{${fg_no_bold[white]}%}"
+  local misc="%{${fg_bold[black]}%}"
 
   # Change path color given user rights on it
-  if [[ -O "${PWD}" ]]; then # owner
-    local path_color="${fg_bold[yellow]}"
-  elif [[ -w "${PWD}" ]]; then # can write
+  if [[ -w "${PWD}" ]]; then # can write
     local path_color="${fg_bold[blue]}"
   else # other
     local path_color="${fg_bold[red]}"
@@ -260,8 +289,11 @@ function precmd {
   if [[ $UID = 0 ]]; then
     local login_color="${fg_bold[red]}"
   else
-    local login_color="${fg_bold[green]}"
+    local login_color="${fg_bold[white]}"
   fi
+
+  # host color.
+  local host_color="${fg_bold[white]}"
 
   # Jailed ?
   if [[ "`uname -s`" = 'FreeBSD' && "`sysctl -n security.jail.jailed 2>/dev/null`" = 1 ]]; then
@@ -272,23 +304,23 @@ function precmd {
   # Display return code when not 0
   local return_code="%(?..${misc}!%{${fg_no_bold[red]}%}%?${misc}! )"
   # Host
-  local host="%{${fg_no_bold[cyan]}%}%m"
+  local host="%{${host_color}%}%m"
   # User
-  local user="${misc}[%{${login_color}%}%n${misc}]"
+  local user="${misc}%{${login_color}%}%n${misc}"
   # Current path
   local cwd="%{${path_color}%}%48<...<%~"
-  # Red # for root, green % for user
-  local sign="%{${login_color}%}%#"
+  # % for user, # for root.
+  local sign="%{${misc}%}%#"
 
   # Git
-  if [ -n "$HAS_GIT_PROMPT" ]; then
-    local git_status="\$(git_super_status)"
-  else
-    local git_status=""
-  fi
+  #if [ -n "$HAS_GIT_PROMPT" ]; then
+  #  local git_status="\$(git_super_status)"
+  #else
+  #  local git_status=""
+  #fi
 
   # Set the prompt
-  PS1="${return_code}${host}${jailed} ${user} ${cwd}${git_status} ${sign}%{${reset_color}%} "
+  PS1="${return_code}${misc}[${user}@${host}${jailed} ${cwd}${git_status}${misc}] ${sign}%{${reset_color}%} "
 }
 
 # }}}
