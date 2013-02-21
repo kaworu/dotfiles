@@ -3,23 +3,12 @@
 !/.gitignore
 !/.gitmodules
 
-!/.hgrc
-
 !/.gvimrc
 !/.vimrc
 !/.vim
 /.vim/.netrwhist
 
-!/.muttrc
-!/.mutt/gpg.rc
-!/.mutt/themes
-!/.mutt/cache/headers/.gitignore
-!/.mailcap
-
-!/.bash_profile
 !/.bashrc
-!/.dialogrc
-!/.dir_colors
 !/.profile
 !/.zlogin
 !/.zprofile
@@ -30,28 +19,8 @@
 !/.screenrc
 !/.tmux.conf
 
-!/.gemrc
-!/.irbrc
-!/.pryrc
-
-!/.curlrc
-
-!/.ssh/authorized_keys
-
 !/.gtkrc-2.0
 !/.terminfo
 !/.Xdefaults
-!/.xinitrc
-!/.xserverrc
-!/.xsession
 
-!/.config/awesome/README.md
-!/.config/awesome/rc.lua
-!/.config/awesome/themes/akoya.lua
-
-!/.ncmpcpp/config
-
-!/.vimperator/colors
-!/.vimperatorrc
-
-!/.local/bin/shot
+!/.local/bin
