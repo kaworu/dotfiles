@@ -302,7 +302,7 @@ function precmd {
     local jailed=""
   fi
   # Display return code when not 0
-  local return_code="%(?..${misc}!%{${fg_no_bold[red]}%}%?${misc}! )"
+  local return_code="%(?..${misc}!%{${fg_bold[red]}%}%?${misc}! )"
   # Host
   local host="%{${host_color}%}%m"
   # User
