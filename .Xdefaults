@@ -47,7 +47,7 @@ XTerm*color15:          #FFFFFF
 !XTerm*color15:          #FFFFFF
 
 URxvt.termName:         rxvt
-URxvt.depth:            24
+URxvt.depth:            32
 URxvt.title:            Terminal
 URxvt.background:       rgba:0011/1111/1111/EEEE
 URxvt.foreground:       rgba:DDDD/DDDD/DDDD/FFFF
