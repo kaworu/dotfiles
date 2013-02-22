@@ -1,4 +1,4 @@
-# VIM
+### VIM
 [submodule ".vim/bundle/vim-webapi"]
 	path = .vim/bundle/vim-webapi
 	url = git://github.com/mattn/webapi-vim.git
@@ -38,3 +38,9 @@
 [submodule ".vim/bundle/vim-markdown"]
 	path = .vim/bundle/vim-markdown
 	url = git://github.com/tpope/vim-markdown.git
+
+
+### ! VIM
+[submodule ".urxvt/bartman-urxvt-scripts"]
+	path = .urxvt/bartman-urxvt-scripts
+	url = git://github.com/bartman/urxvt-scripts.git

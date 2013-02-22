@@ -67,11 +67,11 @@ URxvt.scrollTtyOutput:  false
 URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress:true
 
-URxvt.utmpInhibit:	false
+URxvt.utmpInhibit: false
 URxvt.keysym.C-o: perl:mark-yank-urls:activate_mark_mode
 URxvt.underlineURLs: true
-URxvt.perl-lib: /home/alex/.urxvt/mark-yank-urls
-URxvt.urlLauncher: firefox3
+URxvt.perl-lib: /home/alex/.urxvt/bartman-urxvt-scripts
+URxvt.urlLauncher: google-chrome
 URxvt.perl-ext: selection,mark-yank-urls
 URxvt.perl-ext-common:  default,matcher
 
