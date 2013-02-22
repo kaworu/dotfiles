@@ -12,6 +12,7 @@
 !/.bashrc
 !/.zprofile
 !/.zsh
+/.zsh/cache
 !/.zshrc
 
 !/.screenrc
