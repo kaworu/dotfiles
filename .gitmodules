@@ -2,9 +2,6 @@
 [submodule ".vim/bundle/vim-webapi"]
 	path = .vim/bundle/vim-webapi
 	url = git://github.com/mattn/webapi-vim.git
-[submodule ".vim/bundle/vim-syntastic"]
-	path = .vim/bundle/vim-syntastic
-	url = git://github.com/scrooloose/syntastic.git
 [submodule ".vim/bundle/vim-nerdtree"]
 	path = .vim/bundle/vim-nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
