@@ -47,3 +47,6 @@
 [submodule ".i3/lua-mpd"]
 	path = .i3/lua-mpd
 	url = git://github.com/kAworu/lua-mpd.git
+[submodule ".i3/json4lua"]
+	path = .i3/json4lua
+	url = git://github.com/craigmj/json4lua.git
