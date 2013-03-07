@@ -1,0 +1,22 @@
+#!/usr/bin/env lua
+-- a simple i3-status wrapper for MPD.
+require("lua-mpd/mpd")
+require("json4lua/json4lua/json/json")
+
+mpc = mpd.new {
+    hostname = (arg[1] or "localhost"),
+    port     = (arg[2] or 6600)
+}
+
+-- chomp the first two lines.
+print(io.read())
+io.flush()
+print(io.read())
+io.flush()
+
+-- Let's Go.
+while true do
+    input = io.read()
+    print(input)
+    io.flush()
+end

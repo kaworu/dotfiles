@@ -12,6 +12,10 @@
 set $mod Mod4
 set $mod_alt Mod1
 
+# MPD settings
+set $mpd_host localhost
+set $mpd_port 6600
+
 # font for window titles. ISO 10646 = Unicode
 # font xft:Liberation 9
 font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -168,7 +172,7 @@ bar {
 bar {
     output DVI-I-2
     output DVI-0
-    status_command i3status --config ~/.i3/i3status-twin-right.conf
+    status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
     position top
 }
 
@@ -188,10 +192,9 @@ exec ~/.i3/start-em-all.sh
 
 ### Custom bindings.
 # MPD commands.
-set $mpd_host localhost
-bindsym Ctrl+$mod_alt+l     exec mpc -h $mpd_host next
-bindsym Ctrl+$mod_alt+h     exec mpc -h $mpd_host prev
-bindsym Ctrl+$mod_alt+k     exec mpc -h $mpd_host volume +5
-bindsym Ctrl+$mod_alt+j     exec mpc -h $mpd_host volume -5
-bindsym Ctrl+$mod_alt+space exec mpc -h $mpd_host toggle
-bindsym Ctrl+$mod_alt+s     exec mpc -h $mpd_host stop
+bindsym Ctrl+$mod_alt+l     exec mpc -q -h $mpd_host -p $mpd_port next
+bindsym Ctrl+$mod_alt+h     exec mpc -q -h $mpd_host -p $mpd_port prev
+bindsym Ctrl+$mod_alt+k     exec mpc -q -h $mpd_host -p $mpd_port volume +5
+bindsym Ctrl+$mod_alt+j     exec mpc -q -h $mpd_host -p $mpd_port volume -5
+bindsym Ctrl+$mod_alt+space exec mpc -q -h $mpd_host -p $mpd_port toggle
+bindsym Ctrl+$mod_alt+s     exec mpc -q -h $mpd_host -p $mpd_port stop
