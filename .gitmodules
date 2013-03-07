@@ -38,15 +38,10 @@
 
 
 ### ! VIM
-[submodule ".urxvt/bartman-urxvt-scripts"]
-	path = .urxvt/bartman-urxvt-scripts
-	url = git://github.com/bartman/urxvt-scripts.git
 [submodule ".urxvt/urxvt-perls"]
 	path = .urxvt/urxvt-perls
 	url = git://github.com/muennich/urxvt-perls.git
+
 [submodule ".i3/lua-mpd"]
 	path = .i3/lua-mpd
 	url = git://github.com/kAworu/lua-mpd.git
-[submodule ".i3/json4lua"]
-	path = .i3/json4lua
-	url = git://github.com/craigmj/json4lua.git

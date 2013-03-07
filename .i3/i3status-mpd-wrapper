@@ -31,7 +31,7 @@ end
 
 hack_package_path()
 require("lua-mpd.mpd")
-require("json4lua.json4lua.json.json")
+json = require("dkjson")
 
 mpc = mpd.new {
     hostname = (arg[1] or "localhost"),
