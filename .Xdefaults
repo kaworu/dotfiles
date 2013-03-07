@@ -68,12 +68,15 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress:true
 
 URxvt.utmpInhibit: false
-URxvt.keysym.C-o: perl:mark-yank-urls:activate_mark_mode
-URxvt.underlineURLs: true
-URxvt.perl-lib: /home/alex/.urxvt/bartman-urxvt-scripts
-URxvt.urlLauncher: google-chrome
-URxvt.perl-ext: selection,mark-yank-urls
-URxvt.perl-ext-common:  default,matcher
+URxvt.perl-lib: /home/aperrin/.urxvt/urxvt-perls
+URxvt.perl-ext-common:  keyboard-select,url-select,clipboard
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-o: perl:url-select:select_next
+Urxvt.url-select.autocopy: true
+URxvt.url-select.underline: true
+URxvt.keysym.M-c: perl:clipboard:copy
+URxvt.keysym.M-v: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 
 URxvt.matcher.button:   1
 URxvt.cursorUnderline:  false
