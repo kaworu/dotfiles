@@ -157,6 +157,7 @@ case `uname -s` in
     # FreeBSD's ls colors (default is "exfxcxdxbxegedabagacad")
     export LSCOLORS='ExGxFxcxCxdxdxhbadacec'
     export CLICOLOR='enable'
+    alias grep="grep --color=auto" # GNU grep
   ;;
   OpenBSD)
     is_a_BSD
@@ -177,6 +178,7 @@ case `uname -s` in
     alias lla="ls -lhA"
     # try to buy some real useful stuff
     alias realpath="/bin/readlink -f"
+    alias grep="grep --color=auto" # GNU grep
   ;;
   Darwin) # *khof*
     is_a_BSD
