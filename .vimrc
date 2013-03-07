@@ -201,29 +201,6 @@ let g:gist_show_privates = 1
 " mail
 au BufRead ~/.tmp/mutt* set textwidth=72
 
-" "" '' <> () [] {}
-noremap! "" ""<left>
-noremap! '' ''<left>
-
-noremap! <> <><left>
-noremap! </ </><left>
-
-noremap! (( ()<left>
-noremap! (<cr> (<cr>)<c-o>O
-noremap! (' ('')<esc>hi
-noremap! (" ("")<esc>hi
-
-noremap! {{ {}<left>
-noremap! {<cr> {<cr>}<c-o>O
-noremap! {' {''}<esc>hi
-noremap! {" {""}<esc>hi
-noremap! {{{<cr> {{{ <cr>}}}<esc>kA
-
-noremap! [[ []<left>
-noremap! [<cr> [<cr>]<c-o>O
-noremap! [' ['']<esc>hi
-noremap! [" [""]<esc>hi
-
 if exists(":nohlsearch")
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif

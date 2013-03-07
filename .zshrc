@@ -83,7 +83,7 @@ bindkey '[5~' history-search-backward
 bindkey '[6~' history-search-forward
 
 # Man
-bindkey 'h' run-help
+#bindkey 'h' run-help
 
 # Edit cmdline
 autoload edit-command-line
