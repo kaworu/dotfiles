@@ -44,3 +44,6 @@
 [submodule ".urxvt/urxvt-perls"]
 	path = .urxvt/urxvt-perls
 	url = git://github.com/muennich/urxvt-perls.git
+[submodule ".i3/lua-mpd"]
+	path = .i3/lua-mpd
+	url = git://github.com/kAworu/lua-mpd.git
