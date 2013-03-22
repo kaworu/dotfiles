@@ -237,13 +237,6 @@ fi
 
 # {{{ Prompts
 
-# Git prompt
-if [ -f "$HOME/.zsh/git-prompt/zshrc.sh" ]; then
-  source "$HOME/.zsh/git-prompt/zshrc.sh"
-  #ZSH_THEME_GIT_PROMPT_NOCACHE=1
-  HAS_GIT_PROMPT=1
-fi
-
 # Right prompt with clock
 #RPS1="  %{$fg_no_bold[yellow]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
 
@@ -314,13 +307,6 @@ function precmd {
   # % for user, # for root.
   local sign="%{${misc}%}%#"
 
-  # Git
-  #if [ -n "$HAS_GIT_PROMPT" ]; then
-  #  local git_status="\$(git_super_status)"
-  #else
-  #  local git_status=""
-  #fi
-
   # Set the prompt
   PS1="${return_code}${misc}[${user}@${host}${jailed} ${cwd}${git_status}${misc}] ${sign}%{${reset_color}%} "
 }
@@ -344,10 +330,6 @@ function run-help-sudo {
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
-
-# }}}
-
-# {{{ Reminder
 
 if [[ -f ~/.reminder ]]; then
   cat ~/.reminder
