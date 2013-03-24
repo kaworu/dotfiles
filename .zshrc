@@ -306,7 +306,7 @@ function precmd {
   # Display return code when not 0
   local return_code="%(?..${misc}!%{${fg_bold[red]}%}%?${misc}! )"
   # Host
-  local host="%{${host_color}%}%m"
+  local host="%{${host_color}%}%M"
   # User
   local user="${misc}%{${login_color}%}%n${misc}"
   # Current path
