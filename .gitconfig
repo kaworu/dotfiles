@@ -12,6 +12,8 @@
     pager = less -FRX
 [merge]
     tool = vimdiff
+[push]
+    default = simple
 
 [alias]
     st = status
