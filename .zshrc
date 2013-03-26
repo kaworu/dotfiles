@@ -94,6 +94,8 @@ bindkey 'x' execute-named-cmd
 # Complete help
 bindkey 'c' _complete_help
 
+bindkey '^R' history-incremental-search-backward
+
 # () [] {} ...
 bindkey -s '((' '()\ei'
 bindkey -s '( (' '(   )\ehhi'
