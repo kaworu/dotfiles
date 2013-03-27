@@ -255,7 +255,7 @@ function title {
   local t="%n@%m %~"
 
   case $TERM in
-    screen) # and tmux
+    screen*) # and tmux
       print -nP "\ek$t\e\\"
       print -nP "\e]0;$t\a"
       ;;
@@ -310,7 +310,7 @@ function precmd {
   local sign="%{${misc}%}%#"
 
   # Set the prompt
-  PS1="${return_code}${misc}[${user}@${host}${jailed} ${cwd}${git_status}${misc}] ${sign}%{${reset_color}%} "
+  PS1="${return_code}${misc}[${user}@${host}${jailed} ${cwd}${misc}] ${sign}%{${reset_color}%} "
 }
 
 # }}}
