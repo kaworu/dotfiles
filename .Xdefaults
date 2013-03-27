@@ -81,6 +81,10 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.matcher.button:   1
 URxvt.cursorUnderline:  false
 URxvt.cursorBlink:      false
+URxvt.cursorColor: #657b83
+
+! Fix font space
+URxvt*letterSpace: -1
 
 URxvt.fading:           25%
 URxvt.fadeColor:        black
