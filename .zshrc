@@ -176,8 +176,8 @@ case `uname -s` in
     fi
     # GNU ls colors
     alias ls="ls --color=auto"
-    alias ll="ls -lh"
-    alias lla="ls -lhA"
+    alias ll="ls -lhF"
+    alias lla="ls -lhAF"
     # try to buy some real useful stuff
     alias realpath="/bin/readlink -f"
     alias grep="grep --color=auto" # GNU grep
