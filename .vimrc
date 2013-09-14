@@ -51,8 +51,8 @@ set showcmd
 set hlsearch
 set incsearch
 
-set ignorecase
-set smartcase
+"set ignorecase
+"set smartcase
 
 set scrolloff=3
 set sidescrolloff=5
