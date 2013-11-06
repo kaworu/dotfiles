@@ -1,0 +1,98 @@
+Object-oriented programming is a big seller these days.  Some managers would
+rather have objects than sliced bread.
+		-- perltoot(1)
+%
+Now is better than never.  Although never is often better than *right* now.
+		-- The Zen of Python, by Tim Peters
+%
+No, there is nothing glamorous about debugging. It is the ugly duckling of our
+profession, the admission that we are far from perfect, the one activity that is
+the least predictable or accountable -- and a constant impetus to feelings of
+remorse and guilt: "if only we had done better right from the start, we wouldn't
+be stuck in this mess." The defect is the crime; debugging is the punishment.
+		-- Andreas Zeller (in Beautiful Code)
+%
+I'm not sure how the company lost sight of what matters to our customers, both
+business and home, the most, but in my view we lost our way. I think our teams
+lost sight of what bug-free means, what resilience means, what full scenarios
+mean, what security means, what performance means, how important current
+applications are, and really understanding what the most important problems our
+customers face are. I see lots of random features and some great vision, but
+that does not translate into great products... I would buy a Mac today if I was
+not working at Microsoft.
+		-- Excerpt from a 2004 email from Jim Allchin to Steve Balmer & Bill Gates
+%
+FTP is a dinosaur left over from the time before the Internet as it is known
+today, when research universities were leased lined together and FTP was used to
+share files among research Scientists.
+		-- FreeBSD Handbook.
+%
+There are in order of increasing severity: lies, damn lies, statistics, and
+computer benchmarks.
+		-- diskinfo(8)
+%
+These days, CVSup is fairly easy to build on most Unix-like platforms. The
+minor difficulties that still exist stem from the fact that CVSup is written in
+the programming language NotC. What is NotC? Well, to most people, it really
+doesn't matter. The important thing is that NotC is *not* C.
+		-- John D. Polstra (CVSup author)
+%
+If anybody asks for advice whether to use goto or not, you should tell
+them not to use it. People who ask for advice shouldn't use goto.
+
+At some point they will not ask for advice anymore, and at some point
+they will either start thinking for themselves or they will not. If they
+think for themselves, they will use goto when it is appropriate and
+avoid it when it is inappropriate, and if they are smart they will know
+when it is appropriate. If they don't think for themselves, they will
+still insist that goto is always evil.
+
+Usual indication of "not thinking" is when you present an example that
+is more readable because it uses goto, and they insist that it is worse
+because it uses goto. So the conclusion that they draw is that using
+"goto" is bad because you use "goto".
+		-- Christian Bau on comp.lang.c
+%
+Nothing travels faster than the speed of light with the possible exception of
+bad news, which obeys its own special laws.
+		-- H2G2
+%
+I still maintain the point that designing a monolithic kernel in 1991 is a
+fundamental error.  Be thankful you are not my student.  You would not get a
+high grade for such a design :-)
+		-- Andy Tanenbaum to Linus Torvald
+%
+BSD guys are a lot like Linux guys, except they have kissed girls.
+		-- Theo de Raadt
+%
+I claim that anybody that hasn't noticed by now that I'm an opinionated
+bastard, and that "impolite" is my middle name, is lacking a few clues.
+Finally, it's clear that I'm not only the smartest person around, I'm also
+incredibly good-looking, and that my infallible charm is also second only to my
+becoming modesty.
+So there. Just to clarify.
+		-- Linus "bow down before me, you scum" Torvalds
+%
+I mean, if 10 years from now, when you are doing something quick and dirty, you
+suddenly visualize that I am looking over your shoulders and say to yourself,
+"Dijkstra would not have liked this", well that would be enough immortality for
+me.
+		-- Edsger W Dijkstra
+%
+There are only two things wrong with C++: The initial concept and the
+implementation.
+		-- Bertrand Meyer
+%
+"OpenBSD did it" is no more reason to dirty up our libc with this kind of
+ill-considered interface than "SCO Xenix did it". NetBSD libc should not be the
+union of every mistake anyone ever made in libc in any version of Unix.
+		-- Thor Lancelot Simo
+%
+Those who do not understand Unix are condemned to reinvent it, poorly.
+		-- HenrySpencer (Usenet signature, November 1987)
+%
+Using prototyping to learn which features you don't have to implement helps
+optimization for performance; you don't have to optimize what you don't write.
+The most powerful optimization tool in existence may be the delete key. One of
+my most productive days was throwing away 1000 lines of code.
+		-- Ken Thompson
