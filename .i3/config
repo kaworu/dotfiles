@@ -198,3 +198,5 @@ bindsym Ctrl+$mod_alt+k     exec mpc -q -h $mpd_host -p $mpd_port volume +5
 bindsym Ctrl+$mod_alt+j     exec mpc -q -h $mpd_host -p $mpd_port volume -5
 bindsym Ctrl+$mod_alt+space exec mpc -q -h $mpd_host -p $mpd_port toggle
 bindsym Ctrl+$mod_alt+s     exec mpc -q -h $mpd_host -p $mpd_port stop
+
+# vim:filetype=i3
