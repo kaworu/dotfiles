@@ -96,3 +96,9 @@ optimization for performance; you don't have to optimize what you don't write.
 The most powerful optimization tool in existence may be the delete key. One of
 my most productive days was throwing away 1000 lines of code.
 		-- Ken Thompson
+%
+There are two ways of constructing a software design. One is to make it so
+simple that there are obviously no deficiencies; the other is to make it so
+complicated that there are no obvious deficiencies. The first method is far
+more difficult.
+		-- C.A. R. Hoare (The Emperor's Old Clothes, CACM February 1981)
