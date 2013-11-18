@@ -154,7 +154,7 @@ case `uname -s` in
       alias clla="colorls -GloA"
     fi
   ;;
-  FreeBSD)
+  FreeBSD|DragonFly)
     is_a_BSD; has_toor
     # FreeBSD's ls colors (default is "exfxcxdxbxegedabagacad")
     export LSCOLORS='ExGxFxcxCxdxdxhbadacec'
