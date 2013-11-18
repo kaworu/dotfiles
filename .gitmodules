@@ -53,4 +53,4 @@
 	url = git://github.com/hail2u/vim-css3-syntax.git
 [submodule ".vim/bundle/vim-i3-syntax"]
 	path = .vim/bundle/vim-i3-syntax
-	url = git@github.com:PotatoesMaster/i3-vim-syntax.git
+	url = git://github.com/PotatoesMaster/i3-vim-syntax.git
