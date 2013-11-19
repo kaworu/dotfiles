@@ -54,3 +54,6 @@
 [submodule ".vim/bundle/vim-i3-syntax"]
 	path = .vim/bundle/vim-i3-syntax
 	url = git://github.com/PotatoesMaster/i3-vim-syntax.git
+[submodule ".vim/bundle/vim-cocci"]
+	path = .vim/bundle/vim-cocci
+	url = https://github.com/kAworu/vim-coccinelle.git
