@@ -102,3 +102,10 @@ simple that there are obviously no deficiencies; the other is to make it so
 complicated that there are no obvious deficiencies. The first method is far
 more difficult.
 		-- C.A. R. Hoare (The Emperor's Old Clothes, CACM February 1981)
+%
+The combination of threads, remote-procedure-call interfaces, and heavyweight
+object-oriented design is especially dangerous. Used sparingly and tastefully,
+any of these techniques can be valuable - but if you are ever invited onto a
+project that is supposed to feature all three, fleeing in terror might well be
+an appropriate reaction.
+		-- Eric S. Raymond (The Art of Unix Programming)
