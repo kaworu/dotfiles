@@ -126,7 +126,6 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' original true
 zstyle ':completion:*' squeeze-slashes true
-zstyle ':completion:*:rm:*' ignore-line yes
 
 # }}}
 
@@ -203,7 +202,6 @@ zstyle ':completion:*' group-name ''
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*:*:cd:*' tag-order local-directories path-directories
-zstyle ':completion:*:rm:*' ignore-line yes
 # color for completion
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 # menu for auto-completion
