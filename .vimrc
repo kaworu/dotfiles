@@ -194,8 +194,6 @@ let g:syntastic_auto_loc_list = 1
 
 " gist
 let g:gist_detect_filetype = 1
-let g:gist_open_browser_after_post = 1
-let g:gist_browser_command = 'google-chrome %URL%'
 let g:gist_show_privates = 1
 
 " mail
