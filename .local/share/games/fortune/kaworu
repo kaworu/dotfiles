@@ -109,3 +109,8 @@ any of these techniques can be valuable - but if you are ever invited onto a
 project that is supposed to feature all three, fleeing in terror might well be
 an appropriate reaction.
 		-- Eric S. Raymond (The Art of Unix Programming)
+%
+In summary, Web browsers are like quantum physics: they offer 
+probabilistic guarantees at best, and anyone who claims to 
+fully understand them is a liar.
+		-- James mickens (To Wash It All Away)
