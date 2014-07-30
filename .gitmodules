@@ -56,3 +56,9 @@
 [submodule ".vim/bundle/vim-nerdtree"]
 	path = .vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-diffchanges"]
+	path = .vim/bundle/vim-diffchanges
+	url = https://github.com/jmcantrell/vim-diffchanges
+[submodule ".vim/bundle/vim-matchit"]
+	path = .vim/bundle/vim-matchit
+	url = https://github.com/vim-scripts/matchit.zip
