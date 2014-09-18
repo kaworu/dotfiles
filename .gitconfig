@@ -27,7 +27,5 @@
     lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
     ls = ls-files
 
-[http]
-    sslVerify = false
 [github]
     user = kAworu
