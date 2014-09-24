@@ -86,7 +86,6 @@ map <S-Tab> <C-w>W
 if has("autocmd")
     filetype plugin indent on
 
-    au!
     autocmd FileType text setlocal textwidth=78
     autocmd FileType c      set omnifunc=ccomplete#Complete
     autocmd FileType css    set omnifunc=csscomplete#CompleteCSS
