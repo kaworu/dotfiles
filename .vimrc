@@ -7,8 +7,8 @@ set pastetoggle=<F10>
 set sm
 set complete=.,w,b,u,t,i
 
-set modeline
-set modelines=5     " Debian likes to disable this
+set nomodeline
+set modelines=0
 
 set backspace=indent,eol,start
 
