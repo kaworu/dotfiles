@@ -64,7 +64,7 @@ while true do
         local zstats = mpc:send("playlistid " .. tonumber(status.songid))
         if zstats.name then -- radio
             radio = true
-            now_playing = zstats.name
+            now_playing = string.format("%s / %s", zstats.title, zstats.name)
         else
             local function timeformat(t)
                 if tonumber(t) >= 60 * 60 then -- more than one hour!
