@@ -77,8 +77,8 @@ command -bar -nargs=1 OpenURL :!google-chrome <args>
 setlocal spelllang=fr
 
 " buffer navigation
-map <C-l> <esc>:bnext<return>
-map <C-h> <esc>:bprevious<return>
+map <C-j> <esc>:bnext<return>
+map <C-k> <esc>:bprevious<return>
 map <C-q> <esc>:bdelete<return>
 " split navigation
 map <Tab> <C-w>w
