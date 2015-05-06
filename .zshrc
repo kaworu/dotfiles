@@ -143,15 +143,18 @@ function has_toor() {
     alias toor="sudo su -l toor"
 }
 
+function check_for_colorls() {
+    if which colorls &>/dev/null; then
+        alias ls="colorls -G"
+        alias ll="colorls -Glo"
+        alias la="colorls -GA"
+        alias lla="colorls -GloA"
+    fi
+}
+
 case `uname -s` in
   NetBSD)
-    is_a_BSD; has_toor
-    if which colorls &>/dev/null; then
-      alias cls="colorls -G"
-      alias cll="colorls -Glo"
-      alias cla="colorls -GA"
-      alias clla="colorls -GloA"
-    fi
+    is_a_BSD; has_toor; check_for_colorls
   ;;
   FreeBSD|DragonFly)
     is_a_BSD; has_toor
@@ -161,9 +164,8 @@ case `uname -s` in
     alias grep="grep --color=auto" # GNU grep
   ;;
   OpenBSD)
-    is_a_BSD
-    # FIXME: hardcoded 4.4
-    export PKG_PATH=http://mirror.switch.ch/ftp/pub/OpenBSD/4.4/packages/${$(arch)/OpenBSD\.}
+    is_a_BSD; check_for_colorls
+    export PKG_PATH="ftp://ftp.ch.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
   ;;
   Linux)
     if [[ -r ~/.dir_colors ]]; then
@@ -186,7 +188,7 @@ case `uname -s` in
   ;;
 esac
 
-unfunction is_a_BSD has_toor
+unfunction is_a_BSD has_toor check_for_colorls
 # }}}
 
 # {{{ Completion II
