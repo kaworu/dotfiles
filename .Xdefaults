@@ -68,7 +68,6 @@ URxvt.scrollWithBuffer: true
 URxvt.scrollTtyKeypress:true
 
 URxvt.utmpInhibit: false
-URxvt.perl-lib: /home/aperrin/.urxvt/urxvt-perls
 URxvt.perl-ext-common:  keyboard-select,url-select,clipboard
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 URxvt.keysym.M-o: perl:url-select:select_next
