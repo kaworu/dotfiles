@@ -44,7 +44,7 @@
 
 ### ! VIM
 [submodule ".urxvt/urxvt-perls"]
-	path = .urxvt/urxvt-perls
+	path = .urxvt/ext
 	url = git://github.com/muennich/urxvt-perls.git
 
 [submodule ".i3/lua-mpd"]
