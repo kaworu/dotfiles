@@ -127,6 +127,8 @@ if has("autocmd")
                 \ goto 1
 endif " has autocmd
 syntax enable
+" quick fix for line numbers
+hi LineNr ctermfg=DarkGrey
 
 " Nice statusbar
 set laststatus=2
@@ -147,13 +149,13 @@ set statusline+=%-10.(%l,%c%V%)\ %<%P               " offset
 " statusline colors
 if version >= 700
     " default statusline highlight (colors)
-    hi StatusLine   ctermbg=3 ctermfg=0 gui=bold
-    " default non-currenct statusline highlight
-    hi StatusLineNC ctermbg=3 ctermfg=0 gui=bold
+    hi StatusLine   ctermbg=Black ctermfg=Yellow gui=bold
+    " default non-current statusline highlight
+    hi StatusLineNC ctermbg=Cyan ctermfg=Black
     " statusline highlight when in INSERT mode
-    au InsertEnter * hi StatusLine ctermbg=6 ctermfg=0 gui=bold
+    au InsertEnter * hi StatusLine ctermbg=Black ctermfg=Red gui=bold
     " leaving INSERT mode reset to default
-    au InsertLeave * hi StatusLine ctermbg=3 ctermfg=0 gui=bold
+    au InsertLeave * hi StatusLine ctermbg=Black ctermfg=Yellow gui=bold
 endif
 
 
