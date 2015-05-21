@@ -49,7 +49,7 @@ XTerm*color15:          #FFFFFF
 URxvt.termName:         rxvt
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt.background:       rgba:0011/1111/1111/EEEE
+URxvt.background:       rgba:0000/1717/1c1c/EEEE
 URxvt.foreground:       rgba:DDDD/DDDD/DDDD/FFFF
 URxvt.font:             xft:Liberation Mono:style=Regular:size=9:antialias=true
 XFontSel*background:    black
@@ -95,22 +95,22 @@ Xcursor.theme: whiteglass
 Xcursor.size: 16
 Xft.dpi: 98
 
-URxvt.color0:           #111111
-URxvt.color1:           #CC2222
-URxvt.color2:           #44CC44
-URxvt.color3:           #CCAA44
-URxvt.color4:           #4488CC
-URxvt.color5:           #CC44CC
-URxvt.color6:           #44CCCC
-URxvt.color7:           #CCCCCC
-URxvt.color8:           #444444
-URxvt.color9:           #FF3333
-URxvt.color10:          #44FF44
-URxvt.color11:          #FFCC44
-URxvt.color12:          #4488FF
-URxvt.color13:          #FF44FF
-URxvt.color14:           #44FFCC
-URxvt.color15:          #FFFFFF
+URxvt.color0:           #002b36
+URxvt.color1:           #dc322f
+URxvt.color2:           #009a14
+URxvt.color3:           #b58900
+URxvt.color4:           #268bd2
+URxvt.color5:           #c037d5
+URxvt.color6:           #2aa198
+URxvt.color7:           #fdf6e3
+URxvt.color8:           #586e75
+URxvt.color9:           #f63734
+URxvt.color10:          #00cd1b
+URxvt.color11:          #e9b300
+URxvt.color12:          #2995e6
+URxvt.color13:          #d93ff1
+URxvt.color14:          #37d4ca
+URxvt.color15:          #fdf6e3
 
 !default colors
 !URxvt.color0:           #000000
