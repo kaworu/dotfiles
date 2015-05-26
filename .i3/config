@@ -17,8 +17,8 @@ set $mpd_host localhost
 set $mpd_port 6600
 
 # font for window titles. ISO 10646 = Unicode
-# font xft:Liberation 9
-font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font pango:Liberation 9,FontAwesome 9
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -161,12 +161,13 @@ bindsym $mod+r mode "resize"
 
 # single screen setup.
 #bar {
-#    status_command i3status --config ~/.i3/i3status-single.conf
+#    #status_command i3status --config ~/.i3/i3status-single.conf
+#    status_command i3blocks -c ~/.i3/i3blocks.conf
 #    position top
 #    colors {
 #        background #002b36
 #        statusline #fdf6e3
-#        separator #586e75
+#        separator  #586e75
 #
 #        # class            border  backgr. text
 #        focused_workspace  #2995e6 #268bd2 #fdf6e3
@@ -180,12 +181,13 @@ bindsym $mod+r mode "resize"
 bar {
     output HDMI-0
     output DVI-I-1
-    status_command i3status --config ~/.i3/i3status-twin-left.conf
+    #status_command i3status --config ~/.i3/i3status-twin-left.conf
+    status_command i3blocks -c ~/.i3/i3blocks-twin-left.conf
     position top
     colors {
         background #002b36
         statusline #fdf6e3
-        separator #586e75
+        separator  #586e75
 
         # class            border  backgr. text
         focused_workspace  #2995e6 #268bd2 #fdf6e3
@@ -197,12 +199,13 @@ bar {
 bar {
     output DVI-I-2
     output DVI-0
-    status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
+    #status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
+    status_command i3blocks -c ~/.i3/i3blocks-twin-right.conf
     position top
     colors {
         background #002b36
         statusline #fdf6e3
-        separator #586e75
+        separator  #586e75
 
         # class            border  backgr. text
         focused_workspace  #2995e6 #268bd2 #fdf6e3
