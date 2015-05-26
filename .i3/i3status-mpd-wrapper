@@ -105,7 +105,7 @@ while true do
     table.insert(t, 1, {
         name = "MPD",
         full_text = mpc_line(),
-        color = "#99b5e9"
+        color = "#37d4ca"
     })
     print(json.encode(t) .. ",")
     io.flush()
