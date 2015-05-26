@@ -163,6 +163,17 @@ bindsym $mod+r mode "resize"
 #bar {
 #    status_command i3status --config ~/.i3/i3status-single.conf
 #    position top
+#    colors {
+#        background #002b36
+#        statusline #fdf6e3
+#        separator #586e75
+#
+#        # class            border  backgr. text
+#        focused_workspace  #2995e6 #268bd2 #fdf6e3
+#        active_workspace   #586e75 #586e75 #fdf6e3
+#        inactive_workspace #002b36 #002b36 #586e75
+#        urgent_workspace   #dc322f #dc322f #fdf6e3
+#    }
 #}
 
 # dual screen setup.
@@ -171,19 +182,41 @@ bar {
     output DVI-I-1
     status_command i3status --config ~/.i3/i3status-twin-left.conf
     position top
+    colors {
+        background #002b36
+        statusline #fdf6e3
+        separator #586e75
+
+        # class            border  backgr. text
+        focused_workspace  #2995e6 #268bd2 #fdf6e3
+        active_workspace   #586e75 #586e75 #fdf6e3
+        inactive_workspace #002b36 #002b36 #586e75
+        urgent_workspace   #dc322f #dc322f #fdf6e3
+    }
 }
 bar {
     output DVI-I-2
     output DVI-0
     status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
     position top
+    colors {
+        background #002b36
+        statusline #fdf6e3
+        separator #586e75
+
+        # class            border  backgr. text
+        focused_workspace  #2995e6 #268bd2 #fdf6e3
+        active_workspace   #586e75 #586e75 #fdf6e3
+        inactive_workspace #002b36 #002b36 #586e75
+        urgent_workspace   #dc322f #dc322f #fdf6e3
+    }
 }
 
 # class                 border  backgr. text    indicator
-client.focused          #4c7899 #285577 #dddddd #900000
-client.focused_inactive #333333 #5f676a #dddddd #484e50
-client.unfocused        #333333 #222222 #888888 #292d2e
-client.urgent           #2f343a #900000 #ffffff #900000
+client.focused          #2995e6 #268bd2 #fdf6e3 #dc322f
+client.focused_inactive #586e75 #586e75 #fdf6e3 #484e50
+client.unfocused        #002b36 #002b36 #586e75 #292d2e
+client.urgent           #dc322f #dc322f #fdf6e3 #dc322f
 
 for_window [class="URxvt"] border 1pixel
 
