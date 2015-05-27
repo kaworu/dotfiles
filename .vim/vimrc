@@ -149,13 +149,13 @@ set statusline+=%-10.(%l,%c%V%)\ %<%P               " offset
 " statusline colors
 if version >= 700
     " default statusline highlight (colors)
-    hi StatusLine   ctermbg=Black ctermfg=Yellow gui=bold
+    hi StatusLine   ctermbg=Black ctermfg=Yellow cterm=bold
     " default non-current statusline highlight
     hi StatusLineNC ctermbg=Cyan ctermfg=Black
     " statusline highlight when in INSERT mode
-    au InsertEnter * hi StatusLine ctermbg=Black ctermfg=Red gui=bold
+    au InsertEnter * hi StatusLine ctermbg=Black ctermfg=Red cterm=bold
     " leaving INSERT mode reset to default
-    au InsertLeave * hi StatusLine ctermbg=Black ctermfg=Yellow gui=bold
+    au InsertLeave * hi StatusLine ctermbg=Black ctermfg=Yellow cterm=bold
 endif
 
 
