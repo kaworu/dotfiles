@@ -68,3 +68,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = https://github.com/evidens/vim-twig.git
+[submodule ".vim/bundle/vim-arduino"]
+	path = .vim/bundle/vim-arduino
+	url = https://github.com/sudar/vim-arduino-syntax
