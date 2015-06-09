@@ -222,6 +222,7 @@ client.unfocused        #002b36 #002b36 #586e75 #292d2e
 client.urgent           #dc322f #dc322f #fdf6e3 #dc322f
 
 for_window [class="URxvt"] border 1pixel
+for_window [class="Gcr-prompter"] floating enable
 
 exec eval $(cat ~/.fehbg) # set the wallpaper
 # autostart services programs on startup
