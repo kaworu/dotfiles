@@ -1,6 +1,6 @@
 XTerm*foreground:       white
 XTerm*background:       #000011
-XTerm*FaceName:         Liberation Mono:size=10:antialias=true
+XTerm*FaceName:         Droid Sans Mono:size=10:antialias=true
 !XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
 XTerm*faceSize:         8
 XTerm*metaSendsEscape:  true
@@ -18,7 +18,7 @@ URxvt.depth:            32
 URxvt.title:            Terminal
 URxvt.background:       rgba:0000/1717/1c1c/EEEE
 URxvt.foreground:       rgba:DDDD/DDDD/DDDD/FFFF
-URxvt.font:             xft:Liberation Mono:style=Regular:size=9:antialias=true
+URxvt.font:             xft:Droid Sans Mono:style=Regular:size=9:antialias=true
 XFontSel*background:    black
 XFontSel*foreground:    black
 URxvt.loginShell:       true
