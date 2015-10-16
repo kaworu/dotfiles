@@ -165,7 +165,9 @@ case `uname -s` in
   ;;
   OpenBSD)
     is_a_BSD; check_for_colorls
-    export PKG_PATH="ftp://ftp.ch.openbsd.org/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
+    if [[ -f ~/.pkg_path_root ]]; then # NOTE: without trailing slash, like ftp://ftp.spline.de
+        export PKG_PATH="$(head -n1 ~/.pkg_path_root)/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
+    fi
   ;;
   Linux)
     if [[ -r ~/.dir_colors ]]; then
