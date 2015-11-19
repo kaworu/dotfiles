@@ -168,6 +168,10 @@ case `uname -s` in
     if [[ -f ~/.pkg_path_root ]]; then # NOTE: without trailing slash, like ftp://ftp.spline.de
         export PKG_PATH="$(head -n1 ~/.pkg_path_root)/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
     fi
+    alias realpath="/usr/bin/readlink -f"
+    if [[ $(uname -r) -ge 5.8 ]]; then
+        alias sudo=doas
+    fi
   ;;
   Linux)
     if [[ -r ~/.dir_colors ]]; then
