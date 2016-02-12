@@ -162,3 +162,7 @@ TO͇̹̺ͅƝ̴ȳ̳ TH̘Ë͖́̉ ͠P̯͍̭O̚​N̐Y̡ H̸̡̪̯ͨ͊̽̅̾̎E̾͛�
 TurtlesDown.prototype.render = function() {
     // there is no elegance here. only sleep deprivation and regret.
 		-- Max
+%
+To a lot of people, C is a dead language, and ${lang} is the language of the
+future, for ever-changing transient values of ${lang}.
+		-- Poul-Henning Kamp (https://queue.acm.org/detail.cfm?id=2010365)
