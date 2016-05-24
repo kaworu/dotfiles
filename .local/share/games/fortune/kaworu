@@ -170,3 +170,7 @@ future, for ever-changing transient values of ${lang}.
 The amount of energy necessary to refute bullshit is an order of magnitude
 bigger than to produce it.
 		-- Alberto Brandolini
+%
+A distributed system is one in which the failure of a computer you didn't even
+know existed can render your own computer unusable.
+		-- Leslie Lamport (Thu, 28 May 87 12:23:29 PDT)
