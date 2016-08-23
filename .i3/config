@@ -224,7 +224,7 @@ client.urgent           #dc322f #dc322f #fdf6e3 #dc322f
 for_window [class="URxvt"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
 
-exec eval $(cat ~/.fehbg) # set the wallpaper
+exec sh ~/.fehbg
 # autostart services programs on startup
 exec ~/.i3/start-em-all.sh
 
