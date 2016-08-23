@@ -1,2 +1,2 @@
-"set nonumber
-"highlight Normal ctermfg=grey ctermbg=black
+set nonumber
+highlight Normal ctermfg=grey ctermbg=black
