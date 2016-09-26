@@ -14,6 +14,9 @@ LC_TIME="en_US.UTF-8"; export LC_TIME
 LANG="en_US.UTF-8"; export LANG
 MM_CHARSET="UTF-8"; export MM_CHARSET
 PAGER="less"; export PAGER
+if [ -f "$HOME/.vim/bundle/vim-pager/vimpager" ]; then
+    MANPAGER="$HOME/.vim/bundle/vim-pager/vimpager"; export MANPAGER
+fi
 EDITOR="vim"; export EDITOR
 VISUAL="vim"; export VISUAL
 LESS="-I -M -R --shift 5"; export LESS

@@ -231,8 +231,6 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 
 # {{{ General aliases
 
-# vim as manpager when avaiable.
-test -f ~/.vim/bundle/vim-pager/vimpager && alias man="man -P ~/.vim/bundle/vim-pager/vimpager"
 alias la="ls -A"
 alias :q="exit"
 # use personal lesspipe.sh if avaiable
