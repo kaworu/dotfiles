@@ -1,2 +1,4 @@
 set nonumber
 highlight Normal ctermfg=grey ctermbg=black
+" see https://github.com/rkitover/vimpager/issues/45
+set mouse=
