@@ -74,3 +74,6 @@
 [submodule ".vim/bundle/vim-pager"]
 	path = .vim/bundle/vim-pager
 	url = https://github.com/rkitover/vimpager.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
