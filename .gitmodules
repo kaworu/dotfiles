@@ -2,8 +2,26 @@
 [submodule ".vim/bundle/vim-align"]
 	path = .vim/bundle/vim-align
 	url = git://github.com/vim-scripts/Align.git
+[submodule ".vim/bundle/vim-nerdtree"]
+	path = .vim/bundle/vim-nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-diffchanges"]
+	path = .vim/bundle/vim-diffchanges
+	url = https://github.com/jmcantrell/vim-diffchanges
+[submodule ".vim/bundle/vim-matchit"]
+	path = .vim/bundle/vim-matchit
+	url = https://github.com/vim-scripts/matchit.zip
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/bundle/vim-pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/bundle/vim-pager"]
+	path = .vim/bundle/vim-pager
+	url = https://github.com/rkitover/vimpager.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
 
-# Ruby & Rails stuff.
+# Ruby
 [submodule ".vim/bundle/vim-bundler"]
 	path = .vim/bundle/vim-bundler
 	url = git://github.com/tpope/vim-bundler.git
@@ -41,42 +59,23 @@
 [submodule ".vim/bundle/vim-cocci"]
 	path = .vim/bundle/vim-cocci
 	url = https://github.com/kAworu/vim-coccinelle.git
-
-### ! VIM
-[submodule ".urxvt/urxvt-perls"]
-	path = .urxvt/ext
-	url = git://github.com/muennich/urxvt-perls.git
-
-[submodule ".i3/lua-mpd"]
-	path = .i3/lua-mpd
-	url = git://github.com/kAworu/lua-mpd.git
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule ".vim/bundle/vim-nerdtree"]
-	path = .vim/bundle/vim-nerdtree
-	url = https://github.com/scrooloose/nerdtree.git
-[submodule ".vim/bundle/vim-diffchanges"]
-	path = .vim/bundle/vim-diffchanges
-	url = https://github.com/jmcantrell/vim-diffchanges
-[submodule ".vim/bundle/vim-matchit"]
-	path = .vim/bundle/vim-matchit
-	url = https://github.com/vim-scripts/matchit.zip
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
-	url = https://github.com/tpope/vim-pathogen.git
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = https://github.com/evidens/vim-twig.git
 [submodule ".vim/bundle/vim-arduino"]
 	path = .vim/bundle/vim-arduino
 	url = https://github.com/sudar/vim-arduino-syntax
-[submodule ".vim/bundle/vim-pager"]
-	path = .vim/bundle/vim-pager
-	url = https://github.com/rkitover/vimpager.git
-[submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/vim-rust"]
 	path = .vim/bundle/vim-rust
 	url = https://github.com/rust-lang/rust.vim.git
+
+### ! VIM
+[submodule ".urxvt/urxvt-perls"]
+	path = .urxvt/ext
+	url = git://github.com/muennich/urxvt-perls.git
+[submodule ".i3/lua-mpd"]
+	path = .i3/lua-mpd
+	url = git://github.com/kAworu/lua-mpd.git
