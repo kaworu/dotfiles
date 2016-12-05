@@ -5,7 +5,14 @@ set nocompatible
 set path=.,./include,/usr/include,/usr/local/include,,
 colorscheme elflord
 set pastetoggle=<F10>
-set sm
+" Permanent 'very magic' mode
+nnoremap / /\v
+vnoremap / /\v
+cnoremap %s/ %smagic/
+cnoremap \>s/ \>smagic/
+nnoremap :g/ :g/\v
+nnoremap :g// :g//
+
 set complete=.,w,b,u,t,i
 
 set nomodeline
@@ -52,9 +59,6 @@ set showcmd
 set hlsearch
 set incsearch
 
-"set ignorecase
-"set smartcase
-
 set scrolloff=3
 set sidescrolloff=5
 set scrolljump=1
@@ -72,7 +76,7 @@ set shell=/bin/sh
 set grepprg=grep\ -nH\ $*
 
 " french spell check (:set spell)
-setlocal spelllang=fr
+setlocal spelllang=en
 
 " buffer navigation
 map <C-j> <esc>:bnext<return>
