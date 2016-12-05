@@ -3,6 +3,10 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
+# Rust Cargo
+if [ -d "$HOME/.cargo/bin" ] ; then
+    PATH="$PATH:$HOME/.cargo/bin"
+fi
 
 #LC_ALL="en_US.UTF-8"; export LC_ALL
 LC_COLLATE="en_US.UTF-8"; export LC_COLLATE
