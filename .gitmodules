@@ -71,6 +71,9 @@
 [submodule ".vim/bundle/vim-rust"]
 	path = .vim/bundle/vim-rust
 	url = https://github.com/rust-lang/rust.vim.git
+[submodule ".vim/bundle/vim-toml"]
+	path = .vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml.git
 
 ### ! VIM
 [submodule ".urxvt/urxvt-perls"]
