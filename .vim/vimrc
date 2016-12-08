@@ -5,13 +5,7 @@ set nocompatible
 set path=.,./include,/usr/include,/usr/local/include,,
 colorscheme elflord
 set pastetoggle=<F10>
-" Permanent 'very magic' mode
-nnoremap / /\v
-vnoremap / /\v
-cnoremap %s/ %smagic/
-cnoremap \>s/ \>smagic/
-nnoremap :g/ :g/\v
-nnoremap :g// :g//
+set sm
 
 set complete=.,w,b,u,t,i
 
