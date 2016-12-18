@@ -294,7 +294,7 @@ function precmd {
   fi
 
   # host color.
-  local host_color="${fg_bold[white]}"
+  local host_color="${fg_bold[yellow]}"
 
   # Jailed ?
   if [[ "`uname -s`" = 'FreeBSD' && "`sysctl -n security.jail.jailed 2>/dev/null`" = 1 ]]; then
