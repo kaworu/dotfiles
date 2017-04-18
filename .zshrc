@@ -165,7 +165,9 @@ case `uname -s` in
   ;;
   OpenBSD)
     is_a_BSD; check_for_colorls
-    if [[ -f ~/.pkg_path_root ]]; then # NOTE: without trailing slash, like ftp://ftp.spline.de
+    if [[ -f ~/.pkg_path_root && $(uname -r) -le 6.0 ]]; then
+        # NOTE: since 6.1 /etc/installurl is used by the pkg_* tools.
+        # NOTE: without trailing slash, like ftp://ftp.spline.de
         export PKG_PATH="$(head -n1 ~/.pkg_path_root)/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
     fi
     alias realpath="/usr/bin/readlink -f"
