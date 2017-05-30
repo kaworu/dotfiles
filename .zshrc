@@ -7,7 +7,7 @@
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
-setopt append_history hist_ignore_all_dups
+setopt append_history hist_ignore_all_dups histignorespace
 
 # Misc options
 setopt auto_list
