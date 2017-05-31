@@ -85,3 +85,6 @@
 [submodule ".i3/lua-mpd"]
 	path = .i3/lua-mpd
 	url = https://github.com/kAworu/lua-mpd.git
+[submodule ".local/gef"]
+	path = .local/gef
+	url = https://github.com/hugsy/gef.git
