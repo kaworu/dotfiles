@@ -195,4 +195,10 @@ if exists(":nohlsearch")
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
+" Taglist OpenBSD specific config
+let uname = substitute(system('uname'), "\n", "", "")
+if uname == "OpenBSD"
+    let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
+endif
+
 " vim:ft=vim:sw=2:ts=2:et
