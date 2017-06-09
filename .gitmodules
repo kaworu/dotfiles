@@ -77,6 +77,9 @@
 [submodule ".vim/bundle/vim-nginx"]
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/fatih/vim-nginx.git
+[submodule ".vim/bundle/vim-taglist"]
+	path = .vim/bundle/vim-taglist
+	url = https://github.com/JimiSmith/vim-taglist.git
 
 ### ! VIM
 [submodule ".urxvt/urxvt-perls"]
