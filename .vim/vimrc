@@ -69,7 +69,7 @@ set timeoutlen=250
 set shell=/bin/sh
 set grepprg=grep\ -nH\ $*
 
-" french spell check (:set spell)
+" english spell check by default (:set spell)
 setlocal spelllang=en
 
 " buffer navigation
@@ -195,10 +195,18 @@ if exists(":nohlsearch")
   nnoremap <silent> <C-L> :nohlsearch<CR><C-L>
 endif
 
-" Taglist OpenBSD specific config
+" Taglist config
 let uname = substitute(system('uname'), "\n", "", "")
 if uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
 endif
+
+" NERDTree
+map <F2> :NERDTreeToggle<return>
+"Show hidden files
+let NERDTreeShowHidden=1
+"autopen and focus cursor in the opened file
+"autocmd VimEnter * NERDTree
+"autocmd VimEnter * wincmd p
 
 " vim:ft=vim:sw=2:ts=2:et
