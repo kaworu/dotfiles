@@ -16,8 +16,6 @@ XTerm*saveLines:        1024
 URxvt.termName:         rxvt
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt.background:       rgba:0000/1717/1c1c/EEEE
-URxvt.foreground:       rgba:DDDD/DDDD/DDDD/FFFF
 URxvt.font:             xft:Liberation Mono:style=Regular:size=9:antialias=true
 XFontSel*background:    black
 XFontSel*foreground:    black
@@ -47,7 +45,6 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.matcher.button:   1
 URxvt.cursorUnderline:  false
 URxvt.cursorBlink:      false
-URxvt.cursorColor: #657b83
 
 ! Fix font space
 URxvt*letterSpace: -1
@@ -62,37 +59,29 @@ Xcursor.theme: whiteglass
 Xcursor.size: 16
 Xft.dpi: 98
 
-URxvt.color0:           #002b36
-URxvt.color1:           #dc322f
-URxvt.color2:           #009a14
-URxvt.color3:           #b58900
-URxvt.color4:           #268bd2
-URxvt.color5:           #c037d5
-URxvt.color6:           #2aa198
-URxvt.color7:           #fdf6e3
-URxvt.color8:           #586e75
-URxvt.color9:           #f63734
-URxvt.color10:          #00cd1b
-URxvt.color11:          #e9b300
-URxvt.color12:          #2995e6
-URxvt.color13:          #d93ff1
-URxvt.color14:          #37d4ca
-URxvt.color15:          #fdf6e3
-
-!default colors
-!URxvt.color0:           #000000
-!URxvt.color1:           #CD0000
-!URxvt.color2:           #00CD00
-!URxvt.color3:           #CDCD00
-!URxvt.color4:           #1E90FF
-!URxvt.color5:           #CD00CD
-!URxvt.color6:           #00CDCD
-!URxvt.color7:           #E5E5E5
-!URxvt.color8:           #4C4C4C
-!URxvt.color9:           #FF0000
-!URxvt.color10:          #00FF00
-!URxvt.color11:          #FFFF00
-!URxvt.color12:          #4682B4
-!URxvt.color13:          #FF00FF
-!URxvt.color14:          #00FFFF
-!URxvt.color15:          #FFFFFF
+! Base16 eighties, see https://github.com/chriskempson/base16
+URxvt.color0: #2d2d2d
+URxvt.color1: #f2777a
+URxvt.color2: #99cc99
+URxvt.color3: #ffcc66
+URxvt.color4: #6699cc
+URxvt.color5: #cc99cc
+URxvt.color6: #66cccc
+URxvt.color7: #d3d0c8
+URxvt.color8: #747369
+URxvt.color9: #f2777a
+URxvt.color10: #99cc99
+URxvt.color11: #ffcc66
+URxvt.color12: #6699cc
+URxvt.color13: #cc99cc
+URxvt.color14: #66cccc
+URxvt.color15: #f2f0ec
+URxvt.color16: #f99157
+URxvt.color17: #d27b53
+URxvt.color18: #393939
+URxvt.color19: #515151
+URxvt.color20: #a09f93
+URxvt.color21: #e8e6df
+URxvt.cursorColor: #d3d0c8
+URxvt.background: rgba:1d2d/1d2d/1d2d/eeee
+URxvt.foreground: rgba:d3d3/d0d0/c8c8/ffff

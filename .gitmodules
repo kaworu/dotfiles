@@ -1,3 +1,14 @@
+### ! VIM
+[submodule ".urxvt/urxvt-perls"]
+	path = .urxvt/ext
+	url = https://github.com/muennich/urxvt-perls.git
+[submodule ".i3/lua-mpd"]
+	path = .i3/lua-mpd
+	url = https://github.com/kAworu/lua-mpd.git
+[submodule ".local/gef"]
+	path = .local/gef
+	url = https://github.com/hugsy/gef.git
+
 ### VIM
 [submodule ".vim/bundle/vim-align"]
 	path = .vim/bundle/vim-align
@@ -5,6 +16,9 @@
 [submodule ".vim/bundle/vim-nerdtree"]
 	path = .vim/bundle/vim-nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/bundle/vim-taglist"]
+	path = .vim/bundle/vim-taglist
+	url = https://github.com/JimiSmith/vim-taglist.git
 [submodule ".vim/bundle/vim-diffchanges"]
 	path = .vim/bundle/vim-diffchanges
 	url = https://github.com/jmcantrell/vim-diffchanges
@@ -20,6 +34,12 @@
 [submodule ".vim/bundle/vim-surround"]
 	path = .vim/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/bundle/lightline.vim"]
+	path = .vim/bundle/lightline.vim
+	url = https://github.com/itchyny/lightline.vim.git
+[submodule ".vim/bundle/onedark.vim"]
+	path = .vim/bundle/onedark.vim
+	url = https://github.com/joshdick/onedark.vim.git
 
 # Ruby
 [submodule ".vim/bundle/vim-bundler"]
@@ -77,17 +97,3 @@
 [submodule ".vim/bundle/vim-nginx"]
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/fatih/vim-nginx.git
-[submodule ".vim/bundle/vim-taglist"]
-	path = .vim/bundle/vim-taglist
-	url = https://github.com/JimiSmith/vim-taglist.git
-
-### ! VIM
-[submodule ".urxvt/urxvt-perls"]
-	path = .urxvt/ext
-	url = https://github.com/muennich/urxvt-perls.git
-[submodule ".i3/lua-mpd"]
-	path = .i3/lua-mpd
-	url = https://github.com/kAworu/lua-mpd.git
-[submodule ".local/gef"]
-	path = .local/gef
-	url = https://github.com/hugsy/gef.git
