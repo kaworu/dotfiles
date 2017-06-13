@@ -121,26 +121,42 @@ if has("autocmd")
                 \ unlet skel |
                 \ goto 1
 endif " has autocmd
+
+" skeleton template use <+KEY+>
+nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
+inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
+
+" fancy color stuff
+" onedark.vim override: Don't set a background color when running in a terminal;
+" just use the terminal's background color
+" `gui` is the hex color code used in GUI mode/nvim true-color mode
+" `cterm` is the color code used in 256-color mode
+" `cterm16` is the color code used in 16-color mode
+if (has("autocmd") && !has("gui_running"))
+  let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
+  autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
+end
+
+let g:onedark_color_overrides = {
+           \ "comment_grey": {"gui": "#6c6c6c", "cterm": "243", "cterm16": "15" },
+           \ "special_grey": {"gui": "#585858", "cterm": "240", "cterm16": "15" } }
+
 syntax enable
 colorscheme onedark
 
 " lightline config
 set laststatus=2
 let g:lightline = {
-      \ 'colorscheme': 'onedark',
-      \ 'active': {
-      \   'right': [ [ 'lineinfo' ],
-      \              [ 'percent' ],
-      \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
-      \ },
-      \ 'component': {
-      \   'charvaluehex': '0x%B'
-      \ },
-      \ }
-
-" skeleton template use <+KEY+>
-nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
-inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
+    \ 'colorscheme': 'onedark',
+    \ 'active': {
+    \   'right': [ [ 'lineinfo' ],
+    \              [ 'percent' ],
+    \              [ 'fileformat', 'fileencoding', 'filetype', 'charvaluehex' ] ]
+    \ },
+    \ 'component': {
+    \   'charvaluehex': '0x%B'
+    \ },
+    \ }
 
 " use XHTML and CSS with :TOhtml
 let use_xhtml=1
