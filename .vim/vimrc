@@ -45,7 +45,7 @@ set virtualedit=block
 
 set number
 set numberwidth=3
-set nocursorline
+set cursorline
 set ruler
 set showcmd
 
@@ -137,9 +137,12 @@ if (has("autocmd") && !has("gui_running"))
   autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
 end
 
+" override comments, tabs/spaces, and lines numbers to lighter grays than the
+" default.
 let g:onedark_color_overrides = {
-           \ "comment_grey": {"gui": "#6c6c6c", "cterm": "243", "cterm16": "15" },
-           \ "special_grey": {"gui": "#585858", "cterm": "240", "cterm16": "15" } }
+           \ "comment_grey":   {"gui": "#808080", "cterm": "244", "cterm16": "15" },
+           \ "special_grey":   {"gui": "#6c6c6c", "cterm": "242", "cterm16": "15" },
+           \ "gutter_fg_grey": {"gui": "#6c6c6c", "cterm": "242", "cterm16": "15" } }
 
 syntax enable
 colorscheme onedark
