@@ -41,17 +41,6 @@
 	path = .vim/bundle/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
 
-# Ruby
-[submodule ".vim/bundle/vim-bundler"]
-	path = .vim/bundle/vim-bundler
-	url = https://github.com/tpope/vim-bundler.git
-[submodule ".vim/bundle/vim-haml"]
-	path = .vim/bundle/vim-haml
-	url = https://github.com/tpope/vim-haml.git
-[submodule ".vim/bundle/vim-cucumber"]
-	path = .vim/bundle/vim-cucumber
-	url = https://github.com/tpope/vim-cucumber.git
-
 # Git
 [submodule ".vim/bundle/vim-fugitive"]
 	path = .vim/bundle/vim-fugitive
@@ -97,3 +86,16 @@
 [submodule ".vim/bundle/vim-nginx"]
 	path = .vim/bundle/vim-nginx
 	url = https://github.com/fatih/vim-nginx.git
+[submodule ".vim/bundle/vim-bundler"]
+	path = .vim/bundle/vim-bundler
+	url = https://github.com/tpope/vim-bundler.git
+[submodule ".vim/bundle/vim-haml"]
+	path = .vim/bundle/vim-haml
+	url = https://github.com/tpope/vim-haml.git
+[submodule ".vim/bundle/vim-cucumber"]
+	path = .vim/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
+
+[submodule ".vim/bundle/vim-es7"]
+	path = .vim/bundle/vim-es7
+	url = https://github.com/kern/vim-es7.git
