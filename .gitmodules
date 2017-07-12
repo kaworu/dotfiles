@@ -99,3 +99,6 @@
 [submodule ".vim/bundle/vim-es7"]
 	path = .vim/bundle/vim-es7
 	url = https://github.com/kern/vim-es7.git
+[submodule ".vim/bundle/papercolor.vim"]
+	path = .vim/bundle/papercolor.vim
+	url = https://github.com/NLKNguyen/papercolor-theme.git
