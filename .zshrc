@@ -140,11 +140,11 @@ function is_a_BSD() {
 
 # used if the toor user exist
 function has_toor() {
-    alias toor="sudo su -l toor"
+    alias toor="sudo --login toor"
 }
 
 function check_for_colorls() {
-    if which colorls &>/dev/null; then
+    if type colorls &>/dev/null; then
         alias ls="colorls -G"
         alias ll="colorls -Glo"
         alias la="colorls -GA"
@@ -235,8 +235,9 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 
 alias la="ls -A"
 alias :q="exit"
-# use personal lesspipe.sh if avaiable
+alias tmux="tmux -2 -u"
 alias less="less -Rc"
+# use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
     export LESSOPEN="| ~/.local/bin/lesspipe.sh %s"
 fi
