@@ -140,7 +140,7 @@ function is_a_BSD() {
 
 # used if the toor user exist
 function has_toor() {
-    alias toor="sudo --login toor"
+    alias toor="sudo su -l toor"
 }
 
 function check_for_colorls() {
