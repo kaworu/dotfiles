@@ -102,3 +102,6 @@
 [submodule ".vim/bundle/papercolor.vim"]
 	path = .vim/bundle/papercolor.vim
 	url = https://github.com/NLKNguyen/papercolor-theme.git
+[submodule ".vim/bundle/vim-typescript"]
+	path = .vim/bundle/vim-typescript
+	url = https://github.com/leafgarland/typescript-vim.git
