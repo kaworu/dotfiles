@@ -152,15 +152,18 @@ function check_for_colorls() {
     fi
 }
 
+function lscolors() {
+    # FreeBSD's ls colors (default is "exfxcxdxbxegedabagacad")
+    export LSCOLORS='ExGxFxcxCxdxdxhbadacec'
+    export CLICOLOR='enable'
+}
+
 case `uname -s` in
   NetBSD)
     is_a_BSD; has_toor; check_for_colorls
   ;;
   FreeBSD|DragonFly)
-    is_a_BSD; has_toor
-    # FreeBSD's ls colors (default is "exfxcxdxbxegedabagacad")
-    export LSCOLORS='ExGxFxcxCxdxdxhbadacec'
-    export CLICOLOR='enable'
+    is_a_BSD; has_toor; lscolors
     alias grep="grep --color=auto" # GNU grep
   ;;
   OpenBSD)
@@ -192,11 +195,12 @@ case `uname -s` in
     alias grep="grep --color=auto" # GNU grep
   ;;
   Darwin) # *khof*
-    is_a_BSD
+    is_a_BSD; lscolors
+    alias grep="grep --color=auto" # GNU grep
   ;;
 esac
 
-unfunction is_a_BSD has_toor check_for_colorls
+unfunction is_a_BSD has_toor check_for_colorls lscolors
 # }}}
 
 # {{{ Completion II
