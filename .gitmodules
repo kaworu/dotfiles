@@ -105,3 +105,6 @@
 [submodule ".vim/bundle/vim-typescript"]
 	path = .vim/bundle/vim-typescript
 	url = https://github.com/leafgarland/typescript-vim.git
+[submodule ".vim/bundle/vim-css-color"]
+	path = .vim/bundle/vim-css-color
+	url = https://github.com/ap/vim-css-color.git
