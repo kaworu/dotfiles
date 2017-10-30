@@ -95,7 +95,6 @@
 [submodule ".vim/bundle/vim-cucumber"]
 	path = .vim/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
-
 [submodule ".vim/bundle/vim-es7"]
 	path = .vim/bundle/vim-es7
 	url = https://github.com/kern/vim-es7.git
@@ -108,6 +107,3 @@
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
-[submodule ".vim/bundle/vim-fzf"]
-	path = .vim/bundle/vim-fzf
-	url = https://github.com/junegunn/fzf.vim.git

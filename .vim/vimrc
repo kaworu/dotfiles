@@ -75,6 +75,10 @@ setlocal spelllang=en
 " split navigation
 map <Tab> <C-w>w
 map <S-Tab> <C-w>W
+" quickfix navigation
+nmap <C-n> :cnext<return>
+nmap <C-p> :cprev<return>
+nmap <C-o> :copen<return>
 
 if has("autocmd")
     filetype plugin indent on
@@ -197,6 +201,9 @@ let g:gist_show_privates = 1
 " mail
 au BufRead ~/.tmp/mutt* set textwidth=72
 
+" fugitive
+nmap <C-k> :Ggrep<return>
+
 " NERDTree
 "Show hidden files
 let NERDTreeShowHidden=1
@@ -204,19 +211,11 @@ let NERDTreeShowHidden=1
 " see https://stackoverflow.com/a/33465522
 nmap <F2> :NERDTreeToggle %<return>
 
-" fzf
-command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number ' . shellescape(<q-args>), 0, <bang>0)
-nmap <C-k> :GGrep<return>
-
 " external command paths
 let uname = substitute(system('uname'), "\n", "", "")
 if uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
 elseif uname == "Darwin"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
-    set rtp+=/usr/local/opt/fzf
-elseif uname == "Linux"
-    set rtp+=~/.fzf
 endif
 " vim:ft=vim:sw=2:ts=2:et
