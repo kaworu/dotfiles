@@ -206,7 +206,7 @@ nmap <F2> :NERDTreeToggle %<return>
 
 " fzf
 command! -bang -nargs=* GGrep
-  \ call fzf#vim#grep('git grep --line-number '.shellescape(<q-args>), 0, <bang>0)
+  \ call fzf#vim#grep('git grep --line-number ' . shellescape(<q-args>), 0, <bang>0)
 nmap <C-k> :GGrep<return>
 
 " external command paths
@@ -216,5 +216,7 @@ if uname == "OpenBSD"
 elseif uname == "Darwin"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
     set rtp+=/usr/local/opt/fzf
+elseif uname == "Linux"
+    set rtp+=~/.fzf
 endif
 " vim:ft=vim:sw=2:ts=2:et
