@@ -202,7 +202,7 @@ let g:gist_show_privates = 1
 au BufRead ~/.tmp/mutt* set textwidth=72
 
 " fugitive
-nmap <C-k> :Ggrep<return>
+nmap <C-k> :Ggrep 
 
 " NERDTree
 "Show hidden files
