@@ -71,9 +71,6 @@
 [submodule ".vim/bundle/vim-jade"]
 	path = .vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade.git
-[submodule ".vim/bundle/vim-twig"]
-	path = .vim/bundle/vim-twig
-	url = https://github.com/evidens/vim-twig.git
 [submodule ".vim/bundle/vim-arduino"]
 	path = .vim/bundle/vim-arduino
 	url = https://github.com/sudar/vim-arduino-syntax.git
@@ -107,3 +104,6 @@
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule ".vim/bundle/vim-twig"]
+	path = .vim/bundle/vim-twig
+	url = https://github.com/lumiliet/vim-twig.git
