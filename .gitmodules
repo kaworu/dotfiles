@@ -40,6 +40,9 @@
 [submodule ".vim/bundle/onedark.vim"]
 	path = .vim/bundle/onedark.vim
 	url = https://github.com/joshdick/onedark.vim.git
+[submodule ".vim/bundle/papercolor.vim"]
+	path = .vim/bundle/papercolor.vim
+	url = https://github.com/NLKNguyen/papercolor-theme.git
 
 # Git
 [submodule ".vim/bundle/vim-fugitive"]
@@ -98,12 +101,12 @@
 [submodule ".vim/bundle/vim-es7"]
 	path = .vim/bundle/vim-es7
 	url = https://github.com/kern/vim-es7.git
-[submodule ".vim/bundle/papercolor.vim"]
-	path = .vim/bundle/papercolor.vim
-	url = https://github.com/NLKNguyen/papercolor-theme.git
 [submodule ".vim/bundle/vim-typescript"]
 	path = .vim/bundle/vim-typescript
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule ".vim/bundle/vim-css-color"]
 	path = .vim/bundle/vim-css-color
 	url = https://github.com/ap/vim-css-color.git
+[submodule ".vim/bundle/vim-swift"]
+	path = .vim/bundle/vim-swift
+	url = https://github.com/bumaociyuan/vim-swift.git

@@ -7,6 +7,10 @@ fi
 if [ -d "$HOME/.cargo/bin" ] ; then
     PATH="$PATH:$HOME/.cargo/bin"
 fi
+# Apple Swift
+if [ -d "$HOME/.local/swift/usr/bin" ] ; then
+    PATH="$PATH:$HOME/.local/swift/usr/bin"
+fi
 
 #LC_ALL="en_US.UTF-8"; export LC_ALL
 LC_COLLATE="en_US.UTF-8"; export LC_COLLATE
