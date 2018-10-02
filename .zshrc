@@ -186,6 +186,8 @@ case `uname -s` in
     else
       eval `dircolors`
     fi
+    # disable GNU coreutil trolling
+    export QUOTING_STYLE=literal
     # GNU ls colors
     alias ls="ls --color=auto"
     alias ll="ls -lhF"
