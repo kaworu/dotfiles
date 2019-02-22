@@ -218,5 +218,7 @@ if uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
 elseif uname == "Darwin"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
+    " https://www.reddit.com/r/vim/comments/a4yzyt/g_characters_prefixing_directory_and_file_names/
+    let g:NERDTreeNodeDelimiter = "\u00a0"
 endif
 " vim:ft=vim:sw=2:ts=2:et
