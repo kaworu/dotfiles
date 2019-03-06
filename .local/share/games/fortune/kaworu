@@ -113,7 +113,7 @@ an appropriate reaction.
 In summary, Web browsers are like quantum physics: they offer
 probabilistic guarantees at best, and anyone who claims to
 fully understand them is a liar.
-		-- James mickens (To Wash It All Away)
+		-- James Mickens (To Wash It All Away)
 %
 You can't parse [X]HTML with regex. Because HTML can't be parsed by regex.
 Regex is not a tool that can be used to correctly parse HTML. As I have
