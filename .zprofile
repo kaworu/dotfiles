@@ -3,14 +3,6 @@ PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-# Rust Cargo
-if [ -d "$HOME/.cargo/bin" ] ; then
-    PATH="$PATH:$HOME/.cargo/bin"
-fi
-# Apple Swift
-if [ -d "$HOME/.local/swift/usr/bin" ] ; then
-    PATH="$PATH:$HOME/.local/swift/usr/bin"
-fi
 
 #LC_ALL="en_US.UTF-8"; export LC_ALL
 LC_COLLATE="en_US.UTF-8"; export LC_COLLATE
@@ -29,3 +21,7 @@ EDITOR="vim"; export EDITOR
 VISUAL="vim"; export VISUAL
 LESS="-I -M -R --shift 5"; export LESS
 BLOCKSIZE="K"; export BLOCKSIZE
+
+if [[ -f ~/.zprofile.local ]]; then
+  source ~/.zprofile.local
+fi
