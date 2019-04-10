@@ -143,7 +143,7 @@ function has_toor() {
     alias toor="sudo su -l toor"
 }
 
-function check_for_colorls() {
+function maybe_colorls() {
     if type colorls &>/dev/null; then
         alias ls="colorls -G"
         alias ll="colorls -Glo"
@@ -158,27 +158,31 @@ function lscolors() {
     export CLICOLOR='enable'
 }
 
+function gnu_grep() {
+    alias grep="grep --color=auto" # GNU grep
+}
+
 case `uname -s` in
   NetBSD)
-    is_a_BSD; has_toor; check_for_colorls
+    is_a_BSD; has_toor; maybe_colorls
   ;;
   FreeBSD|DragonFly)
-    is_a_BSD; has_toor; lscolors
-    alias grep="grep --color=auto" # GNU grep
+    is_a_BSD; has_toor; lscolors; gnu_grep
   ;;
   OpenBSD)
-    is_a_BSD; check_for_colorls
+    is_a_BSD; maybe_colorls
+    alias realpath="/usr/bin/readlink -f"
+    if [[ $(uname -r) -ge 5.8 ]]; then
+        alias sudo=doas
+    fi
     if [[ -f ~/.pkg_path_root && $(uname -r) -le 6.0 ]]; then
         # NOTE: since 6.1 /etc/installurl is used by the pkg_* tools.
         # NOTE: without trailing slash, like ftp://ftp.spline.de
         export PKG_PATH="$(head -n1 ~/.pkg_path_root)/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
     fi
-    alias realpath="/usr/bin/readlink -f"
-    if [[ $(uname -r) -ge 5.8 ]]; then
-        alias sudo=doas
-    fi
   ;;
   Linux)
+    gnu_grep
     if [[ -r ~/.dir_colors ]]; then
       eval `dircolors -b ~/.dir_colors`
     elif [[ -r /etc/DIR_COLORS ]]; then
@@ -192,17 +196,13 @@ case `uname -s` in
     alias ls="ls --color=auto"
     alias ll="ls -lhF"
     alias lla="ls -lhAF"
-    # try to buy some real useful stuff
-    alias realpath="/bin/readlink -f"
-    alias grep="grep --color=auto" # GNU grep
   ;;
   Darwin) # *khof*
-    is_a_BSD; lscolors
-    alias grep="grep --color=auto" # GNU grep
+    is_a_BSD; lscolors; gnu_grep
   ;;
 esac
 
-unfunction is_a_BSD has_toor check_for_colorls lscolors
+unfunction is_a_BSD has_toor maybe_colorls lscolors gnu_grep
 # }}}
 
 # {{{ Completion II
