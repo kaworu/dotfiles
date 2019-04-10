@@ -110,3 +110,6 @@
 [submodule ".vim/bundle/vim-twig"]
 	path = .vim/bundle/vim-twig
 	url = https://github.com/lumiliet/vim-twig.git
+[submodule ".vim/bundle/vim-haskell"]
+	path = .vim/bundle/vim-haskell
+	url = https://github.com/neovimhaskell/haskell-vim.git
