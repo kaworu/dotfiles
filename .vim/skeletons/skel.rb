@@ -1,4 +1,1 @@
-#!/usr/bin/env ruby
-# encoding: UTF-8
-
-<+CODE+>
+# frozen_string_literal: true
