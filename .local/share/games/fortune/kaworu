@@ -186,3 +186,6 @@ naming things.
 Most people, I think, don't even know what a rootkit is, so why should they
 care about it?
 		-- Thomas Hesse in 2005
+%
+Duplication is far cheaper than the wrong abstraction.
+		-- Sandi Metz
