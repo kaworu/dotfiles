@@ -13,10 +13,14 @@ XTerm*on4Clicks:        page
 XTerm*on5Clicks:        all
 XTerm*saveLines:        1024
 
-URxvt.termName:         rxvt
+URxvt.termName:         rxvt-unicode-256color
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt.font:             xft:Liberation Mono:style=Regular:size=9:antialias=true
+URxvt*font:             xft:Source Code Pro:style=Medium:size=13:antialias=true:hinting=true
+URxvt*boldFont:         xft:Source Code Pro:style=Bold:size=13:antialias=true:hinting=true
+URxvt*italicFont:       xft:Source Code Pro:style=Oblique:size=13:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Source Code Pro:style=Bold Oblique:size=13:antialias=true:hinting=true
+URxvt*letterSpace:      -2
 XFontSel*background:    black
 XFontSel*foreground:    black
 URxvt.loginShell:       true
@@ -45,9 +49,6 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.matcher.button:   1
 URxvt.cursorUnderline:  false
 URxvt.cursorBlink:      false
-
-! Fix font space
-URxvt*letterSpace: -1
 
 URxvt.fading:           25%
 URxvt.fadeColor:        black
