@@ -1,6 +1,6 @@
 XTerm*foreground:       white
 XTerm*background:       #000011
-XTerm*FaceName:         Jamenlo:size=12:antialias=true
+XTerm*FaceName:         Jamenlo:size=13:antialias=true
 !XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
 XTerm*faceSize:         8
 XTerm*metaSendsEscape:  true
@@ -16,10 +16,10 @@ XTerm*saveLines:        1024
 URxvt.termName:         rxvt-unicode-256color
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt*font:             xft:Jamenlo:style=Regular:size=12:antialias=true:hinting=true
-URxvt*boldFont:         xft:Jamenlo:style=Bold:size=12:antialias=true:hinting=true
-URxvt*italicFont:       xft:Jamenlo:style=Oblique:size=12:antialias=true:hinting=true
-URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Oblique:size=12:antialias=true:hinting=true
+URxvt*font:             xft:Jamenlo:style=Regular:size=13:antialias=true:hinting=true
+URxvt*boldFont:         xft:Jamenlo:style=Bold:size=13:antialias=true:hinting=true
+URxvt*italicFont:       xft:Jamenlo:style=Oblique:size=13:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Oblique:size=13:antialias=true:hinting=true
 URxvt*letterSpace:      -1
 XFontSel*background:    black
 XFontSel*foreground:    black
@@ -60,8 +60,8 @@ Xcursor.theme: whiteglass
 Xcursor.size: 16
 Xft.dpi: 98
 
-#define S_base03        #002b36
-#define S_base02        #073642
+#define S_base03        #505b56
+#define S_base02        #676662
 #define S_base01        #586e75
 #define S_base00        #657b83
 #define S_base0         #839496
