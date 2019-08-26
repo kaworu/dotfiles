@@ -1,6 +1,6 @@
 XTerm*foreground:       white
 XTerm*background:       #000011
-XTerm*FaceName:         Liberation Mono:size=10:antialias=true
+XTerm*FaceName:         Jamenlo:size=12:antialias=true
 !XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
 XTerm*faceSize:         8
 XTerm*metaSendsEscape:  true
@@ -16,10 +16,10 @@ XTerm*saveLines:        1024
 URxvt.termName:         rxvt-unicode-256color
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt*font:             xft:Source Code Pro:style=Medium:size=13:antialias=true:hinting=true
-URxvt*boldFont:         xft:Source Code Pro:style=Bold:size=13:antialias=true:hinting=true
-URxvt*italicFont:       xft:Source Code Pro:style=Oblique:size=13:antialias=true:hinting=true
-URxvt*boldItalicFont:   xft:Source Code Pro:style=Bold Oblique:size=13:antialias=true:hinting=true
+URxvt*font:             xft:Jamenlo:style=Regular:size=12:antialias=true:hinting=true
+URxvt*boldFont:         xft:Jamenlo:style=Bold:size=12:antialias=true:hinting=true
+URxvt*italicFont:       xft:Jamenlo:style=Oblique:size=12:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Oblique:size=12:antialias=true:hinting=true
 URxvt*letterSpace:      -2
 XFontSel*background:    black
 XFontSel*foreground:    black
