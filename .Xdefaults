@@ -20,7 +20,7 @@ URxvt*font:             xft:Jamenlo:style=Regular:size=12:antialias=true:hinting
 URxvt*boldFont:         xft:Jamenlo:style=Bold:size=12:antialias=true:hinting=true
 URxvt*italicFont:       xft:Jamenlo:style=Oblique:size=12:antialias=true:hinting=true
 URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Oblique:size=12:antialias=true:hinting=true
-URxvt*letterSpace:      -2
+URxvt*letterSpace:      -1
 XFontSel*background:    black
 XFontSel*foreground:    black
 URxvt.loginShell:       true
