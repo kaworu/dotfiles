@@ -104,3 +104,6 @@
 [submodule ".vim/bundle/vim-haskell"]
 	path = .vim/bundle/vim-haskell
 	url = https://github.com/neovimhaskell/haskell-vim.git
+[submodule ".vim/bundle/gruvbox.vim"]
+	path = .vim/bundle/gruvbox.vim
+	url = https://github.com/morhetz/gruvbox.git

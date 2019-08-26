@@ -18,8 +18,8 @@ URxvt.depth:            32
 URxvt.title:            Terminal
 URxvt*font:             xft:Jamenlo:style=Regular:size=13:antialias=true:hinting=true
 URxvt*boldFont:         xft:Jamenlo:style=Bold:size=13:antialias=true:hinting=true
-URxvt*italicFont:       xft:Jamenlo:style=Oblique:size=13:antialias=true:hinting=true
-URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Oblique:size=13:antialias=true:hinting=true
+URxvt*italicFont:       xft:Jamenlo:style=Italic:size=13:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Italic:size=13:antialias=true:hinting=true
 URxvt*letterSpace:      -1
 XFontSel*background:    black
 XFontSel*foreground:    black

@@ -127,38 +127,9 @@ endif " has autocmd
 nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
 inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
 
-set background=dark
-syntax enable
-if &background == "dark"
-    " fancy color stuff
-    " onedark.vim override: Don't set a background color when running in a terminal;
-    " just use the terminal's background color
-    " `gui` is the hex color code used in GUI mode/nvim true-color mode
-    " `cterm` is the color code used in 256-color mode
-    " `cterm16` is the color code used in 16-color mode
-    if (has("autocmd") && !has("gui_running"))
-      let s:white = { "gui": "#ABB2BF", "cterm": "145", "cterm16" : "7" }
-      autocmd ColorScheme * call onedark#set_highlight("Normal", { "fg": s:white }) " No `bg` setting
-    end
-
-    " override comments, tabs/spaces, and lines numbers to lighter grays than the
-    " default.
-    let g:onedark_color_overrides = {
-               \ "comment_grey":   {"gui": "#808080", "cterm": "244", "cterm16": "15" },
-               \ "special_grey":   {"gui": "#6c6c6c", "cterm": "242", "cterm16": "15" },
-               \ "gutter_fg_grey": {"gui": "#6c6c6c", "cterm": "242", "cterm16": "15" } }
-    colorscheme onedark
-    let s:colorscheme = 'onedark'
-else
-    set t_Co=256
-    colorscheme PaperColor
-    let s:colorscheme = 'PaperColor'
-endif
-
-"lightline config
+" lightline config
 set laststatus=2
 let g:lightline = {
-    \ 'colorscheme': s:colorscheme,
     \ 'active': {
     \   'right': [ [ 'lineinfo' ],
     \              [ 'percent' ],
@@ -168,6 +139,20 @@ let g:lightline = {
     \   'charvaluehex': '0x%B'
     \ },
     \ }
+
+" theme config
+set background=dark
+syntax enable
+if &background == "dark"
+    set t_Co=256
+    let g:gruvbox_italic = 1
+    colorscheme gruvbox
+    let g:lightline.colorscheme = 'gruvbox'
+else
+    set t_Co=256
+    colorscheme PaperColor
+    let g:lightline.colorscheme = 'PaperColor'
+endif
 
 " use XHTML and CSS with :TOhtml
 let use_xhtml=1
