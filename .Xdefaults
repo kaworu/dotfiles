@@ -60,29 +60,61 @@ Xcursor.theme: whiteglass
 Xcursor.size: 16
 Xft.dpi: 98
 
-! Base16 eighties, see https://github.com/chriskempson/base16
-URxvt.color0: #2d2d2d
-URxvt.color1: #f2777a
-URxvt.color2: #99cc99
-URxvt.color3: #ffcc66
-URxvt.color4: #6699cc
-URxvt.color5: #cc99cc
-URxvt.color6: #66cccc
-URxvt.color7: #d3d0c8
-URxvt.color8: #747369
-URxvt.color9: #f2777a
-URxvt.color10: #99cc99
-URxvt.color11: #ffcc66
-URxvt.color12: #6699cc
-URxvt.color13: #cc99cc
-URxvt.color14: #66cccc
-URxvt.color15: #f2f0ec
-URxvt.color16: #f99157
-URxvt.color17: #d27b53
-URxvt.color18: #393939
-URxvt.color19: #515151
-URxvt.color20: #a09f93
-URxvt.color21: #e8e6df
-URxvt.cursorColor: #d3d0c8
+#define S_base03        #002b36
+#define S_base02        #073642
+#define S_base01        #586e75
+#define S_base00        #657b83
+#define S_base0         #839496
+#define S_base1         #93a1a1
+#define S_base2         #eee8d5
+#define S_base3         #fdf6e3
+
+*background:            S_base03
+*foreground:            S_base0
+*fadeColor:             S_base03
+*cursorColor:           S_base1
+*pointerColorBackground:S_base01
+*pointerColorForeground:S_base1
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+!! black dark/light
+*color0:                S_base02
+*color8:                S_base03
+
+!! red dark/light
+*color1:                S_red
+*color9:                S_orange
+
+!! green dark/light
+*color2:                S_green
+*color10:               S_green
+
+!! yellow dark/light
+*color3:                S_yellow
+*color11:               S_yellow
+
+!! blue dark/light
+*color4:                S_blue
+*color12:               S_blue
+
+!! magenta dark/light
+*color5:                S_magenta
+*color13:               S_magenta
+
+!! cyan dark/light
+*color6:                S_cyan
+*color14:               S_cyan
+
+!! white dark/light
+*color7:                S_base2
+*color15:               S_base3
 URxvt.background: rgba:1d2d/1d2d/1d2d/eeee
 URxvt.foreground: rgba:d3d3/d0d0/c8c8/ffff
