@@ -140,19 +140,30 @@ let g:lightline = {
     \ },
     \ }
 
+if (has("termguicolors"))
+    set termguicolors
+endif
 " theme config
 set background=dark
 syntax enable
+
 if &background == "dark"
-    set t_Co=256
     let g:gruvbox_italic = 1
+    let g:gruvbox_invert_selection = 0
+    let g:gruvbox_italicize_strings = 1
     colorscheme gruvbox
     let g:lightline.colorscheme = 'gruvbox'
 else
-    set t_Co=256
     colorscheme PaperColor
     let g:lightline.colorscheme = 'PaperColor'
 endif
+
+" vim hardcodes background color erase even if the terminfo file does
+" not contain bce (not to mention that libvte based terminals
+" incorrectly contain bce in their terminfo files). This causes
+" incorrect background rendering when using a color theme with a
+" background color.
+let &t_ut=''
 
 " use XHTML and CSS with :TOhtml
 let use_xhtml=1
