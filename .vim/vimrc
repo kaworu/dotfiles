@@ -142,6 +142,15 @@ let g:lightline = {
 
 if (has("termguicolors"))
     set termguicolors
+    " vim hardcodes background color erase even if the terminfo file does
+    " not contain bce (not to mention that libvte based terminals
+    " incorrectly contain bce in their terminfo files). This causes
+    " incorrect background rendering when using a color theme with a
+    " background color.
+    let &t_ut=''
+    " vim / tmux bullshit, :help term
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 " theme config
 set background=dark
@@ -157,13 +166,6 @@ else
     colorscheme PaperColor
     let g:lightline.colorscheme = 'PaperColor'
 endif
-
-" vim hardcodes background color erase even if the terminfo file does
-" not contain bce (not to mention that libvte based terminals
-" incorrectly contain bce in their terminfo files). This causes
-" incorrect background rendering when using a color theme with a
-" background color.
-let &t_ut=''
 
 " use XHTML and CSS with :TOhtml
 let use_xhtml=1
