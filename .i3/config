@@ -24,7 +24,7 @@ font pango:Liberation 9,FontAwesome 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtc
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+Shift+Q kill
@@ -221,7 +221,7 @@ client.focused_inactive #586e75 #586e75 #fdf6e3 #484e50
 client.unfocused        #002b36 #002b36 #586e75 #292d2e
 client.urgent           #dc322f #dc322f #fdf6e3 #dc322f
 
-for_window [class="URxvt"] border 1pixel
+for_window [class="Termite"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
 
 exec sh ~/.fehbg

@@ -19,8 +19,9 @@
 
 !/.gtkrc-2.0
 !/.terminfo
+!/.termcap
 !/.Xdefaults
-!/.urxvt
+!/.config/termite/
 !/.local/bin
 !/.i3
 !/.login_conf
