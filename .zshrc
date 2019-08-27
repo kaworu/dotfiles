@@ -242,7 +242,6 @@ zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 alias la="ls -A"
 alias :q="exit"
 alias tmux="tmux -2 -u"
-alias ssh="TERM=xterm-256color ssh"
 alias less="less -Rc"
 # use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
