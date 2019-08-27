@@ -1,0 +1,15 @@
+# see https://reviews.freebsd.org/D18363?id=51237
+
+ecma+italics|ECMA-48 italics:\
+	:ZH=\E[3m:ZR=\E[23m:
+
+tmux|tmux terminal multiplexer:\
+	:so=\E[7m:se=\E[27m:\
+	:tc=ecma+italics:tc=screen:
+tmux-256color|tmux with 256 colors:\
+	:so=\E[7m:se=\E[27m:\
+	:tc=ecma+italics:tc=screen-256color:
+
+xterm-kitty|KovIdTTY:\
+	:so=\E[7m:se=\E[27m:\
+	:tc=ecma+italics:tc=screen-256color:
