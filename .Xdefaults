@@ -1,6 +1,6 @@
 XTerm*foreground:       white
 XTerm*background:       #000011
-XTerm*FaceName:         Jamenlo:size=13:antialias=true
+XTerm*FaceName:         Jamenlo:size=11:antialias=true
 !XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
 XTerm*faceSize:         8
 XTerm*metaSendsEscape:  true
@@ -16,10 +16,10 @@ XTerm*saveLines:        1024
 URxvt.termName:         rxvt-unicode-256color
 URxvt.depth:            32
 URxvt.title:            Terminal
-URxvt*font:             xft:Jamenlo:style=Regular:size=13:antialias=true:hinting=true
-URxvt*boldFont:         xft:Jamenlo:style=Bold:size=13:antialias=true:hinting=true
-URxvt*italicFont:       xft:Jamenlo:style=Italic:size=13:antialias=true:hinting=true
-URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Italic:size=13:antialias=true:hinting=true
+URxvt*font:             xft:Jamenlo:style=Regular:size=11:antialias=true:hinting=true
+URxvt*boldFont:         xft:Jamenlo:style=Bold:size=11:antialias=true:hinting=true
+URxvt*italicFont:       xft:Jamenlo:style=Italic:size=11:antialias=true:hinting=true
+URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Italic:size=11:antialias=true:hinting=true
 URxvt*letterSpace:      -1
 XFontSel*background:    black
 XFontSel*foreground:    black
