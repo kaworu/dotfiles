@@ -306,7 +306,7 @@ function precmd {
   local host_color="${fg_bold[yellow]}"
 
   # Display return code when not 0
-  local return_code="%(?..${misc}!%{${fg_bold[red]}%}%?${misc}! )"
+  local return_code="%(?..${misc}!%{${fg_bold[red]}%}%?${misc} )"
   # Host
   local host="%{${host_color}%}%M"
   # User
