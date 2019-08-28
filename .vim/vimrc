@@ -40,6 +40,9 @@ if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
 else
   set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:_
 endif
+" see https://vi.stackexchange.com/a/19821
+autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
+autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
 
 set selection=inclusive
 set virtualedit=block
