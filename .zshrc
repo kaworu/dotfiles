@@ -305,12 +305,6 @@ function precmd {
   # host color.
   local host_color="${fg_bold[yellow]}"
 
-  # Jailed ?
-  if [[ "`uname -s`" = 'FreeBSD' && "`sysctl -n security.jail.jailed 2>/dev/null`" = 1 ]]; then
-    local jailed="${misc}(%{${fg_no_bold[yellow]}%}jail${misc})"
-  else
-    local jailed=""
-  fi
   # Display return code when not 0
   local return_code="%(?..${misc}!%{${fg_bold[red]}%}%?${misc}! )"
   # Host
@@ -323,7 +317,7 @@ function precmd {
   local sign="%{${misc}%}%#"
 
   # Set the prompt
-  PS1="${return_code}${misc}[${user}@${host}${jailed} ${cwd}${misc}] ${sign}%{${reset_color}%} "
+  PS1="${return_code}${user}@${host} ${cwd} ${sign}%{${reset_color}%} "
 }
 
 # }}}
