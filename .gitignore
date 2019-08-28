@@ -8,7 +8,6 @@
 !/.vim
 /.vim/.netrwhist
 
-!/.bashrc
 !/.zprofile
 !/.zsh
 /.zsh/cache
