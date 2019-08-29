@@ -39,7 +39,7 @@
 	url = https://github.com/joshdick/onedark.vim.git
 [submodule ".vim/bundle/gruvbox.vim"]
 	path = .vim/bundle/gruvbox.vim
-	url = https://github.com/morhetz/gruvbox.git
+	url = https://github.com/gruvbox-community/gruvbox.git
 [submodule ".vim/bundle/papercolor.vim"]
 	path = .vim/bundle/papercolor.vim
 	url = https://github.com/NLKNguyen/papercolor-theme.git
