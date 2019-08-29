@@ -33,11 +33,12 @@ set autoindent
 set preserveindent
 set smartindent
 
-let showbreak="> "
 set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
+  let &showbreak="↪ "
   let &listchars="tab:←-,trail:•,extends:⇉,precedes:⇇,nbsp:␣"
 else
+  let showbreak="> "
   set listchars=tab:>-,trail:~,extends:>,precedes:<,nbsp:_
 endif
 " see https://vi.stackexchange.com/a/19821
