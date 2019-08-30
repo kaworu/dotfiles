@@ -21,6 +21,7 @@
 !/.termcap
 !/.Xdefaults
 !/.config/termite/
+!/.config/dunst/
 !/.local/bin
 !/.i3
 !/.login_conf

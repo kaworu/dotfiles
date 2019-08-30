@@ -52,7 +52,12 @@ bindsym $mod+Shift+Q kill
 bindsym $mod_alt+F4  kill
 
 # start dmenu (a program launcher)
-bindsym $mod_alt+F2 exec dmenu_run
+bindsym $mod_alt+F2 exec dmenu_run \
+    -fn 'Sans Serif-12' \
+    -nb '$hard_background' \
+    -nf '$foreground' \
+    -sb '$neutral_blue' \
+    -sf '$foreground'
 
 # change focus
 bindsym $mod+h focus left
