@@ -11,6 +11,27 @@
 
 set $mod Mod4
 set $mod_alt Mod1
+# Gruvbox colors from the termite configuration.
+set $soft_background   #32302f
+set $medium_background #282828
+set $hard_background   #1d2021
+set $foreground        #ebdbb2
+set $dark0             #282828
+set $gray              #928374
+set $neutral_red       #cc241d
+set $bright_red        #fb4934
+set $neutral_green     #98971a
+set $bright_green      #b8bb26
+set $neutral_yellow    #d79921
+set $bright_yellow     #fabd2f
+set $neutral_blue      #458588
+set $bright_blue       #83a598
+set $neutral_magenta   #b16286
+set $bright_magenta    #d3869b
+set $neutral_cyan      #689d6a
+set $faded_cyan        #8ec07c
+set $light4            #a89984
+set $light1            #ebdbb2
 
 # MPD settings
 set $mpd_host localhost
@@ -18,7 +39,7 @@ set $mpd_port 6600
 
 # font for window titles. ISO 10646 = Unicode
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-font pango:Liberation 9,FontAwesome 9
+font pango:FontAwesome 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -160,66 +181,66 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 
 # single screen setup.
+bar {
+    #status_command i3status --config ~/.i3/i3status-single.conf
+    status_command i3blocks -c ~/.i3/i3blocks.conf
+    position top
+    colors {
+        background $hard_background
+        statusline $foreground
+        separator  $bright_blue
+
+        # class            border           backgr.          text
+        focused_workspace  $bright_blue     $neutral_blue    $foreground
+        active_workspace   $bright_blue     $neutral_blue    $foreground
+        inactive_workspace $hard_background $hard_background $bright_blue
+        urgent_workspace   $bright_red      $neutral_red     $foreground
+    }
+}
+
+# dual screen setup.
 #bar {
-#    #status_command i3status --config ~/.i3/i3status-single.conf
-#    status_command i3blocks -c ~/.i3/i3blocks.conf
+#    output HDMI-0
+#    output DVI-I-1
+#    #status_command i3status --config ~/.i3/i3status-twin-left.conf
+#    status_command i3blocks -c ~/.i3/i3blocks-twin-left.conf
 #    position top
 #    colors {
-#        background #002b36
-#        statusline #fdf6e3
-#        separator  #586e75
+#        background $hard_background
+#        statusline $foreground
+#        separator  $bright_blue
 #
-#        # class            border  backgr. text
-#        focused_workspace  #2995e6 #268bd2 #fdf6e3
-#        active_workspace   #586e75 #586e75 #fdf6e3
-#        inactive_workspace #002b36 #002b36 #586e75
-#        urgent_workspace   #dc322f #dc322f #fdf6e3
+#        # class            border           backgr.          text
+#        focused_workspace  $bright_blue     $neutral_blue    $foreground
+#        active_workspace   $bright_blue     $neutral_blue    $foreground
+#        inactive_workspace $hard_background $hard_background $bright_blue
+#        urgent_workspace   $bright_red      $neutral_red     $foreground
+#    }
+#}
+#bar {
+#    output DVI-I-2
+#    output DVI-0
+#    #status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
+#    status_command i3blocks -c ~/.i3/i3blocks-twin-right.conf
+#    position top
+#    colors {
+#        background $hard_background
+#        statusline $foreground
+#        separator  $bright_blue
+#
+#        # class            border           backgr.          text
+#        focused_workspace  $bright_blue     $neutral_blue    $foreground
+#        active_workspace   $bright_blue     $neutral_blue    $foreground
+#        inactive_workspace $hard_background $hard_background $bright_blue
+#        urgent_workspace   $bright_red      $neutral_red     $foreground
 #    }
 #}
 
-# dual screen setup.
-bar {
-    output HDMI-0
-    output DVI-I-1
-    #status_command i3status --config ~/.i3/i3status-twin-left.conf
-    status_command i3blocks -c ~/.i3/i3blocks-twin-left.conf
-    position top
-    colors {
-        background #002b36
-        statusline #fdf6e3
-        separator  #586e75
-
-        # class            border  backgr. text
-        focused_workspace  #2995e6 #268bd2 #fdf6e3
-        active_workspace   #586e75 #586e75 #fdf6e3
-        inactive_workspace #002b36 #002b36 #586e75
-        urgent_workspace   #dc322f #dc322f #fdf6e3
-    }
-}
-bar {
-    output DVI-I-2
-    output DVI-0
-    #status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
-    status_command i3blocks -c ~/.i3/i3blocks-twin-right.conf
-    position top
-    colors {
-        background #002b36
-        statusline #fdf6e3
-        separator  #586e75
-
-        # class            border  backgr. text
-        focused_workspace  #2995e6 #268bd2 #fdf6e3
-        active_workspace   #586e75 #586e75 #fdf6e3
-        inactive_workspace #002b36 #002b36 #586e75
-        urgent_workspace   #dc322f #dc322f #fdf6e3
-    }
-}
-
-# class                 border  backgr. text    indicator
-client.focused          #2995e6 #268bd2 #fdf6e3 #dc322f
-client.focused_inactive #586e75 #586e75 #fdf6e3 #484e50
-client.unfocused        #002b36 #002b36 #586e75 #292d2e
-client.urgent           #dc322f #dc322f #fdf6e3 #dc322f
+# class                 border           backgr.          text         indicator
+client.focused          $bright_blue     $neutral_blue    $foreground  $bright_red
+client.focused_inactive $light4          $gray            $foreground  $light1
+client.unfocused        $hard_background $hard_background $bright_blue $light1
+client.urgent           $bright_red      $bright_red      $foreground  $bright_red
 
 for_window [class="Termite"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
