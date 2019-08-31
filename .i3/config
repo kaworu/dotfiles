@@ -32,13 +32,11 @@ set $neutral_cyan      #689d6a
 set $faded_cyan        #8ec07c
 set $light4            #a89984
 set $light1            #ebdbb2
-
 # MPD settings
 set $mpd_host localhost
 set $mpd_port 6600
 
 # font for window titles. ISO 10646 = Unicode
-#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font pango:FontAwesome 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -52,12 +50,9 @@ bindsym $mod+Shift+Q kill
 bindsym $mod_alt+F4  kill
 
 # start dmenu (a program launcher)
-bindsym $mod_alt+F2 exec dmenu_run \
-    -fn 'Sans Serif-12' \
-    -nb '$hard_background' \
-    -nf '$foreground' \
-    -sb '$neutral_blue' \
-    -sf '$foreground'
+bindsym $mod_alt+F2 exec dmenu_run -fn 'Sans Serif-12' \
+    -nb '$hard_background' -nf '$foreground' \
+    -sb '$neutral_blue'    -sf '$foreground'
 
 # change focus
 bindsym $mod+h focus left
@@ -187,7 +182,7 @@ bindsym $mod+r mode "resize"
 
 # single screen setup.
 bar {
-    #status_command i3status --config ~/.i3/i3status-single.conf
+    #status_command i3status --config ~/.i3/i3status-single.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
     status_command i3blocks -c ~/.i3/i3blocks.conf
     position top
     colors {
