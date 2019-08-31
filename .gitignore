@@ -21,6 +21,7 @@
 !/.termcap
 !/.Xdefaults
 !/.config/termite/
+!/.config/gtk-*/
 !/.config/dunst/
 !/.local/bin
 !/.i3

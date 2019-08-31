@@ -1,6 +1,22 @@
-gtk-theme-name = "Clearlooks"
-gtk-icon-theme-name = "SnowIsh-1.0_PNG"
-gtk-font-name = "Dejavu Sans 10"
+# DO NOT EDIT! This file will be overwritten by LXAppearance.
+# Any customization should be done in ~/.gtkrc-2.0.mine instead.
+
+include "/home/alex/.gtkrc-2.0.mine"
+gtk-theme-name="Greybird"
+gtk-icon-theme-name="elementary-xfce-dark"
+gtk-font-name="Helvetica Neue 10"
+gtk-cursor-theme-name="DMZ-White"
+gtk-cursor-theme-size=24
+gtk-toolbar-style=GTK_TOOLBAR_ICONS
+gtk-toolbar-icon-size=GTK_ICON_SIZE_LARGE_TOOLBAR
+gtk-button-images=1
+gtk-menu-images=1
+gtk-enable-event-sounds=0
+gtk-enable-input-feedback-sounds=0
+gtk-xft-antialias=1
+gtk-xft-hinting=0
+gtk-xft-hintstyle="hintnone"
+gtk-xft-rgba="rgb"
 # Custom styles
 
 style "gtk-theme-config-panel" {
@@ -34,10 +50,10 @@ widget "*Xfce*Panel*" style "gtk-theme-config-panel"
 class "*Xfce*Panel*" style "gtk-theme-config-panel"
 
 style "gtk-theme-config-menu" {
-	base[NORMAL] = "#333333"
-	bg[NORMAL] = "#333333"
-	bg[ACTIVE] = "#333333"
-	bg[INSENSITIVE] = "#333333"
+	base[NORMAL] = "#1d2021"
+	bg[NORMAL] = "#1d2021"
+	bg[ACTIVE] = "#1d2021"
+	bg[INSENSITIVE] = "#1d2021"
 	text[NORMAL] = "#ebdbb2"
 	fg[NORMAL] = "#ebdbb2"
 }
