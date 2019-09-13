@@ -239,7 +239,7 @@ bar {
 # class                 border           backgr.          text         indicator
 client.focused          $bright_blue     $neutral_blue    $foreground  $bright_red
 client.focused_inactive $light4          $gray            $foreground  $light1
-client.unfocused        $hard_background $hard_background $bright_blue $light1
+client.unfocused        $soft_background $hard_background $bright_blue $light1
 client.urgent           $bright_red      $bright_red      $foreground  $bright_red
 
 for_window [class="Termite"] border 1pixel
