@@ -22,6 +22,6 @@ VISUAL="vim"; export VISUAL
 LESS="-I -M -R --shift 5"; export LESS
 BLOCKSIZE="K"; export BLOCKSIZE
 
-if [[ -f ~/.zprofile.local ]]; then
-  source ~/.zprofile.local
+if [[ -f ~/.zshenv.local ]]; then
+  source ~/.zshenv.local
 fi
