@@ -14,7 +14,9 @@ set modelines=0
 
 set backspace=indent,eol,start
 
+" Update term title but restore old title after leaving Vim
 set title
+set titleold=
 set shortmess=aoOtTI
 set wildmenu
 set wildmode=longest:full,full
