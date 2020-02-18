@@ -1,0 +1,3 @@
+install: --no-document --env-shebang --wrappers
+update: --no-document --env-shebang --wrappers
+:verbose: true
