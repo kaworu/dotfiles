@@ -85,18 +85,8 @@ nmap <C-p> :cprev<return>
 nmap <C-o> :copen<return>
 
 if has("autocmd")
-    filetype plugin indent on
-
     autocmd FileType text setlocal textwidth=78
-    autocmd FileType c      set omnifunc=ccomplete#Complete
-    autocmd FileType css    set omnifunc=csscomplete#CompleteCSS
-    autocmd FileType html   set omnifunc=htmlcomplete#CompleteTags
     autocmd FileType man    set nolist
-    autocmd FileType php    set omnifunc=phpcomplete#CompletePHP
-    autocmd FileType python set omnifunc=pythoncomplete#Complete
-    autocmd FileType ruby   set omnifunc=rubycomplete#Complete
-    autocmd FileType sql    set omnifunc=sqlcomplete#Complete
-    autocmd FileType xml    set omnifunc=xmlcomplete#CompleteTags
     " When editing a file, always jump to the last known cursor position.
     " Don't do it when the position is invalid or when inside an event handler
     " (happens when dropping a file on gvim).
@@ -132,11 +122,7 @@ nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
 inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
 
 " Load all packages on Vim >= 8
-if has("packages")
-    packloadall
-endif
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-execute pathogen#infect()
+packloadall
 
 " lightline config
 set laststatus=2
@@ -151,6 +137,25 @@ let g:lightline = {
     \ },
     \ }
 
+" theme config
+set background=dark
+syntax enable
+filetype plugin indent on
+if &background == "dark"
+    packadd gruvbox
+    let g:gruvbox_italic = 1
+    let g:gruvbox_invert_selection = 0
+    let g:gruvbox_contrast_dark = 'hard'
+    " spell checking hack, see https://github.com/morhetz/gruvbox/issues/175
+    let g:gruvbox_guisp_fallback = "bg"
+    colorscheme gruvbox
+    let g:lightline.colorscheme = 'gruvbox'
+else
+    packadd papercolor
+    colorscheme PaperColor
+    let g:lightline.colorscheme = 'PaperColor'
+endif
+
 if (has("termguicolors"))
     set termguicolors
     " vim hardcodes background color erase even if the terminfo file does
@@ -163,43 +168,6 @@ if (has("termguicolors"))
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
-" theme config
-set background=dark
-syntax enable
-
-if &background == "dark"
-    let g:gruvbox_italic = 1
-    let g:gruvbox_invert_selection = 0
-    let g:gruvbox_contrast_dark = 'hard'
-    " spell checking hack, see https://github.com/morhetz/gruvbox/issues/175
-    let g:gruvbox_guisp_fallback = "bg"
-    colorscheme gruvbox
-    let g:lightline.colorscheme = 'gruvbox'
-else
-    colorscheme PaperColor
-    let g:lightline.colorscheme = 'PaperColor'
-endif
-
-" use XHTML and CSS with :TOhtml
-let use_xhtml=1
-let html_use_css=1
-let html_ignore_folding=1
-let html_use_encoding="UTF-8"
-
-" Java
-let java_highlight_all=1
-let java_allow_cpp_keywords=1
-
-" Python
-let python_highlight_builtins=1
-let python_highlight_exceptions=1
-let python_highlight_numbers=1
-let python_highlight_space_errors=1
-
-" Ruby
-let ruby_operators=1
-let g:rubycomplete_buffer_loading=1
-let g:rubycomplete_classes_in_global=1
 
 " syntastic
 let g:syntastic_enable_signs = 1

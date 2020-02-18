@@ -8,104 +8,104 @@
 
 ### VIM
 [submodule ".vim/bundle/vim-align"]
-	path = .vim/bundle/vim-align
+	path = .vim/pack/vendor/start/align
 	url = https://github.com/vim-scripts/Align.git
 [submodule ".vim/bundle/vim-nerdtree"]
-	path = .vim/bundle/vim-nerdtree
+	path = .vim/pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/vim-taglist"]
-	path = .vim/bundle/vim-taglist
+	path = .vim/pack/vendor/start/taglist
 	url = https://github.com/JimiSmith/vim-taglist.git
 [submodule ".vim/bundle/vim-diffchanges"]
-	path = .vim/bundle/vim-diffchanges
+	path = .vim/pack/vendor/start/diffchanges
 	url = https://github.com/jmcantrell/vim-diffchanges
 [submodule ".vim/bundle/vim-matchit"]
-	path = .vim/bundle/vim-matchit
+	path = .vim/pack/vendor/start/matchit
 	url = https://github.com/vim-scripts/matchit.zip
 [submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/bundle/vim-pathogen
+	path = .vim/pack/vendor/opt/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 [submodule ".vim/bundle/vim-pager"]
-	path = .vim/bundle/vim-pager
+	path = .vim/pack/vendor/start/pager
 	url = https://github.com/rkitover/vimpager.git
 [submodule ".vim/bundle/vim-surround"]
-	path = .vim/bundle/vim-surround
+	path = .vim/pack/vendor/start/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/lightline.vim"]
-	path = .vim/bundle/lightline.vim
+	path = .vim/pack/vendor/start/lightline
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".vim/bundle/onedark.vim"]
-	path = .vim/bundle/onedark.vim
+	path = .vim/pack/vendor/opt/onedark
 	url = https://github.com/joshdick/onedark.vim.git
 [submodule ".vim/bundle/gruvbox.vim"]
-	path = .vim/bundle/gruvbox.vim
+	path = .vim/pack/vendor/opt/gruvbox
 	url = https://github.com/gruvbox-community/gruvbox.git
 [submodule ".vim/bundle/papercolor.vim"]
-	path = .vim/bundle/papercolor.vim
+	path = .vim/pack/vendor/opt/papercolor
 	url = https://github.com/NLKNguyen/papercolor-theme.git
 
 # Git
 [submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
+	path = .vim/pack/vendor/start/fugitive
 	url = https://github.com/tpope/vim-fugitive.git
 [submodule ".vim/bundle/vim-gist"]
-	path = .vim/bundle/vim-gist
+	path = .vim/pack/vendor/start/gist
 	url = https://github.com/mattn/gist-vim
 [submodule ".vim/bundle/vim-webapi"]
-	path = .vim/bundle/vim-webapi
+	path = .vim/pack/vendor/start/webapi
 	url = https://github.com/mattn/webapi-vim
 
 # syntax
 [submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
+	path = .vim/pack/vendor/start/markdown
 	url = https://github.com/tpope/vim-markdown.git
 [submodule ".vim/bundle/vim-html5"]
-	path = .vim/bundle/vim-html5
+	path = .vim/pack/vendor/start/html5
 	url = https://github.com/othree/html5.vim.git
 [submodule ".vim/bundle/vim-css3"]
-	path = .vim/bundle/vim-css3
+	path = .vim/pack/vendor/start/css3
 	url = https://github.com/hail2u/vim-css3-syntax.git
 [submodule ".vim/bundle/vim-i3-syntax"]
-	path = .vim/bundle/vim-i3-syntax
+	path = .vim/pack/vendor/start/i3
 	url = https://github.com/PotatoesMaster/i3-vim-syntax.git
 [submodule ".vim/bundle/vim-cocci"]
-	path = .vim/bundle/vim-cocci
+	path = .vim/pack/vendor/start/cocci
 	url = https://github.com/kAworu/vim-coccinelle.git
 [submodule ".vim/bundle/vim-arduino"]
-	path = .vim/bundle/vim-arduino
+	path = .vim/pack/vendor/start/arduino
 	url = https://github.com/sudar/vim-arduino-syntax.git
 [submodule ".vim/bundle/vim-rust"]
-	path = .vim/bundle/vim-rust
+	path = .vim/pack/vendor/start/rust
 	url = https://github.com/rust-lang/rust.vim.git
 [submodule ".vim/bundle/vim-toml"]
-	path = .vim/bundle/vim-toml
+	path = .vim/pack/vendor/start/toml
 	url = https://github.com/cespare/vim-toml.git
 [submodule ".vim/bundle/vim-nginx"]
-	path = .vim/bundle/vim-nginx
+	path = .vim/pack/vendor/start/nginx
 	url = https://github.com/fatih/vim-nginx.git
 [submodule ".vim/bundle/vim-bundler"]
-	path = .vim/bundle/vim-bundler
+	path = .vim/pack/vendor/start/bundler
 	url = https://github.com/tpope/vim-bundler.git
 [submodule ".vim/bundle/vim-cucumber"]
-	path = .vim/bundle/vim-cucumber
+	path = .vim/pack/vendor/start/cucumber
 	url = https://github.com/tpope/vim-cucumber.git
 [submodule ".vim/bundle/vim-css-color"]
-	path = .vim/bundle/vim-css-color
+	path = .vim/pack/vendor/start/css-color
 	url = https://github.com/ap/vim-css-color.git
 [submodule ".vim/bundle/vim-swift"]
-	path = .vim/bundle/vim-swift
+	path = .vim/pack/vendor/start/swift
 	url = https://github.com/bumaociyuan/vim-swift.git
 [submodule ".vim/bundle/vim-haskell"]
-	path = .vim/bundle/vim-haskell
+	path = .vim/pack/vendor/start/haskell
 	url = https://github.com/neovimhaskell/haskell-vim.git
 [submodule ".vim/bundle/vim-twig"]
-	path = .vim/bundle/vim-twig
+	path = .vim/pack/vendor/start/twig
 	url = https://github.com/lumiliet/vim-twig.git
 [submodule ".vim/bundle/vim-javascript"]
-	path = .vim/bundle/vim-javascript
+	path = .vim/pack/vendor/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
 [submodule ".vim/bundle/vim-go"]
-	path = .vim/bundle/vim-go
+	path = .vim/pack/vendor/start/go
 	url = https://github.com/fatih/vim-go.git
 [submodule ".vim/pack/vendor/start/commentary"]
 	path = .vim/pack/vendor/start/commentary
