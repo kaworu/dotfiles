@@ -13,49 +13,6 @@ XTerm*on4Clicks:        page
 XTerm*on5Clicks:        all
 XTerm*saveLines:        1024
 
-URxvt.termName:         rxvt-unicode-256color
-URxvt.depth:            32
-URxvt.title:            Terminal
-URxvt*font:             xft:Jamenlo:style=Regular:size=11:antialias=true:hinting=true
-URxvt*boldFont:         xft:Jamenlo:style=Bold:size=11:antialias=true:hinting=true
-URxvt*italicFont:       xft:Jamenlo:style=Italic:size=11:antialias=true:hinting=true
-URxvt*boldItalicFont:   xft:Jamenlo:style=Bold Italic:size=11:antialias=true:hinting=true
-URxvt*letterSpace:      -1
-XFontSel*background:    black
-XFontSel*foreground:    black
-URxvt.loginShell:       true
-URxvt.modifier:         alt
-URxvt.borderLess:       false
-
-URxvt.saveLines:        1024
-URxvt.jumpScroll:       true
-URxvt.scrollstyle:      plain
-URxvt.scrollBar:        false
-URxvt.scrollColor:      #444444
-URxvt.scrollTtyOutput:  false
-URxvt.scrollWithBuffer: true
-URxvt.scrollTtyKeypress:true
-
-URxvt.utmpInhibit: false
-URxvt.perl-ext-common:  keyboard-select,url-select,clipboard
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-o: perl:url-select:select_next
-Urxvt.url-select.autocopy: true
-URxvt.url-select.underline: true
-URxvt.keysym.M-c: perl:clipboard:copy
-URxvt.keysym.M-v: perl:clipboard:paste
-URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
-
-URxvt.matcher.button:   1
-URxvt.cursorUnderline:  false
-URxvt.cursorBlink:      false
-
-URxvt.fading:           25%
-URxvt.fadeColor:        black
-!URxvt.inheritPixmap:    true
-!URxvt.shading:          70%
-!URxvt.tintColor:        blue
-
 Xcursor.theme: whiteglass
 Xcursor.size: 16
 Xft.dpi: 98
@@ -116,5 +73,3 @@ Xft.dpi: 98
 !! white dark/light
 *color7:                S_base2
 *color15:               S_base3
-URxvt.background: rgba:1d2d/1d2d/1d2d/eeee
-URxvt.foreground: rgba:d3d3/d0d0/c8c8/ffff
