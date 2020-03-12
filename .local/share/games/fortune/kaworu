@@ -62,9 +62,6 @@ fundamental error.  Be thankful you are not my student.  You would not get a
 high grade for such a design :-)
 		-- Andy Tanenbaum to Linus Torvald
 %
-BSD guys are a lot like Linux guys, except they have kissed girls.
-		-- Theo de Raadt
-%
 I claim that anybody that hasn't noticed by now that I'm an opinionated
 bastard, and that "impolite" is my middle name, is lacking a few clues.
 Finally, it's clear that I'm not only the smartest person around, I'm also
@@ -165,5 +162,10 @@ it shorter.
 Anyone who considers arithmetical methods of producing random digits is,
 of course, in a state of sin.
 		-- John von Neumann
+%
 The unavoidable price of reliability is simplicity.
 		-- C.A. R. Hoare
+%
+Any organization that designs a system (defined broadly) will produce a design
+whose structure is a copy of the organization's communication structure
+		-- Conway's law
