@@ -1,20 +1,14 @@
 #!/usr/bin/env zsh
-# my zshrc
-
-# {{{ General settings
 
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
 SAVEHIST=10000
 setopt append_history hist_ignore_all_dups histignorespace
-
 # Misc options
 setopt auto_list
 setopt auto_param_keys
 setopt auto_param_slash
-setopt autocd
-setopt equals
 setopt extendedglob
 setopt hash_cmds
 setopt hash_dirs
@@ -22,69 +16,16 @@ setopt numeric_glob_sort
 setopt transient_rprompt
 unsetopt beep
 unsetopt notify
-
 # Color vars
 autoload -U colors
 colors
-
 # Watch for login/logout
 watch=all
-
 # umask
 umask 0022
 
-# }}}
-
-# {{{ Keybindings
-
 # vi keybindings
 bindkey -v
-
-# Fixes from Debian
-if [[ "$TERM" != emacs ]]; then
-  [[ -z "$terminfo[kdch1]" ]] || bindkey -M emacs "$terminfo[kdch1]" delete-char
-  [[ -z "$terminfo[khome]" ]] || bindkey -M emacs "$terminfo[khome]" beginning-of-line
-  [[ -z "$terminfo[kend]" ]] || bindkey -M emacs "$terminfo[kend]" end-of-line
-  [[ -z "$terminfo[kich1]" ]] || bindkey -M emacs "$terminfo[kich1]" overwrite-mode
-  [[ -z "$terminfo[kdch1]" ]] || bindkey -M vicmd "$terminfo[kdch1]" vi-delete-char
-  [[ -z "$terminfo[khome]" ]] || bindkey -M vicmd "$terminfo[khome]" vi-beginning-of-line
-  [[ -z "$terminfo[kend]" ]] || bindkey -M vicmd "$terminfo[kend]" vi-end-of-line
-  [[ -z "$terminfo[kich1]" ]] || bindkey -M vicmd "$terminfo[kich1]" overwrite-mode
-
-  # [[ -z "$terminfo[cuu1]" ]] || bindkey -M viins "$terminfo[cuu1]" vi-up-line-or-history
-  [[ -z "$terminfo[cuu1]" ]] || bindkey -M viins "$terminfo[cuu1]" up-line-or-history
-  [[ -z "$terminfo[cuf1]" ]] || bindkey -M viins "$terminfo[cuf1]" vi-forward-char
-  # [[ -z "$terminfo[kcuu1]" ]] || bindkey -M viins "$terminfo[kcuu1]" vi-up-line-or-history
-  [[ -z "$terminfo[kcuu1]" ]] || bindkey -M viins "$terminfo[kcuu1]" up-line-or-history
-  # [[ -z "$terminfo[kcud1]" ]] || bindkey -M viins "$terminfo[kcud1]" vi-down-line-or-history
-  [[ -z "$terminfo[kcud1]" ]] || bindkey -M viins "$terminfo[kcud1]" down-line-or-history
-  [[ -z "$terminfo[kcuf1]" ]] || bindkey -M viins "$terminfo[kcuf1]" vi-forward-char
-  [[ -z "$terminfo[kcub1]" ]] || bindkey -M viins "$terminfo[kcub1]" vi-backward-char
-
-  # ncurses fogyatekos
-  # [[ "$terminfo[kcuu1]" == "O"* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" vi-up-line-or-history
-  # [[ "$terminfo[kcud1]" == "O"* ]] && bindkey -M viins "${terminfo[kcud1]/O/[}" vi-down-line-or-history
-  [[ "$terminfo[kcuu1]" == ""* ]] && bindkey -M viins "${terminfo[kcuu1]/O/[}" up-line-or-history
-  [[ "$terminfo[kcud1]" == ""* ]] && bindkey -M viins "${terminfo[kcud1]/O/[}" down-line-or-history
-  [[ "$terminfo[kcuf1]" == "O"* ]] && bindkey -M viins "${terminfo[kcuf1]/O/[}" vi-forward-char
-  [[ "$terminfo[kcub1]" == "O"* ]] && bindkey -M viins "${terminfo[kcub1]/O/[}" vi-backward-char
-  [[ "$terminfo[khome]" == "O"* ]] && bindkey -M viins "${terminfo[khome]/O/[}" beginning-of-line
-  [[ "$terminfo[kend]" == "O"* ]] && bindkey -M viins "${terminfo[kend]/O/[}" end-of-line
-  [[ "$terminfo[khome]" == "O"* ]] && bindkey -M emacs "${terminfo[khome]/O/[}" beginning-of-line
-  [[ "$terminfo[kend]" == "O"* ]] && bindkey -M emacs "${terminfo[kend]/O/[}" end-of-line
-fi
-
-# URxvt keys
-bindkey '[2~' overwrite-mode
-bindkey '[3~' delete-char
-bindkey '[7~' beginning-of-line
-bindkey '[8~' end-of-line
-bindkey '[5~' history-search-backward
-bindkey '[6~' history-search-forward
-
-# Man
-#bindkey 'h' run-help
-
 # Edit cmdline
 autoload edit-command-line
 zle -N edit-command-line
@@ -93,26 +34,8 @@ bindkey 'x' execute-named-cmd
 
 # Complete help
 bindkey 'c' _complete_help
-
 bindkey '^R' history-incremental-pattern-search-backward
-
-# () [] {} ...
-bindkey -s '((' '()\ei'
-bindkey -s '( (' '(   )\ehhi'
-bindkey -s '(((' '(\ea(   ))\ehhhi'
-bindkey -s '{{' '{}\ei'
-bindkey -s '{ {' '{  }\ehi'
-bindkey -s '{{{' '{\ea{   }}\ehhhi' # }}} (quick and ugly folding fix...)
-bindkey -s '[[' '[]\ei'
-bindkey -s '[ [' '[   ]\ehhi'
-bindkey -s '[[[' '[\ea[   ]]\ehhhi'
-bindkey -s "''" "'\ea'\ei"
-bindkey -s '""' '"\ea"\ei'
-
-# }}}
-
-# {{{ Completion
-
+# Completion
 autoload -Uz compinit
 autoload -Uz complist
 compinit
@@ -127,10 +50,7 @@ zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' original true
 zstyle ':completion:*' squeeze-slashes true
 
-# }}}
-
-# {{{ Per OS settings
-
+# Per OS settings
 function is_a_BSD() {
     alias ll="ls -loh"
     alias lla="ls -lohA"
@@ -159,7 +79,7 @@ function lscolors() {
 }
 
 function gnu_grep() {
-    alias grep="grep --color=auto" # GNU grep
+    alias grep="grep --color=auto"
 }
 
 case `uname -s` in
@@ -172,14 +92,7 @@ case `uname -s` in
   OpenBSD)
     is_a_BSD; maybe_colorls
     alias realpath="/usr/bin/readlink -f"
-    if [[ $(uname -r) -ge 5.8 ]]; then
-        alias sudo=doas
-    fi
-    if [[ -f ~/.pkg_path_root && $(uname -r) -le 6.0 ]]; then
-        # NOTE: since 6.1 /etc/installurl is used by the pkg_* tools.
-        # NOTE: without trailing slash, like ftp://ftp.spline.de
-        export PKG_PATH="$(head -n1 ~/.pkg_path_root)/pub/OpenBSD/$(uname -r)/packages/$(machine -a)/"
-    fi
+    alias sudo=doas
   ;;
   Linux)
     gnu_grep
@@ -201,20 +114,16 @@ case `uname -s` in
     is_a_BSD; lscolors; gnu_grep
   ;;
 esac
-
 unfunction is_a_BSD has_toor maybe_colorls lscolors gnu_grep
-# }}}
 
-# {{{ Completion II
+# Completion II
 zmodload -a autocomplete
 zmodload -a complist
-
 # formatting and messages
 zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format "${fg_bold[yellow]}%B%d%b$end"
 zstyle ':completion:*:messages' format '%d'
 zstyle ':completion:*' group-name ''
-
 zstyle :compinstall filename "$HOME/.zshrc"
 zstyle ':completion:*' special-dirs true
 zstyle ':completion:*:*:cd:*' tag-order local-directories path-directories
@@ -224,21 +133,15 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 zstyle ':completion:*' menu select=2
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 # Completion Menu for kill
-#zstyle ':completion:*:processes' command 'ps -u'
-#zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;32'
 zstyle ':completion:*:*:kill:*:processes' list-colors "=(#b) #([0-9]#)*=$color[cyan]=$color[red]"
 zstyle ':completion:*:*:kill:*' menu yes select
-#zstyle ':completion:*:*:kill:*' force-list always
 # Cache
 zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
-
 # failed match * are passed literally
 #unsetopt nomatch
-# }}}
 
-# {{{ General aliases
-
+# General aliases
 alias la="ls -A"
 alias :q="exit"
 alias tmux="tmux -2 -u"
@@ -248,20 +151,9 @@ if [ -f ~/.local/bin/lesspipe.sh ]; then
     export LESSOPEN="| ~/.local/bin/lesspipe.sh %s"
 fi
 
-# }}}
-
-# {{{ Prompts
-
-# Right prompt with clock
-#RPS1="  %{$fg_no_bold[yellow]%}%D{%d/%m/%y %H:%M:%S}%{${reset_color}%}"
-
-# Others prompts
+# Prompts
 PS2="%{$fg_no_bold[yellow]%}%_>%{${reset_color}%} "
 PS3="%{$fg_no_bold[yellow]%}?#%{${reset_color}%} "
-
-# }}}
-
-# {{{ title()
 
 # Display the title
 function title {
@@ -278,10 +170,7 @@ function title {
   esac
 }
 
-# }}}
-
-# {{{ precmd()
-
+# PS1 setup
 function precmd {
   # Set window title
   title
@@ -320,22 +209,7 @@ function precmd {
   PS1="${return_code}${user}@${host} ${cwd} ${sign}%{${reset_color}%} "
 }
 
-# }}}
-
-# {{{ run-help-sudo
-
-function run-help-sudo {
-  if [ $# -eq 0 ]; then
-    man sudo
-  else
-    man $1
-  fi
-}
-
-# }}}
-
-# {{{ Reminder
-
+# Reminder
 if [[ -f ~/.zshrc.local ]]; then
   source ~/.zshrc.local
 fi
@@ -343,8 +217,6 @@ fi
 if [[ -f ~/.reminder ]]; then
   cat ~/.reminder
 fi
-
-# }}}
 
 : # noop
 
