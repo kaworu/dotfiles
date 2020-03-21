@@ -64,7 +64,7 @@ function has_toor() {
 }
 
 function maybe_colorls() {
-    if type colorls &>/dev/null; then
+    if command -v colorls >/dev/null; then
         alias ls="colorls -G"
         alias ll="colorls -Glo"
         alias la="colorls -GA"
@@ -140,12 +140,17 @@ zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 # failed match * are passed literally
 #unsetopt nomatch
+if command -v kubectl >/dev/null; then
+    source <(kubectl completion zsh)
+fi
 
 # General aliases
 alias la="ls -A"
 alias :q="exit"
 alias tmux="tmux -2 -u"
 alias less="less -Rc"
+alias cdtmp='cd "$(mktemp -d)"'
+
 # use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
     export LESSOPEN="| ~/.local/bin/lesspipe.sh %s"
