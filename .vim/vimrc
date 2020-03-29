@@ -33,6 +33,16 @@ set autoindent
 set preserveindent
 set smartindent
 
+" Do not redraw screen in the middle of a macro. Makes them complete faster.
+set lazyredraw
+" With both on, searches with no capitals are case insensitive, while searches
+" with a capital characters are case sensitive.
+set smartcase
+set ignorecase
+" Persistent undo, even if you close and reopen Vim. Super great when combined
+" with the undotree plugin.
+set undofile
+
 set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
   let &showbreak="↪ "
