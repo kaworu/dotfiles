@@ -154,6 +154,8 @@ alias cdtmp='cd "$(mktemp -d)"'
 export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
 export FZF_COMPLETION_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
 export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
+[ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
+[ -f ~/.local/fzf/shell/key-bindings.zsh ] && source ~/.local/fzf/shell/key-bindings.zsh
 
 # use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
@@ -222,7 +224,6 @@ function precmd {
 [ -f ~/.reminder ] && cat ~/.reminder
 
 # More zsh config
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 : # noop

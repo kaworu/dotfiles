@@ -192,6 +192,7 @@ nmap <C-k> :Ggrep
 vnoremap <C-k> y/<C-r>"<return>:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
 
 " fzf
+set rtp+=~/.local/fzf
 let g:fzf_command_prefix = 'Fzf'
 nmap <F3> :FzfGFile<return>
 
@@ -206,12 +207,10 @@ nmap <F2> :NERDTreeToggle %<return>
 let uname = substitute(system('uname'), "\n", "", "")
 if uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
-    set rtp+=/usr/local/bin/fzf
 elseif uname == "Darwin"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ctags"
     " https://www.reddit.com/r/vim/comments/a4yzyt/g_characters_prefixing_directory_and_file_names/
     let g:NERDTreeNodeDelimiter = "\u00a0"
     " If installed using Homebrew
-    set rtp+=/usr/local/opt/fzf
 endif
 " vim:ft=vim:sw=2:ts=2:et

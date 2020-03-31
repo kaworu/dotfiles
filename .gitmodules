@@ -116,3 +116,6 @@
 [submodule ".vim/pack/vendor/start/fzf"]
 	path = .vim/pack/vendor/start/fzf
 	url = https://github.com/junegunn/fzf.vim.git
+[submodule ".local/fzf"]
+	path = .local/fzf
+	url = https://github.com/junegunn/fzf.git
