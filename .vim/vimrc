@@ -89,10 +89,6 @@ setlocal spelllang=en
 " split navigation
 map <Tab> <C-w>w
 map <S-Tab> <C-w>W
-" quickfix navigation
-nmap <C-n> :cnext<return>
-nmap <C-p> :cprev<return>
-nmap <C-o> :copen<return>
 
 if has("autocmd")
     autocmd FileType text setlocal textwidth=78
