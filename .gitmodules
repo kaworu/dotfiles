@@ -113,3 +113,6 @@
 [submodule ".vim/pack/vendor/start/undotree"]
 	path = .vim/pack/vendor/start/undotree
 	url = https://github.com/mbbill/undotree.git
+[submodule ".vim/pack/vendor/start/fzf"]
+	path = .vim/pack/vendor/start/fzf
+	url = https://github.com/junegunn/fzf.vim.git

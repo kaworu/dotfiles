@@ -150,6 +150,10 @@ alias :q="exit"
 alias tmux="tmux -2 -u"
 alias less="less -Rc"
 alias cdtmp='cd "$(mktemp -d)"'
+# fzf
+export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
+export FZF_COMPLETION_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
+export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
 
 # use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
@@ -215,13 +219,11 @@ function precmd {
 }
 
 # Reminder
-if [[ -f ~/.zshrc.local ]]; then
-  source ~/.zshrc.local
-fi
+[ -f ~/.reminder ] && cat ~/.reminder
 
-if [[ -f ~/.reminder ]]; then
-  cat ~/.reminder
-fi
+# More zsh config
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
 : # noop
 
