@@ -151,12 +151,16 @@ alias tmux="tmux -2 -u"
 alias less="less -Rc"
 alias cdtmp='cd "$(mktemp -d)"'
 # fzf
-export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
-export FZF_COMPLETION_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
-export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
-[ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
-[ -f ~/.local/fzf/shell/key-bindings.zsh ] && source ~/.local/fzf/shell/key-bindings.zsh
 [ -d ~/.local/fzf/bin ] && export PATH="$HOME/.local/fzf/bin:$PATH"
+if command -v fzf >/dev/null; then
+    export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
+    if command -v bat >/dev/null; then
+        export FZF_COMPLETION_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
+        export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
+    fi
+    [ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
+    [ -f ~/.local/fzf/shell/key-bindings.zsh ] && source ~/.local/fzf/shell/key-bindings.zsh
+fi
 
 # use personal lesspipe.sh if avaiable
 if [ -f ~/.local/bin/lesspipe.sh ]; then
