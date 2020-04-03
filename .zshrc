@@ -157,6 +157,7 @@ if command -v fzf >/dev/null; then
     if command -v bat >/dev/null; then
         export FZF_COMPLETION_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
         export FZF_CTRL_T_OPTS="--preview 'bat --style=numbers --color=always {} | head -n 500'"
+        export BAT_THEME="Gruvbox-N"
     fi
     [ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
     [ -f ~/.local/fzf/shell/key-bindings.zsh ] && source ~/.local/fzf/shell/key-bindings.zsh
