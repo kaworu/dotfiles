@@ -179,8 +179,6 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-
-# single screen setup.
 bar {
     #status_command i3status --config ~/.i3/i3status-single.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
     status_command i3blocks -c ~/.i3/i3blocks.conf
@@ -197,44 +195,6 @@ bar {
         urgent_workspace   $bright_red      $neutral_red     $foreground
     }
 }
-
-# dual screen setup.
-#bar {
-#    output HDMI-0
-#    output DVI-I-1
-#    #status_command i3status --config ~/.i3/i3status-twin-left.conf
-#    status_command i3blocks -c ~/.i3/i3blocks-twin-left.conf
-#    position top
-#    colors {
-#        background $hard_background
-#        statusline $foreground
-#        separator  $bright_blue
-#
-#        # class            border           backgr.          text
-#        focused_workspace  $bright_blue     $neutral_blue    $foreground
-#        active_workspace   $bright_blue     $neutral_blue    $foreground
-#        inactive_workspace $hard_background $hard_background $bright_blue
-#        urgent_workspace   $bright_red      $neutral_red     $foreground
-#    }
-#}
-#bar {
-#    output DVI-I-2
-#    output DVI-0
-#    #status_command i3status --config ~/.i3/i3status-twin-right.conf | ~/.i3/i3status-mpd-wrapper $mpd_host $mpd_port
-#    status_command i3blocks -c ~/.i3/i3blocks-twin-right.conf
-#    position top
-#    colors {
-#        background $hard_background
-#        statusline $foreground
-#        separator  $bright_blue
-#
-#        # class            border           backgr.          text
-#        focused_workspace  $bright_blue     $neutral_blue    $foreground
-#        active_workspace   $bright_blue     $neutral_blue    $foreground
-#        inactive_workspace $hard_background $hard_background $bright_blue
-#        urgent_workspace   $bright_red      $neutral_red     $foreground
-#    }
-#}
 
 # class                 border           backgr.          text         indicator
 client.focused          $bright_blue     $neutral_blue    $foreground  $bright_red
