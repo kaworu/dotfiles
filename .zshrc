@@ -35,6 +35,18 @@ bindkey 'x' execute-named-cmd
 # Complete help
 bindkey 'c' _complete_help
 bindkey '^R' history-incremental-pattern-search-backward
+# parenthesis, quotes, etc.
+bindkey -s '((' '()\ei'
+bindkey -s '( (' '(   )\ehhi'
+bindkey -s '(((' '(\ea(   ))\ehhhi'
+bindkey -s '{{' '{}\ei'
+bindkey -s '{ {' '{  }\ehi'
+bindkey -s '{{{' '{\ea{   }}\ehhhi' # }}} (quick and ugly folding fix...)
+bindkey -s '[[' '[]\ei'
+bindkey -s '[ [' '[   ]\ehhi'
+bindkey -s '[[[' '[\ea[   ]]\ehhhi'
+bindkey -s "''" "'\ea'\ei"
+bindkey -s '""' '"\ea"\ei'
 # Completion
 autoload -Uz compinit
 autoload -Uz complist
