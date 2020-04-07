@@ -46,7 +46,6 @@ floating_modifier $mod
 bindsym $mod+Return exec termite
 
 # kill focused window
-bindsym $mod+Shift+Q kill
 bindsym $mod_alt+F4  kill
 
 # start dmenu (a program launcher)
@@ -205,11 +204,10 @@ client.urgent           $bright_red      $bright_red      $foreground  $bright_r
 for_window [class="Termite"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
 
+# fehbg to set the background image.
 exec sh ~/.fehbg
-# autostart services programs on startup
+# autostart services programs on startup.
 exec ~/.i3/start-em-all.sh
-
-# add here exec firefox blablabla etc.
 
 ### Custom bindings.
 # MPD commands.
