@@ -190,8 +190,20 @@ let g:fzf_command_prefix = 'Fzf'
 " Always enable preview window on the right with 60% width
 let g:fzf_preview_window = 'right:60%'
 nmap <F3> :FzfGFile<return>
-nmap <C-k> :Rg 
-vnoremap <C-k> y/<C-r>"<return>:Rg <C-r>0<return>
+" see https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
+command! -bang -nargs=* FzfGitGrep
+    \ call fzf#vim#grep(
+    \   'git grep --line-number '.shellescape(<q-args>), 0,
+    \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+" <C-k> for searching (also selection in visual mode) using rg if available,
+" git grep otherwise.
+if executable('rg')
+    nmap <C-k> :Rg 
+    vnoremap <C-k> y/<C-r>"<return>:Rg <C-r>0<return>
+else
+    nmap <C-k> :FzfGitGrep 
+    vnoremap <C-k> y/<C-r>"<return>:FzfGitGrep <C-r>0<return>
+endif
 
 " NERDTree
 "Show hidden files
