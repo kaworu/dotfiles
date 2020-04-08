@@ -181,13 +181,17 @@ let g:gist_show_privates = 1
 au BufRead ~/.tmp/mutt* set textwidth=72
 
 " fugitive
-nmap <C-k> :Ggrep 
-vnoremap <C-k> y/<C-r>"<return>:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
+"nmap <C-k> :Ggrep 
+"vnoremap <C-k> y/<C-r>"<return>:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
 
 " fzf
 set rtp+=~/.local/fzf
 let g:fzf_command_prefix = 'Fzf'
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:60%'
 nmap <F3> :FzfGFile<return>
+nmap <C-k> :Rg 
+vnoremap <C-k> y/<C-r>"<return>:Rg <C-r>0<return>
 
 " NERDTree
 "Show hidden files
