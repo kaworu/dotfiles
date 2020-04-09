@@ -61,6 +61,8 @@ zstyle ':completion:*' group-name ''
 zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' original true
 zstyle ':completion:*' squeeze-slashes true
+# disable START / STOP and get C-s / C-q back
+stty -ixon &>/dev/null
 
 # Per OS settings
 function is_a_BSD() {

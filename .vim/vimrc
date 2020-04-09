@@ -79,6 +79,10 @@ set grepprg=grep\ -nH\ $*
 " english spell check by default (:set spell)
 setlocal spelllang=en
 
+" buffer navigation
+map <C-l> <esc>:bnext<return>
+map <C-h> <esc>:bprevious<return>
+map <C-q> <esc>:bdelete<return>
 " split navigation
 map <Tab> <C-w>w
 map <S-Tab> <C-w>W

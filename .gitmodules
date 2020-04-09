@@ -119,3 +119,6 @@
 [submodule ".local/fzf"]
 	path = .local/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule ".vim/pack/vendor/start/buftabline"]
+	path = .vim/pack/vendor/start/buftabline
+	url = https://github.com/ap/vim-buftabline.git
