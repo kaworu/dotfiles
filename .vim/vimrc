@@ -1,4 +1,5 @@
 set nocompatible
+set noerrorbells visualbell t_vb=
 
 set path=.,./include,/usr/include,/usr/local/include,,
 set pastetoggle=<F10>
