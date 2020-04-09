@@ -206,10 +206,10 @@ command! -bang -nargs=* FzfGitGrep
 " git grep otherwise.
 if executable('rg')
     nmap <C-k> :Rg 
-    vnoremap <C-k> y/<C-r>"<return>:Rg <C-r>0<return>
+    vnoremap <C-k> y:Rg <C-r>0<return>
 else
     nmap <C-k> :FzfGitGrep 
-    vnoremap <C-k> y/<C-r>"<return>:FzfGitGrep <C-r>0<return>
+    vnoremap <C-k> y:FzfGitGrep <C-r>0<return>
 endif
 
 " NERDTree
