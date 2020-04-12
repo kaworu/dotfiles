@@ -4,4 +4,3 @@
 use strict;
 use utf8;
 
-<+CODE+>

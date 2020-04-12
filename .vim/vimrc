@@ -1,42 +1,29 @@
 set nocompatible
-set noerrorbells visualbell t_vb=
 
-set path=.,./include,/usr/include,/usr/local/include,,
-set pastetoggle=<F10>
-let mapleader = "\<space>"
-set sm
-
-set complete=.,w,b,u,t,i
-
+" disable modelines.
 set nomodeline
 set modelines=0
 
-set backspace=indent,eol,start
+ " no beeps
+set noerrorbells
+set visualbell
+set t_vb=
 
-" Update term title but restore old title after leaving Vim
+" Update term title but restore old title after leaving Vim.
 set title
 set titleold=
-set shortmess=aoOtTI
+
+" When a bracket is inserted, briefly jump to the matching one.
+set showmatch
+
+" command line completion help
 set wildmenu
 set wildmode=longest:full,full
 
-set viminfo='20,\"500,h
-set history=50
+" short messages
+set shortmess=aoOtTI
 
-set fileencodings=utf-8,latin1,default
-set fileformats=unix
-
-set shiftwidth=4
-set tabstop=4
-set expandtab
-set smarttab
-set autoindent
-set preserveindent
-set smartindent
-
-" Do not redraw screen in the middle of a macro. Makes them complete faster.
-set lazyredraw
-
+" whitespaces highlighting
 set list
 if (&termencoding ==# 'utf-8' || &encoding ==# 'utf-8') && version >= 700
   let &showbreak="↪ "
@@ -49,86 +36,145 @@ endif
 autocmd BufNewFile,BufRead * call matchadd('SpecialKey', '\s\+')
 autocmd BufNewFile,BufRead * call matchadd('NonText', '\n\+')
 
-set selection=inclusive
-set virtualedit=block
-
-set number
-set numberwidth=3
-set cursorline
-set ruler
-set showcmd
-
+" highlight search
 set hlsearch
 set incsearch
 
+" gutter line number
+set number
+set numberwidth=3
+" this is slowing down vim, but I like it.
+set cursorline
+
+" Minimal number of screen lines to keep above and below the cursor.
 set scrolloff=3
+" The minimal number of screen columns to keep to the left and to the right of
+" the cursor if 'nowrap' is set.
 set sidescrolloff=5
+" Minimal number of lines to scroll when the cursor gets off the screen.
 set scrolljump=1
 
+" Start diff mode with vertical splits
+set diffopt+=vertical
+
+" completion menu
+set completeopt=longest,menu,preview
+
+" file format & encoding stuff
+set fileencodings=utf-8,latin1,default
+set fileformats=unix
+
+" ' count of files to remember marks for,
+" " max line count for each registers,
+" h disable hlsearch when loading the viminfo file.
+set viminfo='128,\"512,h
+" : commands and search patterns history.
+set history=128
+
+" disable swap files and backups.
+set noswapfile
+set nobackup
+set nowritebackup
+" automatically save before :next etc. and reread changes
+set autowrite
+set autoread
+
+" external command
+set shell=/bin/sh
+set grepprg=grep\ -nH\ $*
+
+let mapleader = "\<space>"
+" The time in milliseconds that is waited for a key code or mapped key
+" sequence to complete.
+set timeoutlen=250
+
+" make backspace key more powerful
+set backspace=indent,eol,start
+" pasta without indent
+set pastetoggle=<F10>
+
+" tab and indent stuff
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set smarttab
+set autoindent
+set preserveindent
+set smartindent
+
+" visual mode may be positioned at eol and include the character under the
+" cursor.
+set selection=inclusive
+" allow virtual editing (cursor where there is no actual character) in Visual
+" block mode only.
+set virtualedit=block
+
+" performance tricks.
+set ttyfast
+" Do not redraw screen in the middle of a macro. Makes them complete faster.
+set lazyredraw
+
+" folding
 set foldcolumn=2
 set foldmethod=marker
 
-set completeopt=longest,menu,preview
+" abandon a buffer when it becomes hidden
+set hidden
+" buffer navigation
+map      <C-l> <esc>:bnext!<return>
+inoremap <C-l> <esc>:bnext!<return>
+map      <C-h> <esc>:bprevious!<return>
+inoremap <C-h> <esc>:bprevious!<return>
+map      <C-q> <esc>:bdelete<return> retur
 
-set diffopt+=vertical
-
-set timeoutlen=250
-
-set shell=/bin/sh
-set grepprg=grep\ -nH\ $*
+" split position
+set splitright
+set splitbelow
+" split navigation
+map <Tab>   <C-w>w
+map <S-Tab> <C-w>W
 
 " english spell check by default (:set spell)
 setlocal spelllang=en
 
-" buffer navigation
-map <C-l> <esc>:bnext!<return>
-inoremap <C-l> <esc>:bnext!<return>
-map <C-h> <esc>:bprevious!<return>
-inoremap <C-h> <esc>:bprevious!<return>
-map <C-q> <esc>:bdelete<return>
-" split navigation
-map <Tab> <C-w>w
-map <S-Tab> <C-w>W
+autocmd FileType text setlocal textwidth=78
+autocmd FileType man    set nolist
+au BufRead ~/.tmp/mutt* set textwidth=72 " email
+" When editing a file, always jump to the last known cursor position.
+" Don't do it when the position is invalid or when inside an event handler
+" (happens when dropping a file on gvim).
+autocmd BufReadPost *
+            \ if line("'\"") > 0 && line("'\"") <= line("$") |
+            \   execute "normal! g`\"" |
+            \ endif
 
-if has("autocmd")
-    autocmd FileType text setlocal textwidth=78
-    autocmd FileType man    set nolist
-    " When editing a file, always jump to the last known cursor position.
-    " Don't do it when the position is invalid or when inside an event handler
-    " (happens when dropping a file on gvim).
-    autocmd BufReadPost *
-                \ if line("'\"") > 0 && line("'\"") <= line("$") |
-                \   execute "normal! g`\"" |
-                \ endif
-    " When editing a new file, load skeleton if any.
-    " If we find <+FILENAME+> replace it by the filename.
-    " If we find <+HEADERNAME+> replace it by the filename uppercase with .
-    "       replaced by _ (foo.h become FOO_H).
-    " If we find <+CLASSNAME+> replace it by the filename without the extensions.
-    autocmd BufNewFile *
-                \ let skel = $HOME . "/.vim/skeletons/skel." . expand("%:e") |
-                \ if filereadable(skel) |
-                \   execute "silent! 0read " . skel |
-                \   let fn = expand("%") |
-                \   let hn = substitute(expand("%"), "\\w", "\\u\\0", "g") |
-                \   let hn = substitute(hn, "\\.", "_", "g") |
-                \   let hn = substitute(hn, "/", "_", "g") |
-                \   let cn = expand("%:t:r") |
-                \   %s/<+FILENAME+>/\=fn/Ige |
-                \   %s/<+HEADERNAME+>/\=hn/Ige |
-                \   %s/<+CLASSNAME+>/\=cn/Ige |
-                \   unlet fn hn cn |
-                \ endif |
-                \ unlet skel |
-                \ goto 1
-endif " has autocmd
-
-" skeleton template use <+KEY+>
-nnoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
-inoremap § <esc>/<+.\{-1,}+><return>c/+>/e<return>
+" When editing a new file, load skeleton if any.
+" If we find <+FILENAME+> replace it by the filename.
+" If we find <+HEADERNAME+> replace it by the filename uppercase with .
+"       replaced by _ (foo.h become FOO_H).
+" If we find <+CLASSNAME+> replace it by the filename without the extensions.
+autocmd BufNewFile *
+            \ let skel = $HOME . "/.vim/skeletons/skel." . expand("%:e") |
+            \ if filereadable(skel) |
+            \   execute "silent! 0read " . skel |
+            \   let fn = expand("%") |
+            \   let hn = substitute(expand("%"), "\\w", "\\u\\0", "g") |
+            \   let hn = substitute(hn, "\\.", "_", "g") |
+            \   let hn = substitute(hn, "/", "_", "g") |
+            \   let cn = expand("%:t:r") |
+            \   %s/<+FILENAME+>/\=fn/Ige |
+            \   %s/<+HEADERNAME+>/\=hn/Ige |
+            \   %s/<+CLASSNAME+>/\=cn/Ige |
+            \   unlet fn hn cn |
+            \ endif |
+            \ unlet skel |
+            \ goto 1
 
 " lightline config
 set laststatus=2
+" since we use lightline, disable a bunch of stuff we don't need.
+set noruler
+set noshowcmd
 set noshowmode
 let g:lightline = {
     \ 'active': {
@@ -143,6 +189,8 @@ let g:lightline = {
 
 " theme config
 set background=dark
+set synmaxcol=256
+syntax sync minlines=256
 syntax enable
 filetype plugin indent on
 if &background == "dark"
@@ -160,7 +208,7 @@ else
     let g:lightline.colorscheme = 'PaperColor'
 endif
 
-if (has("termguicolors"))
+if has("termguicolors")
     set termguicolors
     " vim hardcodes background color erase even if the terminfo file does
     " not contain bce (not to mention that libvte based terminals
@@ -179,17 +227,9 @@ packloadall
 " syntastic
 let g:syntastic_enable_signs = 1
 let g:syntastic_auto_loc_list = 1
-
 " gist
 let g:gist_detect_filetype = 1
 let g:gist_show_privates = 1
-
-" mail
-au BufRead ~/.tmp/mutt* set textwidth=72
-
-" fugitive
-"nmap <C-k> :Ggrep 
-"vnoremap <C-k> y/<C-r>"<return>:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
 
 " fzf
 set rtp+=~/.local/fzf
@@ -202,24 +242,26 @@ command! -bang -nargs=* FzfGitGrep
     \ call fzf#vim#grep(
     \   'git grep --line-number '.shellescape(<q-args>), 0,
     \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
-" <C-k> for searching (also selection in visual mode) using rg if available,
-" git grep otherwise.
-if executable('rg')
+
+" <C-k> for searching (also selection in visual mode).
+if executable('fzf') && executable('rg')
     nmap <C-k> :Rg 
     vnoremap <C-k> y:Rg <C-r>0<return>
-else
+elseif executable('fzf')
     nmap <C-k> :FzfGitGrep 
     vnoremap <C-k> y:FzfGitGrep <C-r>0<return>
+else
+    nmap <C-k> :Ggrep 
+    vnoremap <C-k> y:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
 endif
 
 " NERDTree
-"Show hidden files
 let NERDTreeShowHidden=1
 " combine NERDTreeFind with NERDTreeToggle,
 " see https://stackoverflow.com/a/33465522
 nmap <F2> :NERDTreeToggle %<return>
 
-" external command paths
+" per OS hacks.
 let uname = substitute(system('uname'), "\n", "", "")
 if uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
@@ -229,4 +271,3 @@ elseif uname == "Darwin"
     let g:NERDTreeNodeDelimiter = "\u00a0"
     " If installed using Homebrew
 endif
-" vim:ft=vim:sw=2:ts=2:et
