@@ -5,6 +5,9 @@
 [color]
 	ui = auto
 
+[diff]
+	algorithm = patience
+
 [color "diff"]
 	whitespace = red reverse
 
