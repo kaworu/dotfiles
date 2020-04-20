@@ -122,3 +122,9 @@
 [submodule ".vim/pack/vendor/start/buftabline"]
 	path = .vim/pack/vendor/start/buftabline
 	url = https://github.com/ap/vim-buftabline.git
+[submodule ".vim/pack/vendor/start/unimpaired"]
+	path = .vim/pack/vendor/start/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/pack/vendor/start/repeat"]
+	path = .vim/pack/vendor/start/repeat
+	url = https://github.com/tpope/vim-repeat.git
