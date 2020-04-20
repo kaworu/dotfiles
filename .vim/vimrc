@@ -262,12 +262,12 @@ let NERDTreeShowHidden=1
 nmap <F2> :NERDTreeToggle %<return>
 
 " unimpaired
-nmap è [
-nmap ¨ ]
-omap è [
-omap ¨ ]
-xmap è [
-xmap ¨ ]
+nmap é [
+nmap à ]
+omap é [
+omap à ]
+xmap é [
+xmap à ]
 
 " per OS hacks.
 let uname = substitute(system('uname'), "\n", "", "")
