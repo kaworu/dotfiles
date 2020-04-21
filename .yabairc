@@ -55,6 +55,7 @@ yabai -m rule --add app=Simulator              manage=off
 yabai -m rule --add app=Timing                 manage=off
 
 # signals
+yabai -m signal --add event=application_launched action='yabai -m window --focus $YABAI_PROCESS_ID'
 yabai -m signal --add event=window_destroyed action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 yabai -m signal --add event=application_terminated action="yabai -m query --windows --window &> /dev/null || yabai -m window --focus mouse"
 
