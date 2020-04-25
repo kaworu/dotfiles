@@ -235,3 +235,5 @@ for_window [class="Gcr-prompter"]      floating enable
 exec --no-startup-id ~/.i3/autostart.sh
 
 ### Custom bindings.
+bindsym XF86MonBrightnessUp   exec --no-startup-id ~/.i3/bin/bbctl +10
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/.i3/bin/bbctl -10
