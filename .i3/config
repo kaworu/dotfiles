@@ -205,7 +205,7 @@ for_window [class="Termite"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
 
 # autostart services programs on startup.
-exec ~/.i3/start-em-all.sh
+exec --no-startup-id ~/.i3/autostart.sh
 
 ### Custom bindings.
 # MPD commands.
