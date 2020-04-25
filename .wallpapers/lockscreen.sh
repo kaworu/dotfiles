@@ -17,7 +17,7 @@ if [ $# -ne 2 ]; then
 fi
 
 convert "$1" $TRANSFORM \
-    '(' -clone 0 -resize "${LEFTRES}!"  '(' "$PADLOCK" -resize x128 -gravity center ')' -composite ')' \
-    '(' -clone 0 -resize "${RIGHTRES}!" '(' "$PADLOCK" -resize x128 -gravity center ')' -composite ')' \
+    '(' -clone 0 -resize "${LEFTRES}!"  '(' "$PADLOCK" -resize x190 -gravity center ')' -composite ')' \
+    '(' -clone 0 -resize "${RIGHTRES}!" '(' "$PADLOCK" -resize x190 -gravity center ')' -composite ')' \
     -delete 0 \
     -background black -gravity South +append "$2"
