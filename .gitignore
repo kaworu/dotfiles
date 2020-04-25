@@ -28,3 +28,8 @@
 !/.yabairc
 !/.skhdrc
 !/.config/kitty/
+
+!/.wallpapers
+/.wallpapers/*
+!/.wallpapers/lockscreen.sh
+!/.wallpapers/padlock.png
