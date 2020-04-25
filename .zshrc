@@ -168,6 +168,10 @@ alias cdtmp='cd "$(mktemp -d)"'
 [ -d ~/.local/fzf/bin ] && export PATH="$HOME/.local/fzf/bin:$PATH"
 if command -v fzf >/dev/null; then
     export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
+    if command -v fd >/dev/null; then
+        export FZF_DEFAULT_COMMAND="fd --type file --follow --color=always"
+        export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --ansi"
+    fi
     if command -v bat >/dev/null; then
         export BAT_THEME="Gruvbox-N"
         export FZF_COMPLETION_OPTS="--preview-window=60% --preview 'bat --style=numbers --color=always {}'"
