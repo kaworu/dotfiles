@@ -204,8 +204,6 @@ client.urgent           $bright_red      $bright_red      $foreground  $bright_r
 for_window [class="Termite"] border 1pixel
 for_window [class="Gcr-prompter"] floating enable
 
-# fehbg to set the background image.
-exec sh ~/.fehbg
 # autostart services programs on startup.
 exec ~/.i3/start-em-all.sh
 
