@@ -62,7 +62,7 @@ zstyle ':completion:*' insert-unambiguous true
 zstyle ':completion:*' original true
 zstyle ':completion:*' squeeze-slashes true
 # disable START / STOP and get C-s / C-q back
-stty -ixon &>/dev/null
+stty -ixon &> /dev/null
 
 # Per OS settings
 function is_a_BSD() {
@@ -78,7 +78,7 @@ function has_toor() {
 }
 
 function maybe_colorls() {
-    if command -v colorls >/dev/null; then
+    if command -v colorls > /dev/null; then
         alias ls="colorls -G"
         alias ll="colorls -Glo"
         alias la="colorls -GA"
@@ -154,7 +154,7 @@ zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 # failed match * are passed literally
 #unsetopt nomatch
-if command -v kubectl >/dev/null; then
+if command -v kubectl > /dev/null; then
     source <(kubectl completion zsh)
 fi
 
@@ -166,13 +166,13 @@ alias less="less -Rc"
 alias cdtmp='cd "$(mktemp -d)"'
 # fzf
 [ -d ~/.local/fzf/bin ] && export PATH="$HOME/.local/fzf/bin:$PATH"
-if command -v fzf >/dev/null; then
+if command -v fzf > /dev/null; then
     export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --multi'
-    if command -v fd >/dev/null; then
+    if command -v fd > /dev/null; then
         export FZF_DEFAULT_COMMAND="fd --type file --follow --color=always"
         export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --ansi"
     fi
-    if command -v bat >/dev/null; then
+    if command -v bat > /dev/null; then
         export BAT_THEME="Gruvbox-N"
         export FZF_COMPLETION_OPTS="--preview-window=60% --preview 'bat --style=numbers --color=always {}'"
         export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
