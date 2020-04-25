@@ -1,0 +1,46 @@
+theme = "gruvbox-dark"
+[icons]
+name = "awesome"
+
+[[block]]
+block = "net"
+device = "wlp1s0"
+ssid = true
+signal_strength = true
+ip = true
+speed_up = true
+speed_down = true
+interval = 2
+
+[[block]]
+block = "bluetooth"
+mac = "04:52:C7:F0:5F:D6"
+
+[[block]]
+block = "sound"
+step_width = 3
+
+[[block]]
+block = "load"
+interval = 1
+format = "{1m} {5m} {15m}"
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+format = "{max}°"
+chip = "*-isa-*"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% {time}"
+
+[[block]]
+block = "time"
+interval = 1
+format = "%d/%m/%Y %H:%M:%S"

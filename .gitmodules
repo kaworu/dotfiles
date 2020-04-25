@@ -1,30 +1,48 @@
 ### ! VIM
-[submodule ".i3/lua-mpd"]
-	path = .i3/lua-mpd
-	url = https://github.com/kAworu/lua-mpd.git
 [submodule ".local/gef"]
 	path = .local/gef
 	url = https://github.com/hugsy/gef.git
+[submodule ".local/fzf"]
+	path = .local/fzf
+	url = https://github.com/junegunn/fzf.git
 
 ### VIM
-[submodule ".vim/bundle/vim-align"]
-	path = .vim/pack/vendor/start/align
-	url = https://github.com/vim-scripts/Align.git
+[submodule ".vim/bundle/vim-pathogen"]
+	path = .vim/pack/vendor/opt/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/pack/vendor/start/buftabline"]
+	path = .vim/pack/vendor/start/buftabline
+	url = https://github.com/ap/vim-buftabline.git
 [submodule ".vim/bundle/vim-nerdtree"]
 	path = .vim/pack/vendor/start/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
 [submodule ".vim/bundle/vim-taglist"]
 	path = .vim/pack/vendor/start/taglist
 	url = https://github.com/JimiSmith/vim-taglist.git
+[submodule ".vim/pack/vendor/start/fzf"]
+	path = .vim/pack/vendor/start/fzf
+	url = https://github.com/junegunn/fzf.vim.git
 [submodule ".vim/bundle/vim-diffchanges"]
 	path = .vim/pack/vendor/start/diffchanges
 	url = https://github.com/jmcantrell/vim-diffchanges
+[submodule ".vim/bundle/vim-align"]
+	path = .vim/pack/vendor/start/align
+	url = https://github.com/vim-scripts/Align.git
+[submodule ".vim/pack/vendor/start/commentary"]
+	path = .vim/pack/vendor/start/commentary
+	url = https://tpope.io/vim/commentary.git
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/pack/vendor/start/matchit
 	url = https://github.com/vim-scripts/matchit.zip
-[submodule ".vim/bundle/vim-pathogen"]
-	path = .vim/pack/vendor/opt/pathogen
-	url = https://github.com/tpope/vim-pathogen.git
+[submodule ".vim/pack/vendor/start/undotree"]
+	path = .vim/pack/vendor/start/undotree
+	url = https://github.com/mbbill/undotree.git
+[submodule ".vim/pack/vendor/start/unimpaired"]
+	path = .vim/pack/vendor/start/unimpaired
+	url = https://github.com/tpope/vim-unimpaired.git
+[submodule ".vim/pack/vendor/start/repeat"]
+	path = .vim/pack/vendor/start/repeat
+	url = https://github.com/tpope/vim-repeat.git
 [submodule ".vim/bundle/vim-pager"]
 	path = .vim/pack/vendor/start/pager
 	url = https://github.com/rkitover/vimpager.git
@@ -107,24 +125,3 @@
 [submodule ".vim/bundle/vim-go"]
 	path = .vim/pack/vendor/start/go
 	url = https://github.com/fatih/vim-go.git
-[submodule ".vim/pack/vendor/start/commentary"]
-	path = .vim/pack/vendor/start/commentary
-	url = https://tpope.io/vim/commentary.git
-[submodule ".vim/pack/vendor/start/undotree"]
-	path = .vim/pack/vendor/start/undotree
-	url = https://github.com/mbbill/undotree.git
-[submodule ".vim/pack/vendor/start/fzf"]
-	path = .vim/pack/vendor/start/fzf
-	url = https://github.com/junegunn/fzf.vim.git
-[submodule ".local/fzf"]
-	path = .local/fzf
-	url = https://github.com/junegunn/fzf.git
-[submodule ".vim/pack/vendor/start/buftabline"]
-	path = .vim/pack/vendor/start/buftabline
-	url = https://github.com/ap/vim-buftabline.git
-[submodule ".vim/pack/vendor/start/unimpaired"]
-	path = .vim/pack/vendor/start/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
-[submodule ".vim/pack/vendor/start/repeat"]
-	path = .vim/pack/vendor/start/repeat
-	url = https://github.com/tpope/vim-repeat.git
