@@ -32,7 +32,7 @@
 	path = .vim/pack/vendor/start/surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/bundle/lightline.vim"]
-	path = .vim/pack/vendor/start/lightline
+	path = .vim/pack/vendor/opt/lightline
 	url = https://github.com/itchyny/lightline.vim.git
 [submodule ".vim/bundle/onedark.vim"]
 	path = .vim/pack/vendor/opt/onedark

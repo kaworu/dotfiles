@@ -170,12 +170,8 @@ autocmd BufNewFile *
             \ unlet skel |
             \ goto 1
 
-" lightline config
+" lightline & theme config
 set laststatus=2
-" since we use lightline, disable a bunch of stuff we don't need.
-set noruler
-set noshowcmd
-set noshowmode
 let g:lightline = {
     \ 'active': {
     \   'right': [ [ 'lineinfo' ],
@@ -186,26 +182,36 @@ let g:lightline = {
     \   'charvaluehex': '0x%B'
     \ },
     \ }
-
-" theme config
-set background=dark
-set synmaxcol=256
 syntax sync minlines=256
 syntax enable
 filetype plugin indent on
-if &background == "dark"
-    packadd gruvbox
-    let g:gruvbox_italic = 1
-    let g:gruvbox_invert_selection = 0
-    let g:gruvbox_contrast_dark = 'hard'
-    " spell checking hack, see https://github.com/morhetz/gruvbox/issues/175
-    let g:gruvbox_guisp_fallback = "bg"
-    colorscheme gruvbox
-    let g:lightline.colorscheme = 'gruvbox'
+if $TERM == "linux"
+    colorscheme elflord
+    set ruler
+    set showcmd
+    set showmode
 else
-    packadd papercolor
-    colorscheme PaperColor
-    let g:lightline.colorscheme = 'PaperColor'
+    set background=dark
+    set synmaxcol=256
+    if &background == "dark"
+        packadd gruvbox
+        let g:gruvbox_italic = 1
+        let g:gruvbox_invert_selection = 0
+        let g:gruvbox_contrast_dark = 'hard'
+        " spell checking hack, see https://github.com/morhetz/gruvbox/issues/175
+        let g:gruvbox_guisp_fallback = "bg"
+        colorscheme gruvbox
+        let g:lightline.colorscheme = 'gruvbox'
+    else
+        packadd papercolor
+        colorscheme PaperColor
+        let g:lightline.colorscheme = 'PaperColor'
+    endif
+    packadd lightline
+    " since we use lightline, disable a bunch of stuff we don't need.
+    set noruler
+    set noshowcmd
+    set noshowmode
 endif
 
 if has("termguicolors")
