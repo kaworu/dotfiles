@@ -22,6 +22,8 @@
 !/.local/bin
 !/.local/fzf
 !/.i3
+/.i3/wallpapers
+!/.i3/wallpapers/padlock.png
 !/.login_conf
 !/.gemrc
 

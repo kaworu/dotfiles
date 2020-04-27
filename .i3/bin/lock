@@ -1,0 +1,14 @@
+#!/bin/sh
+
+set -e
+
+LOCKOPTS='--show-failed-attempts --nofork'
+SCREENCOUNT=$(xrandr | awk '$2 == "connected" {n++} END {print n}')
+LOCKIMAGE="${HOME}/.i3/wallpapers/i3lock-image-${SCREENCOUNT}.png"
+if [ -f "$LOCKIMAGE" ]; then
+    LOCKOPTS="${LOCKOPTS} --image=${LOCKIMAGE}"
+else
+    LOCKOPTS="${LOCKOPTS} --color=32302f" # Gruvbox soft background
+fi
+
+i3lock $LOCKOPTS
