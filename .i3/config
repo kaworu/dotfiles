@@ -103,21 +103,19 @@ bindsym $win+e layout toggle split
 
 # toggle tiling / floating
 bindsym $win+Shift+space floating toggle
-
 # change focus between tiling / floating windows
 bindsym $win+space focus mode_toggle
 
 # focus the parent container
 bindsym $win+a focus parent
-
 # focus the child container
 bindsym $win+d focus child
-# move the currently focused window to the scratchpad
-bindsym $win+Shift+minus move scratchpad
 
+# move the currently focused window to the scratchpad
+bindsym $win+$alt+section move scratchpad
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-bindsym $win+minus scratchpad show
+bindsym $win+section scratchpad show
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
