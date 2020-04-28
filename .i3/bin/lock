@@ -2,7 +2,7 @@
 
 set -e
 
-LOCKOPTS='--show-failed-attempts --nofork'
+LOCKOPTS='--show-failed-attempts'
 SCREENCOUNT=$(xrandr | awk '$2 == "connected" {n++} END {print n}')
 LOCKIMAGE="${HOME}/.i3/wallpapers/i3lock-image-${SCREENCOUNT}.png"
 if [ -f "$LOCKIMAGE" ]; then
