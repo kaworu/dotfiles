@@ -35,16 +35,6 @@ set $light1            #ebdbb2
 # is used in the bar {} block below.
 font pango:FontAwesome 12
 
-# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
-# screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.i3/bin/lock
-
-# Use pactl to adjust volume in PulseAudio.
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
 # Modifiers
 set $win Mod4
 set $alt Mod1
@@ -127,7 +117,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws0 "0"
 
 # switch to workspace
 bindsym $win+1 workspace number $ws1
@@ -139,7 +129,7 @@ bindsym $win+6 workspace number $ws6
 bindsym $win+7 workspace number $ws7
 bindsym $win+8 workspace number $ws8
 bindsym $win+9 workspace number $ws9
-bindsym $win+0 workspace number $ws10
+bindsym $win+0 workspace number $ws0
 
 # move focused container to workspace
 bindsym $win+$alt+1 move container to workspace number $ws1
@@ -151,7 +141,7 @@ bindsym $win+$alt+6 move container to workspace number $ws6
 bindsym $win+$alt+7 move container to workspace number $ws7
 bindsym $win+$alt+8 move container to workspace number $ws8
 bindsym $win+$alt+9 move container to workspace number $ws9
-bindsym $win+$alt+0 move container to workspace number $ws10
+bindsym $win+$alt+0 move container to workspace number $ws0
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -229,9 +219,17 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="(?i)mplayer"]       floating enable
 for_window [class="Gcr-prompter"]      floating enable
 
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.i3/bin/lock
 # autostart services programs on startup.
 exec --no-startup-id ~/.i3/autostart.sh
 
 ### Custom bindings.
 bindsym XF86MonBrightnessUp   exec --no-startup-id brightnessctl set +10%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 10%-
+# Use pactl to adjust volume in PulseAudio.
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10%
+bindsym XF86AudioMute        exec --no-startup-id pactl set-sink-mute   @DEFAULT_SINK@   toggle
+bindsym XF86AudioMicMute     exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
