@@ -180,9 +180,10 @@ mode "resize" {
 bindsym $win+r mode "resize"
 
 # see https://wiki.archlinux.org/index.php/I3#Shutdown,_reboot,_lock_screen
-set $mode_system System: (l)ock, (r)estart, (e)xit, (s)uspend, (Shift+r)eboot, (Shift+s)hutdown
+set $mode_system System: (l)ock, (o)ff, (r)estart, (e)xit, (s)uspend, (Shift+r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
     bindsym l       exec --no-startup-id loginctl lock-session, mode "default"
+    bindsym o       exec --no-startup-id xset dpms force off,   mode "default"
     bindsym r       restart
     bindsym e       exit
     bindsym s       exec --no-startup-id systemctl suspend,     mode "default"
