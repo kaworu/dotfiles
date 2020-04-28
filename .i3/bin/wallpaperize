@@ -15,23 +15,23 @@ if [ $# -ne 1 ]; then
     echo "usage $0 image" > /dev/stderr
     exit 1
 fi
-IMAGE=$1
+
+echo -n 'Setting background image... '
+convert "$1" "${HOME}/.i3/wallpapers/background.png"
+feh --bg-scale "${HOME}/.i3/wallpapers/background.png"
+echo 'done.'
 
 echo -n 'Generating single screen i3lock image... '
-convert "$IMAGE" $TRANSFORM \
+convert "${HOME}/.i3/wallpapers/background.png" $TRANSFORM \
     -resize "${LEFTRES}!"  '(' "$PADLOCK" -resize x190 -gravity center ')' -composite \
     "${HOME}/.i3/wallpapers/i3lock-image-1.png"
 echo 'done.'
 
 echo -n 'Generating dual screen i3lock image... '
-convert "$IMAGE" $TRANSFORM \
+convert "${HOME}/.i3/wallpapers/background.png" $TRANSFORM \
     '(' -clone 0 -resize "${LEFTRES}!"  '(' "$PADLOCK" -resize x190 -gravity center ')' -composite ')' \
     '(' -clone 0 -resize "${RIGHTRES}!" '(' "$PADLOCK" -resize x190 -gravity center ')' -composite ')' \
     -delete 0 \
     -background black -gravity South +append \
     "${HOME}/.i3/wallpapers/i3lock-image-2.png"
-echo 'done.'
-
-echo -n 'Setting background image... '
-feh --bg-fill "$IMAGE"
 echo 'done.'
