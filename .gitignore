@@ -19,19 +19,16 @@
 !/.Xdefaults
 !/.config/termite/
 !/.config/dunst/
+!/.config/fontconfig/
 !/.local/bin
 !/.local/fzf
+!/.login_conf
+!/.gemrc
+
 !/.i3
 /.i3/wallpapers
 !/.i3/wallpapers/padlock.png
-!/.login_conf
-!/.gemrc
 
 !/.yabairc
 !/.skhdrc
 !/.config/kitty/
-
-!/.wallpapers
-/.wallpapers/*
-!/.wallpapers/lockscreen.sh
-!/.wallpapers/padlock.png
