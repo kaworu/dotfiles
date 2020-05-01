@@ -2,6 +2,7 @@
 name = "gruvbox-dark"
 [theme.overrides]
 idle_bg = "#1d2021"
+separator = " "
 
 [icons]
 name = "awesome"
