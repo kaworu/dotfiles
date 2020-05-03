@@ -185,7 +185,7 @@ let g:lightline = {
 syntax sync minlines=256
 syntax enable
 filetype plugin indent on
-if $TERM == "linux"
+if empty($DISPLAY)
     colorscheme elflord
     set ruler
     set showcmd
