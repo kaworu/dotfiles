@@ -53,6 +53,7 @@ yabai -m rule --add app=Xcode       space=5
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app=Simulator              manage=off
 yabai -m rule --add app=Timing                 manage=off
+yabai -m rule --add app=Gimp                   manage=off
 
 # signals
 yabai -m signal --add event=application_launched action='yabai -m window --focus $YABAI_PROCESS_ID'
