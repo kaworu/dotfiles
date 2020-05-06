@@ -30,7 +30,7 @@
 	url = https://github.com/vim-scripts/Align.git
 [submodule ".vim/pack/vendor/start/commentary"]
 	path = .vim/pack/vendor/start/commentary
-	url = https://tpope.io/vim/commentary.git
+	url = https://github.com/tpope/vim-commentary.git
 [submodule ".vim/bundle/vim-matchit"]
 	path = .vim/pack/vendor/start/matchit
 	url = https://github.com/vim-scripts/matchit.zip
