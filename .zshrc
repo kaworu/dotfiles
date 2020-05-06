@@ -1,5 +1,6 @@
 #!/usr/bin/env zsh
 
+#zmodload zsh/zprof
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -154,9 +155,6 @@ zstyle ':completion::complete:*' use-cache on
 zstyle ':completion::complete:*' cache-path ~/.zsh/cache
 # failed match * are passed literally
 #unsetopt nomatch
-if command -v kubectl > /dev/null; then
-    source <(kubectl completion zsh)
-fi
 
 # General aliases
 alias la="ls -A"
@@ -251,6 +249,6 @@ function precmd {
 # More zsh config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-: # noop
+#zprof
 
-# vim:filetype=zsh:tabstop=2:shiftwidth=2:fdm=marker:
+: # noop
