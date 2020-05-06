@@ -8,8 +8,7 @@
 
 !/.zshenv
 !/.zshrc
-!/.zsh
-/.zsh/cache
+/.zsh
 
 !/.screenrc
 !/.tmux.conf
