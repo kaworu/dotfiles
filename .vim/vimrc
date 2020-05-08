@@ -186,12 +186,7 @@ let g:lightline = {
 syntax sync minlines=256
 syntax enable
 filetype plugin indent on
-if empty($DISPLAY) && s:uname != 'Darwin'
-    colorscheme elflord
-    set ruler
-    set showcmd
-    set showmode
-else
+if &t_Co == 256
     set background=dark
     set synmaxcol=256
     if &background == "dark"
@@ -213,6 +208,11 @@ else
     set noruler
     set noshowcmd
     set noshowmode
+else
+    colorscheme elflord
+    set ruler
+    set showcmd
+    set showmode
 endif
 
 if has("termguicolors")
