@@ -1,6 +1,6 @@
 XTerm*termName:       xterm-256color
 XTerm*foreground:       #ebdbb2
-XTerm*background:       #1d2021
+XTerm*background:       #282828
 XTerm*FaceName:         monospace:size=12:antialias=true
 !XTerm*FaceName:         Fixed:pixelsize=14:antialias=true
 XTerm*faceSize:         8
@@ -20,7 +20,8 @@ Xft.dpi: 98
 
 # soft contrast: background = #32302f
 # medium contrast: background = #282828
-*background:            #1d2021
+# hard contrast: background = #1d2021
+*background:            #282828
 *foreground:            #ebdbb2
 *fadeColor:             #1d2021
 *cursorColor:           #ebdbb2

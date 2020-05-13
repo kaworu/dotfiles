@@ -56,8 +56,8 @@ bindsym $alt+F4 kill
 
 # start dmenu (a program launcher)
 bindsym $alt+F2 exec --no-startup-id dmenu_run -fn 'Sans Serif-12' \
-    -nb '$hard_background' -nf '$foreground' \
-    -sb '$neutral_blue'    -sf '$foreground'
+    -nb '$medium_background' -nf '$foreground' \
+    -sb '$neutral_blue'      -sf '$foreground'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -194,23 +194,23 @@ bar {
     tray_output primary
     position top
     colors {
-        background $hard_background
+        background $medium_background
         statusline $foreground
         separator  $bright_blue
 
         # class            border           backgr.          text
-        focused_workspace  $bright_blue     $neutral_blue    $foreground
-        active_workspace   $bright_blue     $neutral_blue    $foreground
-        inactive_workspace $hard_background $hard_background $bright_blue
-        urgent_workspace   $bright_red      $neutral_red     $foreground
+        focused_workspace  $bright_blue       $neutral_blue      $foreground
+        active_workspace   $bright_blue       $neutral_blue      $foreground
+        inactive_workspace $medium_background $medium_background $bright_blue
+        urgent_workspace   $bright_red        $neutral_red       $foreground
     }
 }
 
 # class                 border           backgr.          text         indicator
-client.focused          $bright_blue     $neutral_blue    $foreground  $bright_red
-client.focused_inactive $light4          $gray            $foreground  $light1
-client.unfocused        $soft_background $hard_background $bright_blue $light1
-client.urgent           $bright_red      $bright_red      $foreground  $bright_red
+client.focused          $bright_blue     $neutral_blue      $foreground  $bright_red
+client.focused_inactive $light4          $gray              $foreground  $light1
+client.unfocused        $soft_background $medium_background $bright_blue $light1
+client.urgent           $bright_red      $bright_red        $foreground  $bright_red
 
 for_window [class="Termite"] border 2pixel
 

@@ -193,7 +193,6 @@ if &t_Co == 256
         packadd gruvbox
         let g:gruvbox_italic = 1
         let g:gruvbox_invert_selection = 0
-        let g:gruvbox_contrast_dark = 'hard'
         " spell checking hack, see https://github.com/morhetz/gruvbox/issues/175
         let g:gruvbox_guisp_fallback = "bg"
         colorscheme gruvbox
