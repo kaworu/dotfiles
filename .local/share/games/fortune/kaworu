@@ -179,3 +179,7 @@ Make it work, make it fast, make it right.
 Architectural insight is not the product of master plans, but of hard won
 experience.
 		-- Big Ball of Mud, by Brian Foote
+%
+Programs must be written for people to read, and only incidentally for machines
+to execute.
+		-- Hal Abelson
