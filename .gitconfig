@@ -25,6 +25,7 @@
 
 [alias]
 	st = status
+	rs = restore
 	ci = commit
 	br = branch
 	co = checkout
