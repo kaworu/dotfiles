@@ -213,6 +213,7 @@ client.unfocused        $soft_background $medium_background $bright_blue $light1
 client.urgent           $bright_red      $bright_red        $foreground  $bright_red
 
 for_window [class="Termite"] border 2pixel
+for_window [window_role="PictureInPicture"] border none
 
 for_window [window_role="pop-up"]      floating enable
 for_window [window_role="task_dialog"] floating enable
