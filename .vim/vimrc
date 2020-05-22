@@ -140,7 +140,6 @@ setlocal spelllang=en
 
 autocmd FileType text setlocal textwidth=78
 autocmd FileType man    set nolist
-au BufRead ~/.tmp/mutt* set textwidth=72 " email
 " When editing a file, always jump to the last known cursor position.
 " Don't do it when the position is invalid or when inside an event handler
 " (happens when dropping a file on gvim).
