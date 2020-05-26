@@ -49,7 +49,7 @@ set $right l
 floating_modifier $win
 
 # start a terminal
-bindsym $win+Return exec st
+bindsym $win+Return exec termite
 
 # kill focused window
 bindsym $alt+F4 kill
