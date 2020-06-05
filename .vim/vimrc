@@ -126,7 +126,7 @@ map      <C-l> <esc>:bnext!<return>
 inoremap <C-l> <esc>:bnext!<return>
 map      <C-h> <esc>:bprevious!<return>
 inoremap <C-h> <esc>:bprevious!<return>
-map      <C-q> <esc>:bdelete<return> retur
+map      <C-q> <esc>:bdelete<return>
 
 " split position
 set splitright
