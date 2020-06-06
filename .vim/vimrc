@@ -239,9 +239,9 @@ let g:gist_show_privates = 1
 " fzf
 set rtp+=~/.local/fzf
 let g:fzf_command_prefix = 'Fzf'
-let g:fzf_layout = { 'down': '~100%' }
+let g:fzf_layout = { 'down': '~80%' }
 let g:fzf_preview_window = 'down:60%'
-nmap <F3> :FzfGFile<return>
+nmap <C-j> :FzfGFile<return>
 " see https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
 command! -bang -nargs=* FzfGitGrep
     \ call fzf#vim#grep(

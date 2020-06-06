@@ -52,10 +52,10 @@ floating_modifier $win
 bindsym $win+Return exec termite
 
 # kill focused window
-bindsym $alt+F4 kill
+bindsym $win+q kill
 
 # start dmenu (a program launcher)
-bindsym $alt+F2 exec --no-startup-id dmenu_run -fn 'Sans Serif-12' \
+bindsym $win+space exec --no-startup-id dmenu_run -fn 'Sans Serif-12' \
     -nb '$medium_background' -nf '$foreground' \
     -sb '$neutral_blue'      -sf '$foreground'
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -92,8 +92,6 @@ bindsym $win+e layout toggle split
 
 # toggle tiling / floating
 bindsym $win+Shift+space floating toggle
-# change focus between tiling / floating windows
-bindsym $win+space focus mode_toggle
 
 # focus the parent container
 bindsym $win+a focus parent
