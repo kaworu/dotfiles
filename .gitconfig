@@ -34,11 +34,11 @@
 	co = checkout
 	df = diff
 	dc = diff --cached
-	lg = log -p
-	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	ds = diff --stat
+	ll = log --decorate --graph --pretty=oneline
 	ls = ls-files
 	stash-file-list = "!for s in `git stash list --format=\"%gd\"`; do git stash show \"$s\" --name-only | sed -e \"s/^/$s: /\"; done"
+	exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
 
 [github]
 	user = kAworu
