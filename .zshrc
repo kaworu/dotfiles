@@ -124,6 +124,7 @@ case `uname -s` in
     alias ls="ls --color=auto"
     alias ll="ls -lhF"
     alias lla="ls -lhAF"
+    alias ip="ip --color=auto"
   ;;
   Darwin) # *khof*
     is_a_BSD; lscolors; gnu_grep
