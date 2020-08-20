@@ -183,3 +183,8 @@ experience.
 Programs must be written for people to read, and only incidentally for machines
 to execute.
 		-- Hal Abelson
+%
+It is hard to believe today, but under this embarrassing mess lies the ruins of
+the beautiful cathedral of Unix, deservedly famous for its simplicity of
+design, its economy of features, and its elegance of execution.
+		-- Poul-Henning Kamp (https://queue.acm.org/detail.cfm?id=2349257)
