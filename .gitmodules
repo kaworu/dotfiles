@@ -22,9 +22,6 @@
 [submodule ".vim/pack/vendor/start/fzf"]
 	path = .vim/pack/vendor/start/fzf
 	url = https://github.com/junegunn/fzf.vim.git
-[submodule ".vim/pack/vendor/start/diffchanges"]
-	path = .vim/pack/vendor/start/diffchanges
-	url = https://github.com/jmcantrell/vim-diffchanges
 [submodule ".vim/pack/vendor/start/align"]
 	path = .vim/pack/vendor/start/align
 	url = https://github.com/vim-scripts/Align.git
@@ -37,9 +34,6 @@
 [submodule ".vim/pack/vendor/start/undotree"]
 	path = .vim/pack/vendor/start/undotree
 	url = https://github.com/mbbill/undotree.git
-[submodule ".vim/pack/vendor/start/unimpaired"]
-	path = .vim/pack/vendor/start/unimpaired
-	url = https://github.com/tpope/vim-unimpaired.git
 [submodule ".vim/pack/vendor/start/repeat"]
 	path = .vim/pack/vendor/start/repeat
 	url = https://github.com/tpope/vim-repeat.git
@@ -116,9 +110,6 @@
 [submodule ".vim/pack/vendor/start/haskell"]
 	path = .vim/pack/vendor/start/haskell
 	url = https://github.com/neovimhaskell/haskell-vim.git
-[submodule ".vim/pack/vendor/start/twig"]
-	path = .vim/pack/vendor/start/twig
-	url = https://github.com/lumiliet/vim-twig.git
 [submodule ".vim/pack/vendor/start/javascript"]
 	path = .vim/pack/vendor/start/javascript
 	url = https://github.com/pangloss/vim-javascript.git
