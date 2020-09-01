@@ -42,5 +42,3 @@
 
 [github]
 	user = kAworu
-[url "git@github.com:"]
-	insteadOf = https://github.com/
