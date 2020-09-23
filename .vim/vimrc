@@ -266,14 +266,6 @@ let NERDTreeShowHidden=1
 " see https://stackoverflow.com/a/33465522
 nmap <F2> :NERDTreeToggle %<return>
 
-" unimpaired
-nmap é [
-nmap à ]
-omap é [
-omap à ]
-xmap é [
-xmap à ]
-
 " per OS hacks.
 if s:uname == "OpenBSD"
     let Tlist_Ctags_Cmd = "/usr/local/bin/ectags"
