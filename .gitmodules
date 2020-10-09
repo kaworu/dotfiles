@@ -116,3 +116,6 @@
 [submodule ".vim/pack/vendor/start/go"]
 	path = .vim/pack/vendor/start/go
 	url = https://github.com/fatih/vim-go.git
+[submodule ".vim/pack/vendor/start/helm"]
+	path = .vim/pack/vendor/start/helm
+	url = https://github.com/towolf/vim-helm.git
