@@ -246,7 +246,8 @@ nmap <C-j> :FzfGFile<return>
 command! -bang -nargs=* FzfGitGrep
     \ call fzf#vim#grep(
     \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-    \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+    \   fzf#vim#with_preview(g:fzf_preview_window), <bang>0)
+
 
 " <C-k> for searching (also selection in visual mode).
 if executable('fzf') && executable('rg')
