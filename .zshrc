@@ -7,6 +7,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt append_history hist_ignore_all_dups histignorespace
 # Misc options
+setopt interactivecomments
 setopt auto_list
 setopt auto_param_keys
 setopt auto_param_slash
