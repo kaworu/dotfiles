@@ -16,6 +16,7 @@ setopt hash_cmds
 setopt hash_dirs
 setopt numeric_glob_sort
 setopt transient_rprompt
+setopt noequals
 unsetopt beep
 unsetopt notify
 # Color vars
