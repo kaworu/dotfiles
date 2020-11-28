@@ -228,6 +228,8 @@ endif
 
 " Load all packages on Vim >= 8
 packloadall
+" part of ViM 8.2 runtime
+packadd matchit
 
 " syntastic
 let g:syntastic_enable_signs = 1

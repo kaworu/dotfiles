@@ -28,9 +28,6 @@
 [submodule ".vim/pack/vendor/start/commentary"]
 	path = .vim/pack/vendor/start/commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/pack/vendor/start/matchit"]
-	path = .vim/pack/vendor/start/matchit
-	url = https://github.com/vim-scripts/matchit.zip
 [submodule ".vim/pack/vendor/start/undotree"]
 	path = .vim/pack/vendor/start/undotree
 	url = https://github.com/mbbill/undotree.git
