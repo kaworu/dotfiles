@@ -122,3 +122,6 @@
 [submodule ".vim/pack/vendor/start/jenkins"]
 	path = .vim/pack/vendor/start/jenkins
 	url = https://github.com/martinda/Jenkinsfile-vim-syntax.git
+[submodule ".vim/pack/vendor/start/bpftrace"]
+	path = .vim/pack/vendor/start/bpftrace
+	url = https://github.com/mmarchini/bpftrace.vim.git
