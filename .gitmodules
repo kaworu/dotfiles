@@ -122,3 +122,6 @@
 [submodule ".vim/pack/vendor/start/bpftrace"]
 	path = .vim/pack/vendor/start/bpftrace
 	url = https://github.com/mmarchini/bpftrace.vim.git
+[submodule ".vim/pack/vendor/start/terraform"]
+	path = .vim/pack/vendor/start/terraform
+	url = https://github.com/hashivim/vim-terraform.git
