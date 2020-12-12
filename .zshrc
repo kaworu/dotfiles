@@ -32,8 +32,7 @@ bindkey -v
 # Edit cmdline
 autoload edit-command-line
 zle -N edit-command-line
-bindkey 'e' edit-command-line
-bindkey 'x' execute-named-cmd
+bindkey '^X^E' edit-command-line
 
 # Complete help
 bindkey 'c' _complete_help
