@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 #zmodload zsh/zprof
+
 # History
 HISTFILE=~/.zsh_history
 HISTSIZE=10000
@@ -30,7 +31,7 @@ umask 0022
 # vi keybindings
 bindkey -v
 # Edit cmdline
-autoload edit-command-line
+autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
@@ -50,6 +51,7 @@ bindkey -s '[[[' '[\ea[   ]]\ehhhi'
 bindkey -s "''" "'\ea'\ei"
 bindkey -s '""' '"\ea"\ei'
 # Completion
+fpath+=("$HOME/.zsh/completions")
 autoload -Uz compinit
 autoload -Uz complist
 compinit
