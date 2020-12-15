@@ -243,7 +243,7 @@ set runtimepath^=~/.local/fzf
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~80%' }
 let g:fzf_preview_window = 'down:60%'
-nmap <C-j> :FzfGFile<return>
+nmap <C-j> :GFile<return>
 " see https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
 command! -bang -nargs=* FzfGitGrep
     \ call fzf#vim#grep(
