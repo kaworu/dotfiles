@@ -17,6 +17,7 @@
 !/.termcap
 !/.Xdefaults
 !/.config/termite/
+!/.config/alacritty/
 !/.config/dunst/
 !/.config/fontconfig/
 !/.local/bin
