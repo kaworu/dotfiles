@@ -7,4 +7,7 @@ set textwidth=80
 if has("autocmd")
     set omnifunc=ccomplete#Complete
 endif
-setlocal equalprg=clang-format
+
+if executable("clang-format")
+    setlocal equalprg=clang-format
+endif

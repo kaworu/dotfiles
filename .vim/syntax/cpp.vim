@@ -1,1 +1,3 @@
-setlocal equalprg=clang-format
+if executable("clang-format")
+    setlocal equalprg=clang-format
+endif
