@@ -16,7 +16,6 @@ XTerm*saveLines:        1024
 
 Xcursor.theme: whiteglass
 Xcursor.size: 16
-Xft.dpi: 98
 
 # soft contrast: background = #32302f
 # medium contrast: background = #282828
