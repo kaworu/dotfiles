@@ -79,7 +79,7 @@
 	url = https://github.com/PotatoesMaster/i3-vim-syntax.git
 [submodule ".vim/pack/vendor/start/cocci"]
 	path = .vim/pack/vendor/start/cocci
-	url = https://github.com/kAworu/vim-coccinelle.git
+	url = https://github.com/kaworu/vim-coccinelle.git
 [submodule ".vim/pack/vendor/start/arduino"]
 	path = .vim/pack/vendor/start/arduino
 	url = https://github.com/sudar/vim-arduino-syntax.git
