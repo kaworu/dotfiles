@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-#zmodload zsh/zprof
+test -n "$ZPROF" && zmodload zsh/zprof
 
 # History
 HISTFILE=~/.zsh_history
@@ -248,6 +248,6 @@ function precmd {
 # More zsh config
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
 
-#zprof
+test -n "$ZPROF" && zprof
 
 : # noop
