@@ -37,6 +37,7 @@
 	ds = diff --stat
 	ll = log --decorate --graph --pretty=oneline
 	ls = ls-files
+	sw = switch
 	stash-file-list = "!for s in `git stash list --format=\"%gd\"`; do git stash show \"$s\" --name-only | sed -e \"s/^/$s: /\"; done"
 	exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
 	pr  = "!f() { git fetch -fu ${2:-$(git remote | grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
