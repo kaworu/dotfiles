@@ -244,22 +244,28 @@ set runtimepath^=~/.local/fzf
 let g:fzf_command_prefix = 'Fzf'
 let g:fzf_layout = { 'down': '~80%' }
 let g:fzf_preview_window = 'down:60%'
-nmap <C-j> :GFile<return>
-" see https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
-command! -bang -nargs=* FzfGitGrep
-    \ call fzf#vim#grep(
-    \   'git grep --line-number -- '.shellescape(<q-args>), 0,
-    \   fzf#vim#with_preview(g:fzf_preview_window), <bang>0)
-
+nmap <C-j> :GitFiles<return>
 
 " <C-k> for searching (also selection in visual mode).
+let s:searchopts = '--column --line-number --color=always'
+" see https://github.com/junegunn/fzf.vim#example-git-grep-wrapper
+command! -bang -nargs=* FzfGitGrep
+    \ call fzf#vim#grep(printf('git grep %s -- %s', s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* FzfGitGrepWord
+    \ call fzf#vim#grep(printf('git grep --word-regexp %s -- %s', s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
+
 if executable('fzf') && executable('rg')
-    nmap <C-k> :Rg 
-    vnoremap <C-k> y:Rg <C-r>0<return>
+    let s:rg = 'rg --no-heading --smart-case --hidden --sort path'
+    command! -bang -nargs=* RipGrep
+        \ call fzf#vim#grep(printf('%s %s -- %s', s:rg, s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
+    command! -bang -nargs=* RipGrepWord
+        \ call fzf#vim#grep(printf('%s --word-regexp %s -- %s', s:rg, s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
+    nmap <C-k> :RipGrep 
+    vnoremap <C-k> y:RipGrepWord <C-r>0<return>
 elseif executable('fzf')
     nmap <C-k> :FzfGitGrep 
-    vnoremap <C-k> y:FzfGitGrep <C-r>0<return>
-else
+    vnoremap <C-k> y:FzfGitGrepWord <C-r>0<return>
+else " use fugitive
     nmap <C-k> :Ggrep 
     vnoremap <C-k> y:silent Ggrep <C-r>0<return>:copen<return>:redraw!<return>
 endif
