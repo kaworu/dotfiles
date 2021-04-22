@@ -128,3 +128,6 @@
 [submodule ".vim/pack/vendor/start/delve"]
 	path = .vim/pack/vendor/start/delve
 	url = https://github.com/sebdah/vim-delve
+[submodule ".vim/pack/vendor/start/gh-line"]
+	path = .vim/pack/vendor/start/gh-line
+	url = https://github.com/ruanyl/vim-gh-line.git
