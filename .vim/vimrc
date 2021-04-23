@@ -255,7 +255,7 @@ command! -bang -nargs=* FzfGitGrepWord
     \ call fzf#vim#grep(printf('git grep --word-regexp %s -- %s', s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
 
 if executable('fzf') && executable('rg')
-    let s:rg = 'rg --no-heading --smart-case --hidden --sort path'
+    let s:rg = "rg --no-heading --smart-case --hidden --iglob '!.git/' --sort path"
     command! -bang -nargs=* RipGrep
         \ call fzf#vim#grep(printf('%s %s -- %s', s:rg, s:searchopts, shellescape(<q-args>)), 1, fzf#vim#with_preview(), <bang>0)
     command! -bang -nargs=* RipGrepWord
