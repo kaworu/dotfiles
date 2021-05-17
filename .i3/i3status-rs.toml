@@ -9,11 +9,7 @@ name = "awesome"
 [[block]]
 block = "net"
 device = "wlp1s0"
-ssid = true
-signal_strength = true
-ip = true
-speed_up = true
-speed_down = true
+format = "{ssid} {signal_strength} {ip} {speed_down;K*b} {speed_up;K*b}"
 interval = 2
 
 [[block]]
