@@ -29,7 +29,7 @@ format = "{1m} {5m} {15m}"
 block = "temperature"
 collapsed = false
 interval = 10
-format = "{max}°"
+format = "{max}"
 chip = "*-isa-*"
 
 [[block]]
