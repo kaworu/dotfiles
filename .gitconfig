@@ -32,15 +32,14 @@
 	ci = commit -v
 	br = branch
 	co = checkout
-	df = diff
+	sw = switch
 	dc = diff --cached
 	ds = diff --stat
 	ll = log --decorate --graph --pretty=oneline
 	ls = ls-files
-	sw = switch
 	stash-file-list = "!for s in `git stash list --format=\"%gd\"`; do git stash show \"$s\" --name-only | sed -e \"s/^/$s: /\"; done"
 	exclude = !sh -c 'echo "$1" >> .git/info/exclude' -
-	pr  = "!f() { git fetch -fu ${2:-$(git remote | grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr = "!f() { git fetch -fu ${2:-$(git remote | grep ^upstream || echo origin)} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
 
 [github]
