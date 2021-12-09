@@ -29,6 +29,7 @@
 [alias]
 	st = status
 	rs = restore
+	rss = restore --staged
 	ci = commit -v
 	br = branch
 	co = checkout
