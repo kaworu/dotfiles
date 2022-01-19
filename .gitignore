@@ -5,6 +5,7 @@
 
 !/.vim
 /.vim/.netrwhist
+!/.config/nvim
 
 !/.zshenv
 !/.zshrc
