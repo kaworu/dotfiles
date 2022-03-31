@@ -45,3 +45,6 @@
 
 [github]
 	user = kaworu
+
+[init]
+	defaultBranch = main
