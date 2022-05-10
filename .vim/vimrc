@@ -109,6 +109,8 @@ set selection=inclusive
 " allow virtual editing (cursor where there is no actual character) in Visual
 " block mode only.
 set virtualedit=block
+" highlight with start without jumping, see https://stackoverflow.com/a/49944815/7936137
+nnoremap <silent> * :let @/= '\<' . expand('<cword>') . '\>' <bar> set hls <cr>
 
 " performance tricks.
 set ttyfast
