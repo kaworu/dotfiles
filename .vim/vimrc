@@ -1,4 +1,5 @@
 set nocompatible
+set mouse=
 let s:uname = substitute(system('uname'), "\n", "", "")
 
 " disable modelines.
