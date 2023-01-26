@@ -48,7 +48,7 @@ set $right l
 floating_modifier $alt
 
 # start a terminal
-bindsym $alt+Return exec alacritty
+bindsym $alt+Return exec alacritty msg create-window || alacritty
 
 # kill focused window
 bindsym $alt+q kill
