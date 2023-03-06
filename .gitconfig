@@ -17,6 +17,9 @@
 	pager = less -FRX
 	filemode = false
 
+[rebase]
+	autoSquash = true
+
 [merge]
 	tool = vimdiff
 
