@@ -217,6 +217,14 @@ for_window [window_role="task_dialog"] floating enable
 for_window [class="(?i)mplayer"]       floating enable
 for_window [class="Gcr-prompter"]      floating enable
 
+# Zoom stuff from https://bewilderedoctothorpe.net/2022/03/30/i3wm-zoom-screen-sharing/
+# Set Zoom notification window to floating with no focus
+for_window [title="^zoom\s?$"] floating enable
+no_focus [title="^zoom\s?$"]
+# For meetings that you have joined via a link
+for_window [title="^join\?action=join.*$"] floating enable
+no_focus [title="^join\?action=join.*$"]
+
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
 exec --no-startup-id xss-lock --transfer-sleep-lock -- ~/.i3/bin/lock
