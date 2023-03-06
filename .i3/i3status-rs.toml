@@ -1,16 +1,19 @@
 [theme]
-name = "gruvbox-dark"
+theme = "gruvbox-dark"
 [theme.overrides]
 separator = " "
 
 [icons]
-name = "awesome"
+icons = "awesome4"
 
 [[block]]
 block = "net"
 device = "wlp1s0"
-format = "{ssid} {signal_strength} {ip} {speed_down;K*b} {speed_up;K*b}"
-interval = 2
+format = " $icon $ssid $signal_strength @$frequency $ip "
+
+[[block]]
+block = "external_ip"
+format = "$country_flag $ip "
 
 [[block]]
 block = "bluetooth"
@@ -23,24 +26,22 @@ step_width = 3
 [[block]]
 block = "load"
 interval = 1
-format = "{1m} {5m} {15m}"
-
-[[block]]
-block = "temperature"
-collapsed = false
-interval = 10
-format = "{max}"
-chip = "*-isa-*"
+format = " $icon $1m.eng(w:4) $5m.eng(w:4) $15m.eng(w:4) "
 
 [[block]]
 block = "backlight"
+invert_icons = true
+
+[[block]]
+block = "temperature"
+format = " $icon $max "
 
 [[block]]
 block = "battery"
-interval = 10
-format = "{percentage} {time}"
+format = " $icon $percentage {$time |}"
+missing_format = ""
 
 [[block]]
 block = "time"
-interval = 1
-format = "%d/%m/%Y %H:%M:%S"
+interval = 0.5
+format = " $icon $timestamp.datetime(f:'%d/%m/%Y %H:%M:%S') "
