@@ -131,3 +131,6 @@
 [submodule ".vim/pack/vendor/start/gh-line"]
 	path = .vim/pack/vendor/start/gh-line
 	url = https://github.com/ruanyl/vim-gh-line.git
+[submodule ".vim/pack/vendor/start/json5"]
+	path = .vim/pack/vendor/start/json5
+	url = https://github.com/gutenye/json5.vim.git
