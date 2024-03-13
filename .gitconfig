@@ -16,6 +16,9 @@
 	editor = vim
 	pager = less -FRX
 	filemode = false
+	compression = 0
+[pack]
+	windowsMemory = 256m
 
 [rebase]
 	autoSquash = true
