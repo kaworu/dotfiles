@@ -174,6 +174,7 @@ if command -v fzf > /dev/null; then
         export FZF_COMPLETION_OPTS="--preview-window=60% --preview 'bat --style=numbers --color=always {}'"
         export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
         export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+        export MANROFFOPT="-c"
     fi
     [ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
     [ -f ~/.local/fzf/shell/key-bindings.zsh ] && source ~/.local/fzf/shell/key-bindings.zsh
