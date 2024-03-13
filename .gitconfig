@@ -25,6 +25,8 @@
 
 [merge]
 	tool = vimdiff
+[rerere]
+	enabled = true
 
 [pull]
 	ff = only
