@@ -6,7 +6,7 @@
 	ui = auto
 
 [diff]
-	algorithm = patience
+	algorithm = histogram
 
 [color "diff"]
 	whitespace = red reverse
