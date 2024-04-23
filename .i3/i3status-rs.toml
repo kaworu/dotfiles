@@ -43,5 +43,5 @@ missing_format = ""
 
 [[block]]
 block = "time"
-interval = 0.5
+interval = 1
 format = " $icon $timestamp.datetime(f:'%d/%m/%Y %H:%M:%S') "
