@@ -119,6 +119,11 @@ case `uname -s` in
     alias ll="ls -lhF"
     alias lla="ls -lhAF"
     alias ip="ip --color=auto"
+    # ubuntu batcat
+    if command -v batcat > /dev/null; then
+        alias bat=batcat
+        export BAT_CMD=batcat
+    fi
   ;;
   Darwin) # *khof*
     is_a_BSD; lscolors; gnu_grep
@@ -169,11 +174,11 @@ if command -v fzf > /dev/null; then
         export FZF_DEFAULT_COMMAND="fd --type file --follow --color=always"
         export FZF_DEFAULT_OPTS="$FZF_DEFAULT_OPTS --ansi"
     fi
-    if command -v bat > /dev/null; then
+    if command -v ${BAT_CMD:-bat} > /dev/null; then
         export BAT_THEME="Gruvbox-N"
-        export FZF_COMPLETION_OPTS="--preview-window=60% --preview 'bat --style=numbers --color=always {}'"
+        export FZF_COMPLETION_OPTS="--preview-window=60% --preview '${BAT_CMD:-bat} --style=numbers --color=always {}'"
         export FZF_CTRL_T_OPTS="$FZF_COMPLETION_OPTS"
-        export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+        export MANPAGER="sh -c 'col -bx | ${BAT_CMD:-bat} -l man -p'"
         export MANROFFOPT="-c"
     fi
     [ -f ~/.local/fzf/shell/completion.zsh ] && source ~/.local/fzf/shell/completion.zsh
