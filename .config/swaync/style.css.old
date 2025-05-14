@@ -1,0 +1,266 @@
+/*
+ * vim: ft=less
+ */
+
+@define-color cc-bg #1d2021;
+
+@define-color noti-bg #282828;
+@define-color noti-bg-darker #1d2021;
+@define-color noti-close-bg rgba(255, 255, 255, 0.1);
+@define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
+
+@define-color text-color #ebdbb2;
+@define-color text-color-disabled #928374;
+
+@define-color bg-selected #458588;
+
+.notification-row {
+  outline: none;
+}
+
+.notification {
+  margin: 6px 12px;
+  padding: 0;
+}
+
+.critical {
+  background: #cc241d;
+  padding: 6px;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 6px;
+}
+
+.close-button {
+  background: @noti-close-bg;
+  color: @text-color;
+  text-shadow: none;
+  padding: 0;
+  margin-top: 10px;
+  margin-right: 16px;
+  box-shadow: none;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.close-button:hover {
+  box-shadow: none;
+  background: @noti-close-bg-hover;
+  transition: all 0.15s ease-in-out;
+  border: none;
+}
+
+.notification-default-action,
+.notification-action {
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: @noti-bg;
+  border: none;
+  color: @text-color;
+  transition: all 0.15s ease-in-out;
+}
+
+.notification-action {
+  border-top: none;
+  border-right: none;
+}
+
+.inline-reply {
+  margin-top: 8px;
+}
+.inline-reply-entry {
+  background: @noti-bg-darker;
+  color: @text-color;
+  caret-color: @text-color;
+}
+.inline-reply-button {
+  margin-left: 4px;
+  background: @noti-bg;
+  color: @text-color;
+}
+.inline-reply-button:disabled {
+  background: initial;
+  color: @text-color-disabled;
+  border: 1px solid transparent;
+}
+
+.image {
+}
+
+.body-image {
+  margin-top: 6px;
+  background-color: white;
+}
+
+.summary {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+}
+
+.time {
+  font-size: 16px;
+  font-weight: bold;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+  margin-right: 18px;
+}
+
+.body {
+  font-size: 15px;
+  font-weight: normal;
+  background: transparent;
+  color: @text-color;
+  text-shadow: none;
+}
+
+.control-center {
+  background: @cc-bg;
+}
+
+.control-center-list {
+  background: transparent;
+}
+
+.control-center-list-placeholder {
+  opacity: 0.5;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+/* Window behind control center and on all other monitors */
+.blank-window {
+  background: alpha(#1d2021, 0.25);
+}
+
+/*** Widgets ***/
+
+/* Title widget */
+.widget-title {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+.widget-title > button {
+  font-size: initial;
+  color: @text-color;
+  text-shadow: none;
+  background: @noti-bg;
+  box-shadow: none;
+}
+/* DND widget */
+.widget-dnd {
+  margin: 8px;
+  font-size: 1.1rem;
+}
+.widget-dnd > switch {
+  font-size: initial;
+  background: @noti-bg;
+  box-shadow: none;
+}
+.widget-dnd > switch:checked {
+  background: @bg-selected;
+}
+/* Label widget */
+.widget-label {
+  margin: 8px;
+}
+.widget-label > label {
+  font-size: 1.1rem;
+}
+
+/* Mpris widget */
+.widget-mpris {
+  /* The parent to all players */
+}
+.widget-mpris-player {
+  padding: 8px;
+  margin: 8px;
+}
+.widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+.widget-mpris-subtitle {
+  font-size: 1.1rem;
+}
+
+/* Buttons widget */
+.widget-buttons-grid {
+  padding: 8px;
+  margin: 8px;
+  background-color: @noti-bg;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button{
+  background: @noti-bg;
+}
+
+/* Menubar widget */
+.widget-menubar>box>.menu-button-bar>button {
+  border: none;
+  background: transparent;
+}
+
+/* .AnyName { Name defined in config after #
+  background-color: @noti-bg;
+  padding: 8px;
+  margin: 8px;
+}
+
+.AnyName>button {
+  background: transparent;
+  border: none;
+} */
+
+.topbar-buttons>button { /* Name defined in config after # */
+  border: none;
+  background: transparent;
+}
+
+/* Volume widget */
+
+.widget-volume {
+  background-color: @noti-bg;
+  padding: 8px;
+  margin: 8px;
+}
+
+.widget-volume>box>button {
+  background: transparent;
+  border: none;
+}
+
+.per-app-volume {
+  background-color: @noti-bg-alt;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+}
+
+/* Backlight widget */
+.widget-backlight {
+  background-color: @noti-bg;
+  padding: 8px;
+  margin: 8px;
+}
+
+/* Title widget */
+.widget-inhibitors {
+  margin: 8px;
+  font-size: 1.5rem;
+}
+.widget-inhibitors > button {
+  font-size: initial;
+  color: @text-color;
+  text-shadow: none;
+  background: @noti-bg;
+  box-shadow: none;
+}

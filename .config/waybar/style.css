@@ -1,0 +1,101 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: sans-serif;
+    font-size: 16px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: #32302f;
+    border-bottom: 1px solid #458588;
+    color: #ebdbb2;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: #ebdbb2;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.focused {
+    background-color: #458588;
+    border-bottom: 1px solid #83a598;
+}
+
+#workspaces button.urgent {
+    color: #32302f;
+    background-color: #fb4934;
+    border-bottom: 1px solid #cc241d;
+}
+
+#mode {
+    padding: 0 8px;
+    background: #cc241d;
+    border-bottom: 1px solid #cc241d;
+}
+
+#pulseaudio,
+#network,
+#load,
+#temperature,
+#backlight,
+#battery,
+#clock,
+#power-profiles-daemon {
+    padding: 0 8px;
+}
+
+#network,
+#temperature,
+#battery,
+#power-profiles-daemon {
+    color: #32302f;
+    background-color: #ebdbb2;
+}
+
+#temperature.critical {
+    color: #ebdbb2;
+    background: #cc241d;
+}
+
+#battery.charging {
+    color: #32302f;
+    background-color: #8ec07c;
+}
+#battery.warning {
+    color: #32302f;
+    background-color: #fabd2f;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ebdbb2;
+        color: #32302f;
+    }
+}
+#battery.critical:not(.charging) {
+    background: #cc241d;
+    color: #ebdbb2;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#power-profiles-daemon.power-saver {
+    background-color: #b8bb26;
+}
+#power-profiles-daemon.performance {
+    background-color: #fb4934;
+}
+
+tooltip {
+  background: rgba(50, 48, 47, 0.95);
+  border: 2px solid #458588;
+}
+tooltip label {
+  color: #ebdbb2;
+}

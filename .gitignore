@@ -14,21 +14,30 @@
 !/.screenrc
 !/.tmux.conf
 
-!/.terminfo
-!/.termcap
 !/.Xdefaults
-!/.config/termite/
 !/.config/alacritty/
 !/.config/dunst/
 !/.config/fontconfig/
+!/.config/fuzzel
+!/.config/safeeyes
+!/.config/termite/
+!/.gemrc
 !/.local/bin
 !/.local/fzf
 !/.login_conf
-!/.gemrc
+!/.termcap
+!/.terminfo
 
 !/.i3
 /.i3/wallpapers
 !/.i3/wallpapers/padlock.png
+
+!/.config/sway
+!/.config/swaylock
+!/.config/swaync
+!/.config/waybar
+/.config/sway/wallpapers
+!/.config/sway/wallpapers/padlock.png
 
 !/.yabairc
 !/.skhdrc

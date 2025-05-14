@@ -1,0 +1,35 @@
+#!/bin/sh
+# Simple lock image generator using ImageMagick.
+
+set -e
+
+WALLPAPERS_DIR=$(readlink -f $(dirname "$0")/../wallpapers)
+
+# left and right screens resolutions
+LEFTRES=2880x1800
+RIGHTRES=2560x1440
+# ImageMagick transformation before duplicating and adding the padlock image.
+TRANSFORM='-colorspace Gray -blur 0x5'
+PADLOCK_GEO_LEFT="120x120+3+0"
+PADLOCK_GEO_RIGHT="100x100+3+0"
+# Image added at the center of the images.
+PADLOCK="${WALLPAPERS_DIR}/padlock.png"
+
+if [ $# -ne 1 ]; then
+    echo "usage $0 image" > /dev/stderr
+    exit 1
+fi
+
+convert "$1" "${WALLPAPERS_DIR}/background.png"
+
+echo -n 'Generating single screen lock image... '
+convert "${WALLPAPERS_DIR}/background.png" $TRANSFORM \
+    '(' "$PADLOCK" -gravity center -geometry "$PADLOCK_GEO_LEFT" ')' -composite \
+    "${WALLPAPERS_DIR}/lock-image-1.png"
+echo 'done.'
+
+echo -n 'Generating dual screen lock image... '
+convert "${WALLPAPERS_DIR}/background.png" $TRANSFORM \
+    '(' "$PADLOCK" -gravity center -geometry "$PADLOCK_GEO_RIGHT" ')' -composite \
+    "${WALLPAPERS_DIR}/lock-image-2.png"
+echo 'done.'
